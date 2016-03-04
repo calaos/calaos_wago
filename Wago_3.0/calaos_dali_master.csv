@@ -1,0 +1,21 @@
+// Comments and empty lines are not read and starts with //
+//   This file is needed to define mapping from other DALI master device and calaos
+//   The mapping should list the device type, addresses and calaos address map
+//
+// DALI Sensor type 1 Presence+Light
+// Format: MultiSensorType1;<DALI addr presence>;<calaos addr presence>;<DALI addr light level>;<calaos addr light level>
+MultiSensorType1;1;56;2;10
+
+// DALI Sensor type 1 Push button Sensor
+// Format: PushbuttonSensorType1;<DALI addr button1>;<calaos addr1>;<DALI addr button2>;<calaos addr2>;<DALI addr button3>;<calaos addr3>;<DALI addr button4>;<calaos addr4>
+PushbuttonSensorType1;1;1;2;2;3;3;4;4
+
+// DALI Sensor type 2 Presence+Light+IRRemote
+// Format: MultiSensorType2;<DALI addr presence>;<calaos addr presence>;<DALI addr light level>;<calaos addr light level>;<DALI addr remote control>;<calaos remote control start address>
+// Note: remote address can use up to 11 addresses for remote control buttons
+MultiSensorType2;1;56;2;10;3;20
+
+// DALI Sensor type 2 Push button Sensor
+// Format: PushbuttonSensorType2;<DALI addr>;<calaos address start>
+// Note: remote address can use up to 4 addresses for buttons
+PushbuttonSensorType2;1;1
