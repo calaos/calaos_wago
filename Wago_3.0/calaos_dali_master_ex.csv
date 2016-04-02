@@ -1,4 +1,3 @@
-// Comments and empty lines are not read and starts with //
 //   This file is needed to define mapping from other DALI master device and calaos
 //   The mapping should list the device type, addresses and calaos address map
 //
@@ -19,3 +18,9 @@ MultiSensorType2;1;2;3;600000
 // Format: PushbuttonSensorType2;<DALI addr>
 // Note: remote address can use up to 4 addresses for buttons
 PushbuttonSensorType2;1
+
+//Dali ECG
+DaliEcg;1
+
+//Dali Group
+DaliGroup;1
