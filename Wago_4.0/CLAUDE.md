@@ -6,9 +6,11 @@ du code de `../Wago_3.0`, retravaillee ici. Tout se passe dans ce dossier.
 ## Ce que tu peux et ne peux pas toucher
 - Le **source** est `src/common/*.exp` (partage) et `src/targets/<cible>/*.exp`
   (specifique). C'est la seule chose que tu edites.
-- **Jamais** les `wago_XXX.pro` a la racine : binaire proprietaire, regenere par
-  `tools\build.cmd`. Ils restent a la racine car ils referencent `..\Additionnal\`
-  (repertoire de bibliotheques relatif).
+- **Jamais** les `pro\wago_XXX.pro` : binaire proprietaire, regenere par
+  `tools\build.cmd`. Leur repertoire de bibliotheques est relatif au `.pro`
+  lui-meme : depuis `pro\`, c'est `..\..\Additionnal`. Un `.pro` repris de la
+  3.0 porte `..\Additionnal` et doit etre corrige, sinon les libs ne se
+  resolvent plus.
 - **Jamais** `../Wago_3.0/` : c'est la reference, en lecture seule.
 - Pas de `online login`, pas de telechargement vers un automate. Jamais.
 

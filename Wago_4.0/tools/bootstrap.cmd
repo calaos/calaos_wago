@@ -1,7 +1,11 @@
 @echo off
 rem ============================================================
 rem  bootstrap.cmd  -  A lancer UNE FOIS pour initialiser Wago_4.0
-rem   1. copie les .pro de Wago_3.0 vers Wago_4.0\ (racine, pour ..\Additionnal)
+rem   1. copie les .pro de Wago_3.0 vers Wago_4.0\pro\
+rem      ATTENTION : les .pro de la 3.0 portent un repertoire de bibliotheques
+rem      ..\Additionnal, valable depuis la racine mais PAS depuis pro\. Apres
+rem      cette copie il faut le passer a ..\..\Additionnal (options du projet,
+rem      categorie Repertoires) sinon les libs ne se resolvent plus.
 rem   2. exporte chaque cible en .exp
 rem   3. classe les .exp dans src\common et src\targets\<cible>
 rem ============================================================
@@ -26,6 +30,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0sort_exports.ps1" -Cle
 
 echo.
 echo BOOTSTRAP OK.
-echo Prochaine etape : git add *.pro src tools CLAUDE.md ^&^& git commit
+echo Prochaine etape : git add pro src tools CLAUDE.md ^&^& git commit
 echo Puis valider le cycle complet sans modification :  tools\build_all.cmd
 exit /b 0

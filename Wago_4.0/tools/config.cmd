@@ -16,9 +16,10 @@ rem --- Arborescence (calculee depuis le dossier tools\) ----------
 for %%i in ("%~dp0..") do set "ROOT=%%~fi"
 for %%i in ("%ROOT%\..") do set "REPO=%%~fi"
 set "REF_DIR=%REPO%\Wago_3.0"
-rem Les .pro restent a la racine de Wago_4.0 : ils referencent ..\Additionnal\
-rem (repertoire de bibliotheques relatif, comme dans Wago_3.0).
-set "PRO_DIR=%ROOT%"
+rem Les .pro vivent dans Wago_4.0\pro\. Leur repertoire de bibliotheques est
+rem relatif au .pro lui-meme : depuis pro\, c'est ..\..\Additionnal
+rem (et non ..\Additionnal comme lorsqu'ils etaient a la racine).
+set "PRO_DIR=%ROOT%\pro"
 set "LIB_DIR=%REPO%\Additionnal"
 set "SRC_DIR=%ROOT%\src"
 set "BUILD_DIR=%ROOT%\build"

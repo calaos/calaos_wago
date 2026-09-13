@@ -1,7 +1,7 @@
 @echo off
 rem ============================================================
 rem  export.cmd <cible>
-rem  Exporte wago_<cible>.pro (racine) en fichiers .exp (un par objet)
+rem  Exporte pro\wago_<cible>.pro en fichiers .exp (un par objet)
 rem  dans build\export\<cible>\
 rem ============================================================
 setlocal enabledelayedexpansion

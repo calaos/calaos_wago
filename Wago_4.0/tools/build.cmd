@@ -2,7 +2,7 @@
 rem ============================================================
 rem  build.cmd <cible>
 rem  Reimporte src\common\*.exp + src\targets\<cible>\*.exp dans
-rem  wago_<cible>.pro (racine), rebuild complet, sauvegarde, log.
+rem  pro\wago_<cible>.pro, rebuild complet, sauvegarde, log.
 rem  Code retour : 0 = OK, 1 = erreurs de compilation, 2 = usage
 rem ============================================================
 setlocal enabledelayedexpansion

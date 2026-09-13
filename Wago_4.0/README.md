@@ -7,7 +7,8 @@ Claude Code.
 ## Mise en route (VM Windows avec WAGO-I/O-PRO)
 
 1. `Wago_4.0\` doit etre au meme niveau que `Wago_3.0\` et `Additionnal\` :
-   les `.pro` resolvent leurs bibliotheques via `..\Additionnal\` (relatif).
+   les `.pro` vivent dans `Wago_4.0\pro\` et resolvent leurs bibliotheques via
+   le chemin relatif `..\..\Additionnal`.
 2. Adapter `tools\config.cmd` si Codesys.exe n'est pas au chemin par defaut.
 3. `tools\check_env.cmd` doit afficher `ENV OK`.
 4. `tools\bootstrap.cmd` : copie les `.pro` de `Wago_3.0`, exporte les 7 cibles,
@@ -52,6 +53,12 @@ CoDeSys attend un dialogue que `query off` ne couvre pas. Relancer a la main la
 commande affichee par le script, ou `tools\open.cmd <c>`.
 Causes habituelles : bibliotheque WAGO systeme absente de l'installation, target
 non installe, mot de passe projet.
+
+**Bibliotheques introuvables** : verifier le repertoire de bibliotheques du
+projet (options du projet, categorie Repertoires). Les `.pro` etant dans
+`pro\`, il doit valoir `..\..\Additionnal`. Un `.pro` recopie depuis `Wago_3.0`
+porte `..\Additionnal`, qui etait correct quand les `.pro` etaient a la racine
+mais ne l'est plus.
 
 `tools\diag.cmd <c>` refait un export minimal en affichant le `.cds` genere, la
 ligne de commande exacte et le log obtenu : c'est le point de depart de tout

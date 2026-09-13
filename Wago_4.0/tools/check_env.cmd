@@ -26,7 +26,7 @@ for %%t in (%TARGETS%) do (
   )
 )
 
-echo [3/4] Bibliotheques projet ^(..\Additionnal relatif au .pro^)
+echo [3/4] Bibliotheques projet ^(..\..\Additionnal relatif au .pro, qui vit dans pro\^)
 if exist "!LIB_DIR!\DALI_647_02_v2.3.lib" (
   echo    OK  !LIB_DIR!
 ) else (
