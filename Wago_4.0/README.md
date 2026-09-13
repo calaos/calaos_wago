@@ -54,6 +54,14 @@ commande affichee par le script, ou `tools\open.cmd <c>`.
 Causes habituelles : bibliotheque WAGO systeme absente de l'installation, target
 non installe, mot de passe projet.
 
+**CoDeSys reste ouvert apres un echec de compilation** : ne devrait plus
+arriver, `build.cmd` genere `onerror continue` en tete du `.cds`. Sans lui une
+erreur de `project rebuild` interrompt le fichier de commandes **avant**
+`file quit`, et le `start /wait` du script ne rend jamais la main. Si tu dois
+malgre tout fermer CoDeSys de force, supprime `pro\*.ASD` : cette sauvegarde
+automatique declenche un dialogue de restauration bloquant au lancement
+suivant. `build.cmd` le fait desormais avant chaque appel.
+
 **Bibliotheques introuvables** : verifier le repertoire de bibliotheques du
 projet (options du projet, categorie Repertoires). Les `.pro` etant dans
 `pro\`, il doit valoir `..\..\Additionnal`. Un `.pro` recopie depuis `Wago_3.0`

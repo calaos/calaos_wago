@@ -25,8 +25,16 @@ del /q "!LOG!" 2>nul
 rem --- Sauvegarde du .pro avant import ----------------------------
 copy /y "!PRO!" "!BUILD_DIR!\wago_%T%.pro.bak" >nul
 
+rem --- Menage : un .ASD reste apres une fermeture forcee de CoDeSys
+rem     et provoque un dialogue de restauration bloquant au lancement.
+del /q "!PRO_DIR!\wago_%T%.ASD" 2>nul
+
 rem --- Generation du .cds : un "project import" par fichier ------
+rem  onerror continue : sans lui, une erreur de compilation interrompt le
+rem  fichier de commandes AVANT "file quit". CoDeSys reste alors ouvert et
+rem  le "start /wait" du script ne rend jamais la main.
 (
+  echo onerror continue
   echo query off
   echo replace yesall
   echo out open "!LOG!"
