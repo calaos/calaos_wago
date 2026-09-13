@@ -28,6 +28,24 @@ Claude Code.
 | `tools\build.cmd <c>` | `.exp` -> import dans `.pro` -> rebuild -> `build\logs\build_<c>.log` |
 | `tools\build_all.cmd` | toutes les cibles (`--keep-going` pour ne pas s'arreter) |
 | `tools\open.cmd <c>` | ouvre le `.pro` dans l'IDE pour debloquer / verifier |
+| `tools\diag.cmd <c>` | export minimal instrumente : affiche le `.cds`, la commande et le log |
+
+## Ce qui a ete valide
+- `tools\export_all.cmd` : 7/7 `EXPORT OK` (87 objets, 88 pour la 849).
+- `tools\build_all.cmd` : 7/7 `BUILD OK`, `0 Error(s), 0 Warning(s).`
+- Aller-retour `.exp` -> `.pro` -> `.exp` **idempotent** : apres un build_all
+  puis un export_all, les 610 objets re-exportes sont identiques octet pour
+  octet a `src\`.
+
+Deux effets a connaitre :
+- **Le premier import normalise le source.** CoDeSys supprime les lignes vides
+  en fin de corps de POU et renomme les entrees du Library Manager
+  (`<lib>.LIB_<date>` -> `<lib>.LIB <date>`). C'est fait une fois pour toutes,
+  c'est deja integre dans `src\`, et les cycles suivants sont stables.
+- **Le `.pro` n'est pas reproductible octet pour octet.** Il embarque les
+  informations de compilation : il apparait donc modifie par git apres chaque
+  build, meme a source identique. C'est normal ; ce qui fait foi, c'est que le
+  re-export redonne exactement `src\`.
 
 ## Si un script bloque
 CoDeSys attend un dialogue que `query off` ne couvre pas. Relancer a la main la
@@ -67,6 +85,15 @@ consequence, `query off` repond seul aux dialogues (dont
 « The version of at least one library has changed since the project was last
 opened! », qui apparait a chaque ouverture des `.pro`). Les scripts utilisent
 `start "" /wait` pour attendre reellement la fin du processus.
+
+### `query off` : garder la forme nue, ne pas la "corriger"
+L'aide ne documente que `query off ok|no|cancel`. La forme nue `query off`
+utilisee par les scripts fonctionne et prend le **bouton par defaut de chaque
+dialogue**, ce qui n'est pas equivalent : sur
+« Taskconfig import: Do you want to overwrite the system events? »,
+`query off` repond `No` (les evenements systeme du `.pro` sont preserves) la ou
+`query off ok` repond `Yes` (ils sont ecrases a chaque build). C'est avec
+`query off` que l'aller-retour a ete verifie idempotent.
 
 ### Les guillemets ne posent pas de probleme
 Les chemins absolus entre guillemets dans le `.cds` sont acceptes, y compris
