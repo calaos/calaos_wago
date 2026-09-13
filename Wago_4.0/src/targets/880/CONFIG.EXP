@@ -25,6 +25,7 @@ VAR CONSTANT
 	CALAOS_MODEL: STRING(8) := '750-880';
 	DALI: BYTE := 1;
 	DSI: BYTE := 2;
+	DMX_ADDR_BASE: DINT := 100; (* DALI/DMX boundary of the address field: >= this value means DMX channel (address - DMX_ADDR_BASE) *)
 END_VAR
 
 (* @END_DECLARATION := '0' *)

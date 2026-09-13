@@ -226,8 +226,8 @@ IF server.bDataReceived THEN
 
 	IF (Strncmp(cmd, 'WAGO_DALI_SET ', 14) = TRUE) THEN
 		p1 := GET_PARAM_DINT(cmd, 1); (* Dali Line *)
-		p2 := GET_PARAM_DINT(cmd, 2); (* Short addr or group? *)
-		p3 := GET_PARAM_DINT(cmd, 3); (* Dali Address *)
+		p2 := GET_PARAM_DINT(cmd, 2); (* Group flag: 1 = p3 is a DALI group number, else p3 is a DALI short address *)
+		p3 := GET_PARAM_DINT(cmd, 3); (* Address: DALI short addr, or DALI group no. when p2=1, or DMX channel when >= DMX_ADDR_BASE *)
 		p4 := GET_PARAM_DINT(cmd, 4); (* Dimm value in percent *)
 		p5 := GET_PARAM_DINT(cmd, 5); (* Fade time *)
 
@@ -237,8 +237,9 @@ IF server.bDataReceived THEN
 			dali_group := FALSE;
 		END_IF
 
-		IF (p3 > 99) THEN
-			abDMX_Values[DINT_TO_BYTE(p3 - 100)] := DINT_TO_BYTE(p4 * 255 / 100);
+		(* From DMX_ADDR_BASE up the address is a DMX channel: neither a DALI short address nor a DALI group *)
+		IF (p3 >= Config.DMX_ADDR_BASE) THEN
+			abDMX_Values[DINT_TO_BYTE(p3 - Config.DMX_ADDR_BASE)] := DINT_TO_BYTE(p4 * 255 / 100);
 		ELSE
 			Dali_switch(bAddress := DINT_TO_BYTE(p3), xGroup := dali_group, xButton := FALSE);
 			Dali_switch(bAddress := DINT_TO_BYTE(p3), xGroup := dali_group, bDimmLevel := DINT_TO_BYTE(p4),
@@ -248,8 +249,8 @@ IF server.bDataReceived THEN
 
 	IF (Strncmp(cmd, 'WAGO_DALI_GET ', 14) = TRUE) THEN
 		p1 := GET_PARAM_DINT(cmd, 1); (* Dali Line *)
-		p2 := GET_PARAM_DINT(cmd, 2); (* Short addr *)
-		p3 := GET_PARAM_DINT(cmd, 3); (* Short addr or group? *)
+		p2 := GET_PARAM_DINT(cmd, 2); (* Address: DALI short addr, or DALI group no. when p3=1, or DMX channel when >= DMX_ADDR_BASE *)
+		p3 := GET_PARAM_DINT(cmd, 3); (* Group flag: 1 = p2 is a DALI group number, else p2 is a DALI short address *)
 
 		IF (p3 = 1) THEN
 			dali_group := TRUE;
@@ -257,14 +258,15 @@ IF server.bDataReceived THEN
 			dali_group := FALSE;
 		END_IF
 
-		IF (p2 < 99) THEN
+		(* Same boundary as WAGO_DALI_SET: below DMX_ADDR_BASE the address is DALI, from it up it is DMX *)
+		IF (p2 < Config.DMX_ADDR_BASE) THEN
 			IF Config.CONFIG_DALI = TRUE THEN
 				DALIDimmValue(xEnable := TRUE, bShortAddress := DINT_TO_BYTE(p2), tCycleTime := t#1s);
 			END_IF
 			daliShortAddr := DINT_TO_BYTE(p2);
 			dmx_read_addr := 0;
 		ELSE
-			dmx_read_addr := DINT_TO_BYTE(p3 - 100);
+			dmx_read_addr := DINT_TO_BYTE(p2 - Config.DMX_ADDR_BASE); (* DMX channel comes in p2, like in WAGO_DALI_SET p3 ; p2 is never the group flag here *)
 		END_IF
 		DaliSend := TRUE;
 	END_IF
