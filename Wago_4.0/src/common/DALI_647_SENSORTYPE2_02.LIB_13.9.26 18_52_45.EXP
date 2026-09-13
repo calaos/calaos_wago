@@ -1,0 +1,20 @@
+LIBRARY
+DALI_647_SensorType2_02.lib 13.9.26 18:52:45
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 13
+FbAddressingSensorType2: 2048
+FbConfigMultiSensorType2: 2048
+FbConfigPushbuttonSensorType2: 2048
+FbLocateSensorType2: 2048
+FbMultiSensorType2: 2048
+FbPushbuttonSensorType2: 2048
+FbRawDataPushbuttonSensorType2: 2048
+FbSortAddressesSensorType2: 2048
+FuDALI_647_SensorType2: 2048
+FuMSensorLuxLevel: 2048
+FuTypMultiSensorType2: 2048
+FuTypPushbuttonSensorType2: 2048
+PrgDALIConfigSensorType2: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY

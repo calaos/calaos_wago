@@ -1,0 +1,98 @@
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @GLOBAL_VARIABLE_LIST := 'Variables_Globales' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+VAR_GLOBAL CONSTANT
+	MaxDaliSensors: BYTE := 128;
+END_VAR
+VAR_GLOBAL
+	ConfigDone: BOOL := FALSE; (* Do the config only one time *)
+	info : ARRAY[0..63] OF MODULE_INFO; (* I/O Module infos *)
+
+	LedMode: BYTE := 0;
+
+	(* modules infos *)
+	nb_module: BYTE;
+	nb_module_in: BYTE;
+	nb_module_out: BYTE;
+	nb_module_analog_in: BYTE;
+	nb_module_analog_out: BYTE;
+	start_addr_in: WORD;
+	start_addr_out: WORD;
+	nb_input_digital: WORD;
+	nb_output_digital: WORD;
+
+	(* All inputs events *)
+	event: ARRAY[0..512] OF INTER_EVENT; (* See Rules mapping below *)
+	lights: ARRAY[0..63] OF BYTE;	(* MAX of 256/8 = 32 digital output modules as lights *)
+									(* We store only the boolean state of each light *)
+	volets: ARRAY[0..512] OF VOLET; (* MAX of 256/8 = 32 digital output modules as volets *)
+
+	HEARTBEAT: BOOL := FALSE;
+
+	OutArrState: ARRAY[0..512] OF BYTE;	(* state of outputs *)
+
+	impulse_time: TIME := T#300ms;
+
+	(* DALI *)
+	DALIJoblist: FbDALI_Joblist;
+
+	Dali_switch: DaliSwitch;
+	DALIDimmValue: DaliDimValue;
+	DALIShowShortAdr: FbDALI_ShowShortAdr;
+
+	(* DALI 647 module *)
+	DaliSendValue647: ARRAY[1..64] OF FbDaliSendDimmValue;
+	DaliSendValueGrp647: ARRAY[1..16] OF FbDaliSendDimmValue;
+	DaliValue647: ARRAY[1..64] OF BYTE;
+	DaliValueGrp647: ARRAY[1..16] OF BYTE;
+
+	daliSensors: ARRAY [1..MaxDaliSensors] OF typDaliSensorData;
+	DaliSensorT1: ARRAY[1..MaxDaliSensors] OF FbMultiSensorType1;
+	DaliButtonT1: ARRAY[1..MaxDaliSensors] OF FbPushbuttonSensorType1;
+	DaliSensorT2: ARRAY[1..MaxDaliSensors] OF FbMultiSensorType2;
+	DaliButtonT2: ARRAY[1..MaxDaliSensors] OF FbPushbuttonSensorType2;
+
+	(* DALI sensors input mapping *)
+	DaliSensorsInputs: ARRAY[0..768] OF BOOL;
+
+	(*
+		Modbus addresses mapping:
+			- [4096..4352] : Standard digital outputs
+			- [6144..6248] : KNX inputs/outputs
+			- [6656..7424] : Dali Master Sensors Digital (max 768 addresses available)
+			- [256..272] : Dali Master Sensors Analog values (16 addresses for lightlevels in WORD)
+	*)
+
+	netOutStandard AT %IB512: ARRAY[0..31] OF BYTE;
+
+	netDaliSensor AT %QB832: ARRAY[0..31] OF BYTE; (* addresses for digital values *)
+	netDaliLevels AT %QW256: ARRAY[0..15] OF WORD; (* addresses for light levels *)
+
+	write_word: WRITE_OUTPUT_WORD;
+	read_word: READ_INPUT_WORD;
+	write_bit: WRITE_OUTPUT_BIT;
+	read_bit: READ_INPUT_BIT;
+
+END_VAR
+VAR_GLOBAL RETAIN
+	(* Rules mapping:
+		- [0..256] : standard digital inputs
+		- [257..357]: knx digital inputs
+	*)
+	output_type: ARRAY[0..512] OF OUTPUT_TYPE; (* The type of each output *)
+	output_addr: ARRAY[0..512] OF OUTPUT_ADDR; (* The addresses for each type *)
+
+   	volets_position: ARRAY[0..100] OF DWORD;
+
+	(* DMX Values *)
+	abDMX_Values: ARRAY [1..255] OF BYTE;
+END_VAR
+(* @OBJECT_END := 'Variables_Globales' *)
+(* @CONNECTIONS := Variables_Globales
+FILENAME : ''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)

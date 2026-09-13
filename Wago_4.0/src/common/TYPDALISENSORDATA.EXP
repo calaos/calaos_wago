@@ -1,0 +1,31 @@
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE typDaliSensorData :
+STRUCT
+
+	SensorType: enumDaliSensor;
+
+	(* MultiSensorType1 *)
+	AddrPresence: BYTE;
+	AddrLightLevel: BYTE;
+	offDelay: TIME;
+
+	(* MultiSensorType2 *)
+	AddrRemote: BYTE;
+
+	(* PushbuttonSensorType1 *)
+	AddrButton1: BYTE;
+	AddrButton2: BYTE;
+	AddrButton3: BYTE;
+	AddrButton4: BYTE;
+
+	(* PushbuttonSensorType2 *)
+	AddrButtons: BYTE;
+
+	(* Dali devices *)
+	Address: BYTE;
+
+END_STRUCT
+END_TYPE
+(* @END_DECLARATION := '0' *)

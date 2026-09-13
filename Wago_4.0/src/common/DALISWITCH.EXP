@@ -1,0 +1,46 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/DALI' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION_BLOCK DaliSwitch
+VAR_INPUT
+	bAddress: BYTE;
+	xGroup: BOOL := FALSE;
+	xButton: BOOL;
+	bDimmLevel: BYTE;
+	bFadeTime: BYTE;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	DaliSendValue641: FbDALI_SwitchValue;
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* A DaliSwitch FB that uses either the 750-641 or 753-647
+ Both modules cannot be used at the same time
+*)
+
+IF Config.CONFIG_DALI = TRUE THEN
+	DaliSendValue641(
+		bAddress :=  bAddress,
+	    xGroup := xGroup,
+		bDimmLevel := bDimmLevel,
+		xButton := xButton
+	);
+ELSIF Config.CONFIG_DALI_647 = TRUE THEN
+
+	IF xGroup = TRUE THEN
+		DaliValueGrp647[bAddress] := bDimmLevel;
+		IF xButton = FALSE THEN
+			DaliSendValueGrp647[bAddress](xUpdate := FALSE);
+		END_IF
+	ELSE
+		DaliValue647[bAddress] := bDimmLevel;
+		IF xButton = FALSE THEN
+			DaliSendValue647[bAddress](xUpdate := FALSE);
+		END_IF
+	END_IF
+
+END_IF
+END_FUNCTION_BLOCK

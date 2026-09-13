@@ -1,0 +1,19 @@
+LIBRARY
+SysLibFile.lib 2.12.10 14:48:34
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 12
+SysFileClose: 0
+SysFileCopy: 0
+SysFileDelete: 0
+SysFileEOF: 0
+SysFileGetPos: 0
+SysFileGetSize: 0
+SysFileGetTime: 0
+SysFileOpen: 0
+SysFileRead: 0
+SysFileRename: 0
+SysFileSetPos: 0
+SysFileWrite: 0
+NumOfGVLs: 1
+Globale_Variablen: 0
+END_LIBRARY

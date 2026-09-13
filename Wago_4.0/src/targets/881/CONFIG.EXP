@@ -1,0 +1,100 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+PROGRAM Config
+VAR
+	access : MODULE_INFO_ACCESS;
+	cpt: BYTE;
+	ethernet_config : ETHERNET_SET_VARIABLES;
+	CONFIG_DALI: BOOL := FALSE;
+	CONFIG_DALI_647: BOOL := FALSE;
+	first_in: BOOL := FALSE;
+	first_out: BOOL := FALSE;
+	AddrDali647In: INT;
+	AddrDali647Out: INT;
+END_VAR
+VAR_INPUT RETAIN
+	SERVER_IP: DWORD;
+	DALI_MODE: BYTE;
+END_VAR
+VAR CONSTANT
+	CALAOS_VERSION_H: WORD := 3;
+	CALAOS_VERSION_L: WORD := 0;
+	DALI: BYTE := 1;
+	DSI: BYTE := 2;
+END_VAR
+
+(* @END_DECLARATION := '0' *)
+(* Do all the config job *)
+
+IF (ConfigDone = FALSE) THEN
+
+(* Get the module I/O Config *)
+access.physicalPosTo := 0;
+access.moduleType := 0;
+ADD_PI_INFORMATION( 1, ADR(access), ADR(info[0]) );
+
+FOR cpt := 0 TO 63 DO
+	IF (info[cpt].moduleType = 0 AND info[cpt].physicalPos = 0) THEN
+		cpt := 63; (* the end *)
+	ELSE
+		IF (info[cpt].moduleType = 641) THEN
+			(* This is a DALI 641 module *)
+			CONFIG_DALI := TRUE;
+		END_IF
+
+		IF (info[cpt].moduleType = 647) THEN
+			(* This is a DALI 753-647 module (multi master) *)
+			CONFIG_DALI_647 := TRUE;
+		END_IF
+
+		nb_module := nb_module + 1;
+		IF ((info[cpt].desc.sizePAE > 8) AND (info[cpt].desc.channels > 0)) THEN
+			nb_module_analog_in := nb_module_analog_in + 1;
+(*			start_addr_in := start_addr_in + info[cpt].desc.sizePAE; *)
+			IF CONFIG_DALI_647 = FALSE THEN
+				AddrDali647In := AddrDali647In + (info[cpt].desc.sizePAE / 8);
+			END_IF
+		END_IF
+		IF ((info[cpt].desc.sizePAA > 8) AND (info[cpt].desc.channels > 0)) THEN
+			nb_module_analog_out := nb_module_analog_out + 1;
+(*			start_addr_out := start_addr_out + info[cpt].desc.sizePAA; *)
+			IF CONFIG_DALI_647 = FALSE THEN
+				AddrDali647Out := AddrDali647Out + (info[cpt].desc.sizePAA / 8);
+			END_IF
+		END_IF
+		IF ((info[cpt].desc.sizePAE <= 16) AND (info[cpt].desc.sizePAE > 0) AND (info[cpt].desc.channels = 0)) THEN
+			nb_module_in := nb_module_in + 1;
+			nb_input_digital := nb_input_digital + info[cpt].desc.sizePAE;
+
+			IF (first_in = FALSE) THEN
+				first_in := TRUE;
+				start_addr_in := info[cpt].desc.posPAE;
+			END_IF
+		END_IF
+		IF ((info[cpt].desc.sizePAA <= 16) AND (info[cpt].desc.sizePAA > 0) AND (info[cpt].desc.channels = 0)) THEN
+			nb_module_out := nb_module_out + 1;
+			nb_output_digital := nb_output_digital + info[cpt].desc.sizePAA;
+
+			IF (first_out = FALSE) THEN
+				first_out := TRUE;
+				start_addr_out := info[cpt].desc.posPAA;
+			END_IF
+		END_IF
+
+	END_IF
+END_FOR
+
+(* Start the heartbeat timer *)
+(*HEARTBEAT_TIMER(IN:=FALSE, PT:=T#30s);*)
+(*HEARTBEAT_TIMER(IN:=TRUE, PT:=T#30s);*)
+
+(* Config du timout des sockets *)
+ethernet_config(EN:=TRUE, BootpRequest:=0, ConnectionWdTime:=65535);
+
+ConfigDone := TRUE;
+
+END_IF
+END_PROGRAM

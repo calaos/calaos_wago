@@ -1,0 +1,11 @@
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE typEthernet_BUFFER :
+	STRUCT
+		Index		:	INT;
+		Data		:	ARRAY[1..1500] OF BYTE;
+	END_STRUCT
+END_TYPE
+
+(* @END_DECLARATION := '0' *)

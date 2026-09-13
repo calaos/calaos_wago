@@ -1,0 +1,67 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION GET_PARAM_DINT : DINT
+VAR_INPUT
+	str: STRING;
+	pos: BYTE;
+END_VAR
+VAR
+	i: BYTE;
+	j: BYTE;
+	mult : DWORD;
+	dec : DWORD;
+	p: INT;
+	tmp: POINTER TO ARRAY[0..255] OF BYTE;
+	val: DINT;
+	neg: BOOL := FALSE;
+	found: INT;
+END_VAR
+(* @END_DECLARATION := '0' *)
+
+(* cut before the value we want *)
+FOR i := 1 TO pos DO
+	found := FIND(str, ' ');
+	IF found = 0 THEN
+		GET_PARAM_DINT := 0;
+		RETURN;
+	END_IF
+	str := DELETE(str, found, 1);
+END_FOR
+
+(* cut after the value we want *)
+p := FIND(str, ' ');
+IF (p > 0) THEN
+	str := LEFT(str, p - 1);
+END_IF
+
+(* Convert the value *)
+tmp := ADR(str);
+
+IF (Strncmp(str, '-', 1) = TRUE) THEN
+	neg := TRUE;
+	str := DELETE(str, 1, 1);
+END_IF
+
+val := 0;
+FOR i := 0 TO INT_TO_BYTE(LEN(str) - 1) DO
+	dec := 1;
+	FOR j := 2 TO INT_TO_BYTE(LEN(str) - i) DO
+		dec := dec * 10;
+	END_FOR
+
+	mult := tmp^[i] - 16#30;
+	mult := mult * dec;
+	val := val + mult;
+
+END_FOR
+
+IF (neg = TRUE) THEN
+	GET_PARAM_DINT := 0 - val;
+ELSE
+	GET_PARAM_DINT := val;
+END_IF
+
+END_FUNCTION

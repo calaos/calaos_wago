@@ -1,0 +1,128 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+PROGRAM ManageOutput
+VAR
+	cpt: INT;
+	tmp: INT;
+	_light: LIGHT;
+	in: BOOL;
+END_VAR
+
+(* @END_DECLARATION := '0' *)
+(* Set all outputs when in standalone mode *)
+
+(* Get the address of the first digital output *)
+FOR cpt := 0 TO 512 DO
+
+	CASE output_type[cpt] OF
+	NONE: (* Do nothing *);
+	TELERUPTEUR:
+		tmp := cpt;
+		IF (output_addr[cpt].SameAs >= 0) THEN
+			tmp := output_addr[cpt].SameAs;
+		END_IF
+		IF (event[cpt].ON = TRUE) THEN
+			_light(IN := FALSE, STATE := BYTE_TO_BOOL(SHR(lights[tmp / 8], tmp MOD 8) AND 16#01));
+			_light(IN := TRUE, STATE := BYTE_TO_BOOL(SHR(lights[tmp / 8], tmp MOD 8) AND 16#01));
+			SetOutput(output_addr[tmp].ADDR1 + start_addr_out, _light.OUT);
+
+			(* set old state *)
+			IF (_light.OUT = TRUE) THEN
+				lights[tmp / 8] := lights[tmp / 8] OR SHL(BYTE#1, tmp MOD 8);
+			ELSE
+				lights[tmp / 8] := lights[tmp / 8] AND NOT SHL(BYTE#1, tmp MOD 8);
+			END_IF
+		END_IF
+	DIRECT:
+		tmp := cpt;
+		IF (output_addr[cpt].SameAs >= 0) THEN
+			tmp := output_addr[cpt].SameAs;
+		END_IF
+		in := GetInput(cpt + start_addr_in);
+		SetOutput(output_addr[tmp].ADDR1 + start_addr_out, in);
+	VOLET:
+		tmp := cpt;
+		IF (output_addr[cpt].SameAs >= 0) THEN
+			tmp := output_addr[cpt].SameAs;
+		END_IF
+		IF (event[cpt].ON = TRUE) THEN
+			volets[tmp](IN := TRUE, IMPULSE := FALSE);
+			SetOutput(output_addr[tmp].ADDR1 + start_addr_out, volets[tmp].MONTE);
+			SetOutput(output_addr[tmp].ADDR2 + start_addr_out, volets[tmp].DESCENTE);
+		END_IF
+	VOLET_IMPULSE:
+		tmp := cpt;
+		IF (output_addr[cpt].SameAs >= 0) THEN
+			tmp := output_addr[cpt].SameAs;
+		END_IF
+		IF (event[cpt].ON = TRUE) THEN
+			volets[tmp](IN := TRUE, IMPULSE := TRUE);
+		ELSE
+			volets[tmp](IN := FALSE, IMPULSE := TRUE);
+		END_IF
+		SetOutput(output_addr[tmp].ADDR1 + start_addr_out, volets[tmp].MONTE);
+		SetOutput(output_addr[tmp].ADDR2 + start_addr_out, volets[tmp].DESCENTE);
+	TELERUPTEUR_DALI:
+		tmp := cpt;
+		IF (output_addr[cpt].SameAs >= 0) THEN
+			tmp := output_addr[cpt].SameAs;
+		END_IF
+		IF (event[cpt].ON = TRUE) THEN
+			_light(IN := FALSE, STATE := BYTE_TO_BOOL(SHR(lights[tmp / 8], tmp MOD 8) AND 16#01));
+			_light(IN := TRUE, STATE := BYTE_TO_BOOL(SHR(lights[tmp / 8], tmp MOD 8) AND 16#01));
+
+			IF (output_addr[tmp].ADDR2 > 99) THEN
+				IF (_light.OUT = TRUE) THEN
+					abDMX_Values[WORD_TO_BYTE(output_addr[tmp].ADDR2 - 100)] := 255;
+				ELSE
+					abDMX_Values[WORD_TO_BYTE(output_addr[tmp].ADDR2 - 100)] := 0;
+				END_IF
+			ELSE
+				Dali_switch(bAddress := WORD_TO_BYTE(output_addr[tmp].ADDR2), xGroup := FALSE, xButton := FALSE);
+				IF (_light.OUT = TRUE) THEN
+					Dali_switch(bAddress := WORD_TO_BYTE(output_addr[tmp].ADDR2), xGroup := FALSE, bDimmLevel := 100,
+						bFadeTime := 1, xButton := TRUE);
+				ELSE
+					Dali_switch(bAddress := WORD_TO_BYTE(output_addr[tmp].ADDR2), xGroup := FALSE, bDimmLevel := 0,
+						bFadeTime := 1, xButton := TRUE);
+				END_IF
+			END_IF
+
+			(* set old state *)
+			IF (_light.OUT = TRUE) THEN
+				lights[tmp / 8] := lights[tmp / 8] OR SHL(BYTE#1, tmp MOD 8);
+			ELSE
+				lights[tmp / 8] := lights[tmp / 8] AND NOT SHL(BYTE#1, tmp MOD 8);
+			END_IF
+		END_IF
+	TELERUPTEUR_DALI_GROUP:
+		tmp := cpt;
+		IF (output_addr[cpt].SameAs >= 0) THEN
+			tmp := output_addr[cpt].SameAs;
+		END_IF
+		IF (event[cpt].ON = TRUE) THEN
+			_light(IN := FALSE, STATE := BYTE_TO_BOOL(SHR(lights[tmp / 8], tmp MOD 8) AND 16#01));
+			_light(IN := TRUE, STATE := BYTE_TO_BOOL(SHR(lights[tmp / 8], tmp MOD 8) AND 16#01));
+			Dali_switch(bAddress := output_addr[tmp].ADDR2, xGroup := TRUE, xButton := FALSE);
+			IF (_light.OUT = TRUE) THEN
+				Dali_switch(bAddress := output_addr[tmp].ADDR2, xGroup := TRUE, bDimmLevel := 100,
+					bFadeTime := 1, xButton := TRUE);
+			ELSE
+				Dali_switch(bAddress := output_addr[tmp].ADDR2, xGroup := TRUE, bDimmLevel := 0,
+					bFadeTime := 1, xButton := TRUE);
+			END_IF
+
+			(* set old state *)
+			IF (_light.OUT = TRUE) THEN
+				lights[tmp / 8] := lights[tmp / 8] OR SHL(BYTE#1, tmp MOD 8);
+			ELSE
+				lights[tmp / 8] := lights[tmp / 8] AND NOT SHL(BYTE#1, tmp MOD 8);
+			END_IF
+		END_IF
+	END_CASE
+END_FOR
+
+END_PROGRAM

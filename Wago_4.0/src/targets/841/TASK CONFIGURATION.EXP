@@ -1,0 +1,34 @@
+
+RESOURCE
+
+TASK MainTask (PRIORITY := 1);
+PLC_PRG();
+{Additional_info : 2,0,0,0,1,4294967295}
+END_TASK
+
+TASK DMXTask (PRIORITY := 2, INTERVAL := T#10ms);
+DMX();
+{Additional_info : 1,0,0,0,1,4294967295}
+END_TASK
+{event_task : 'start','Called when program starts','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,1,11987}
+{event_task : 'stop','Called when program stops','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,2,11987}
+{event_task : 'before_reset','Called before reset takes place','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,3,11987}
+{event_task : 'after_reset','Called after reset took place','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,4,11987}
+{event_task : 'shutdown','Called before shutdown is performed (Firmware update over ethernet)','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,5,11987}
+{event_task : 'excpt_watchdog','Software watchdog of IEC-task expired','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,7,11987}
+{event_task : 'excpt_fieldbus','Fieldbus error','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,9,11987}
+{event_task : 'excpt_ioupdate','KBus error','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,10,11987}
+{event_task : 'excpt_dividebyzero','Division by zero. Only integer operations!','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,18,11987}
+{event_task : 'excpt_noncontinuable','Exception handler','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,20,11987}
+{event_task : 'after_reading_inputs','Called after reading of inputs','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,28,11987}
+{event_task : 'before_writing_outputs','Called before writing of outputs','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,29,11987}
+{event_task : 'debug_loop','Debug loop at breakpoint','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,31,11987}
+{event_task : 'online_change','Is called after CodeInit() at Online-Change','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,33,11987}
+{event_task : 'before_download','Is called before the Download starts','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,34,11987}
+{event_task : 'event_login','Is called before the login service is performed','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,501,11987}
+{event_task : 'eth_overload','Ethernet Overload','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,750,11987}
+{event_task : 'eth_network_ready','Is called directly after the Network and the PLC are initialised','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,751,11987}
+{event_task : 'blink_code','New blink code / Blink code cleared ( Call STATUS_GET_LAST_ERROR for details )','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,752,11987}
+{event_task : 'interrupt_0','Interrupt Real Time Clock (every second)','','FUNCTION systemevent: DWORD VAR_INPUT dwEvent: DWORD; dwFilter: DWORD; dwOwner: DWORD; END_VAR '}{event_task_info : 0,1000,11987}
+
+END_RESOURCE

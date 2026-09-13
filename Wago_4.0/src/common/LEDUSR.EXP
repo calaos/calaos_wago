@@ -1,0 +1,84 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION_BLOCK LedUsr
+VAR_INPUT
+	Mode: BYTE;
+
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	Sequence: ARRAY [0..4] OF FLASHING_SEQUENCE;
+	ptrFS: POINTER TO FLASHING_SEQUENCE;
+
+	i: BYTE := 0;
+END_VAR
+(* @END_DECLARATION := '0' *)
+CASE Mode OF
+	0 : i := 0;
+	1 : i := 11; (* Mode Wago *)
+	2 : i := 12; (* Mode PC *)
+	3 : i := 13; (* Error *)
+END_CASE
+
+LedMode := 255;
+
+CASE i OF
+	0 : (* Init *)
+		Sequence[0].Colour := ORANGE;
+		Sequence[0].Frequency := 10;
+		Sequence[0].Relation := 128;
+		Sequence[0].Duration := t#0s;
+
+		Sequence[1].Colour := ORANGE;
+		Sequence[1].Frequency := 0;
+		Sequence[1].Relation := 128;
+		Sequence[1].Duration := t#0s;
+
+		Sequence[2].Colour := GREEN;
+		Sequence[2].Frequency := 0;
+		Sequence[2].Relation := 128;
+		Sequence[2].Duration := t#0s;
+
+		Sequence[3].Colour := RED;
+		Sequence[3].Frequency := 0;
+		Sequence[3].Relation := 128;
+		Sequence[3].Duration := t#0s;
+
+		Sequence[4].Colour := ORANGE;
+		Sequence[4].Frequency := 0;
+		Sequence[4].Relation := 0;
+		Sequence[4].Duration := t#0s;
+
+		ptrFS := ADR(Sequence);
+		SET_FLASHING_SEQUENCE(TRUE, ADR(ptrFS));
+
+		i := 10;
+
+	10: (* Start *)
+		SET_FLASHING_SEQUENCE_INDEX(TRUE, TRUE, 0);
+		START_FLASHING_SEQUENCE(TRUE);
+
+		i := 255;
+
+	11: (* Led Mode wago *)
+		SET_FLASHING_SEQUENCE_INDEX(TRUE, TRUE, 1);
+
+		i := 255;
+
+	12: (* Led Mode PC *)
+		SET_FLASHING_SEQUENCE_INDEX(TRUE, TRUE, 2);
+
+		i := 255;
+
+	13: (* Led Error *)
+		SET_FLASHING_SEQUENCE_INDEX(TRUE, TRUE, 3);
+
+		i := 255;
+
+END_CASE
+
+END_FUNCTION_BLOCK

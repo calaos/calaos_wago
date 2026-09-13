@@ -1,0 +1,2443 @@
+(* @PATH := '\/DALI 647\/Configuration Pages' *)
+
+VISUALISATION visuDALIControlGearStatus _VISU_TYPES : 1,3
+_BG_BMP : ''
+_TEXT : 139
+_PAINTZOOM : 100
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 135,1,741,387,438,194
+_COLORS : 12632256,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,25,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 140,6,736,382,438,194
+_COLORS : 15658734,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Status Control Gears',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 1,4294967272,400,0,26,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 150,87,726,258,438,172
+_COLORS : 14342874,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Short address',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 1,4294967275,400,0,27,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+0
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 160,112,191,143,175,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,28,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+1
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 195,112,226,143,210,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,29,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+2
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 230,112,261,143,245,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,30,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+3
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 265,112,296,143,280,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,31,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+4
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 300,112,331,143,315,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,32,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+5
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 335,112,366,143,350,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,33,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+6
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 370,112,401,143,385,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,34,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+7
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 405,112,436,143,420,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,35,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 150,36,266,62,208,49
+_COLORS : 15658734,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Module number',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967283,700,0,36,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 3
+_NOCOLORS : 1,1
+_POS : 270,36,306,62,288,49
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : 'PrgDALIConfig.bModule_753_647',' %s',''
+_ZOOM : ''
+_INPUT : 1048576
+_TEXT : 5,4294967283,700,0,37,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,36,686,62,645,49
+_COLORS : 15658734,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Feedback',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967283,700,0,40,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 3
+_NOCOLORS : 1,1
+_POS : 690,36,726,62,708,49
+_COLORS : 15658734,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : 'PrgDALIConfig.StatusControlGear.bFeedback',' %s',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967283,700,0,41,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+8
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 440,112,471,143,455,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,43,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+9
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 475,112,506,143,490,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,44,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+10
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 510,112,541,143,525,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,45,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+11
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 545,112,576,143,560,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,46,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+12
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 580,112,611,143,595,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,47,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+13
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 615,112,646,143,630,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,48,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+14
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 650,112,681,143,665,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,49,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+15
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 685,112,716,143,700,127
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,50,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+16
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 160,147,191,178,175,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,51,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+17
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 195,147,226,178,210,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,52,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+18
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 230,147,261,178,245,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,53,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+19
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 265,147,296,178,280,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,54,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+20
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 300,147,331,178,315,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,55,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+21
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 335,147,366,178,350,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,56,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+22
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 370,147,401,178,385,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,57,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+23
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 405,147,436,178,420,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,58,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+24
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 440,147,471,178,455,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,59,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+25
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 475,147,506,178,490,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,60,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+26
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 510,147,541,178,525,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,61,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+27
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 545,147,576,178,560,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,62,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+28
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 580,147,611,178,595,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,63,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+29
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 615,147,646,178,630,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,64,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+30
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 650,147,681,178,665,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,65,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+31
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 685,147,716,178,700,162
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,66,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+32
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 160,182,191,213,175,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,67,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+33
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 195,182,226,213,210,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,68,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+34
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 230,182,261,213,245,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,69,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+35
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 265,182,296,213,280,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,70,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+36
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 300,182,331,213,315,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,71,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+37
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 335,182,366,213,350,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,72,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+38
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 370,182,401,213,385,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,73,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+39
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 405,182,436,213,420,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,74,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+40
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 440,182,471,213,455,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,75,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+41
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 475,182,506,213,490,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,76,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+42
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 510,182,541,213,525,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,77,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+43
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 545,182,576,213,560,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,78,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+44
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 580,182,611,213,595,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,79,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+45
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 615,182,646,213,630,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,80,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+46
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 650,182,681,213,665,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,81,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+47
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 685,182,716,213,700,197
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,82,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+48
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 160,217,191,248,175,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,83,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+49
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 195,217,226,248,210,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,84,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+50
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 230,217,261,248,245,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,85,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+51
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 265,217,296,248,280,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,86,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+52
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 300,217,331,248,315,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,87,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+53
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 335,217,366,248,350,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,88,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+54
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 370,217,401,248,385,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,89,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+55
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 405,217,436,248,420,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,90,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+56
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 440,217,471,248,455,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,91,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+57
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 475,217,506,248,490,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,92,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+58
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 510,217,541,248,525,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,93,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+59
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 545,217,576,248,560,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,94,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+60
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 580,217,611,248,595,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,95,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+61
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 615,217,646,248,630,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,96,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+62
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 650,217,681,248,665,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,97,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuStatus'
+NUM_STRINGS_IN_LIST: 1
+Index
+NUM_STRINGS_IN_LIST: 1
+63
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 685,217,716,248,700,232
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,98,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 3
+_NOCOLORS : 1,1
+_POS : 390,307,496,333,443,320
+_COLORS : 16777215,0,65535,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','PrgDALIConfig.StatusControlGear.xRead','','PrgDALIConfig.StatusControlGear.xRead'
+_DSP : '','Read',''
+_ZOOM : ''
+_INPUT : 131072
+_TEXT : 5,4294967283,700,0,99,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 160,264,176,280,168,272
+_COLORS : 12632256,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,100,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 250,264,266,280,260,269
+_COLORS : 16744448,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,101,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 270,262,371,283,320,272
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Online',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 4,4294967285,400,0,102,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 180,262,310,283,245,272
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Offline',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 4,4294967285,400,0,103,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 335,264,351,280,345,272
+_COLORS : 65535,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,104,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 475,264,491,280,485,269
+_COLORS : 33023,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,105,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 495,262,591,283,543,272
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Lamp Failure',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 4,4294967285,400,0,106,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 355,262,451,283,403,272
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Lamp Power On',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 4,4294967285,400,0,107,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 590,264,606,280,600,269
+_COLORS : 255,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,108,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 610,262,706,283,658,272
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Error Control Gear',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 4,4294967285,400,0,109,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_REF : 'visuDALI_Menue'
+NUM_STRINGS_IN_LIST: 0
+NUM_STRINGS_IN_LIST: 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,1
+_POS : 0,0,138,388,69,194
+_COLORS : 0,16777215,0
+_VARIABLES : '','','','','','','',''
+_FRAME : 0,0,2
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,134,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 3,8,734,381,368,194
+_COLORS : 16777215,0,16777215,0,16711680
+_VARIABLES : '','','','','','','',''
+_THRESH : 'PrgDALIConfig.StatusControlGear.xReady','','',''
+_DSP : '','Please wait!',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 2,4294967272,400,0,135,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_VISUGROUP : 0
+_POS : 297,123,553,234,425,178
+_THRESH : 'PrgDALIConfig.StatusControlGear.xNoError','','',''
+_VARIABLES : '','','','','','','',''
+_INPUT : 0
+_DSP : '','',''
+_ZOOM : ''
+_TEXT : 5,4294967284,400,0,136,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_FRAME : 1,0,0,1
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+_BG_BMP : ''
+_TEXT : 0
+_PAINTZOOM : 100
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 0,0,256,111,128,55
+_COLORS : 16777215,0,16777215,0,255
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','$R$NAn error has occurred.$R$NPlease confirm!',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 1,4294967277,400,0,137,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 3
+_NOCOLORS : 1,1
+_POS : 75,70,181,101,128,85
+_COLORS : 16777215,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','','PrgDALIConfig.StatusControlGear.xQuit'
+_DSP : '','Quit',''
+_ZOOM : ''
+_INPUT : 131072
+_TEXT : 5,4294967283,700,0,138,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+_KEYINFOLIST : 0
+_END_VISUGROUP
+_KEYINFOLIST : 0
+END_VISUALISATION

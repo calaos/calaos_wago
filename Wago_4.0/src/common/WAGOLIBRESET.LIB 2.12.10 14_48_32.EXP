@@ -1,0 +1,7 @@
+LIBRARY
+WagoLibReset.lib 2.12.10 14:48:32
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 1
+FirmwareReset: 2048
+NumOfGVLs: 0
+END_LIBRARY

@@ -1,0 +1,73 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+PROGRAM KNX_Master
+VAR
+
+	InterKNXBool: ARRAY[0..99] OF FbDPT_Bool;  (* max of 100 bool inputs *)
+	SortieKNXBool: ARRAY[0..99] OF FbDPT_Bool; (* max of 100 bool outputs *)
+
+	dummy_dpt: typDPT;
+	typKNX: typKNX;
+
+	FbKNX_Master_849: FbKNX_Master_849;
+
+	KNXStatus: enumDeviceStatus;
+
+	i: INT;
+
+	wBuffer: POINTER TO BYTE;
+	command: STRING(255);
+	Write: ETHERNET_WRITE_PT;
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* KNX Master *)
+FbKNX_Master_849(typKNX := typKNX);
+KNXStatus := FbKNX_Master_849.enumDeviceStatus;
+
+FOR i := 0 TO 99 DO
+
+	(* handle KNX inputs *)
+	InterKNXBool[i](typKNX := typKNX, typDPT := dummy_dpt);
+	KNXInputs[i] := InterKNXBool[i].xSwitch_OUT;
+
+	(* trigger inputs and send them on the network if needed *)
+	event[i + 256](IN := KNXInputs[i]);
+	IF (event[i + 256].ON = TRUE) THEN
+		command := 'WAGO KNX ';
+		command := CONCAT(command,  INT_TO_STRING(i));
+		command := CONCAT(command,  ' 1');
+		wBuffer := ADR(command);
+
+		Write(EN := 0, SOCKET := 0, LEN_IN := 0, DST_IP:=0, DST_PORT:=0, DATA_PT := wBuffer);
+		Write(EN := 1, SOCKET := SendInput.socket, LEN_IN := LEN(command), DST_IP := Config.SERVER_IP, DST_PORT := 4646, DATA_PT := wBuffer);
+	END_IF
+	IF (event[i + 256].OFF = TRUE) THEN
+		command := 'WAGO KNX ';
+		command := CONCAT(command,  INT_TO_STRING(i));
+		command := CONCAT(command,  ' 0');
+		wBuffer := ADR(command);
+
+		Write(EN := 0, SOCKET := 0, LEN_IN := 0, DST_IP:=0, DST_PORT:=0, DATA_PT := wBuffer);
+		Write(EN := 1, SOCKET := SendInput.socket, LEN_IN := LEN(command), DST_IP := Config.SERVER_IP, DST_PORT := 4646, DATA_PT := wBuffer);
+	END_IF
+
+	IF (HEARTBEAT = TRUE) THEN
+		(* In server mode, we set the knx output to the state of the modbus network input *)
+		KNXOutputs[i] := BYTE_TO_BOOL(SHR(netOutKNX[i / 8], i MOD 8) AND 16#01);
+	END_IF
+
+	(* handle KNX outputs *)
+	SortieKNXBool[i](typKNX := typKNX, xSwitch_IN := KNXOutputs[i], typDPT := dummy_dpt);
+
+END_FOR
+
+IF (Config.CONFIG_KNX = TRUE) THEN
+	IF (KNXStatus <> KNX_DEVICE_OK AND KNXStatus <> KNX_DEVICE_NOT_INIT) THEN
+		LedMode := 3;
+	END_IF
+END_IF
+
+END_PROGRAM

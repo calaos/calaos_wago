@@ -1,0 +1,17 @@
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE OUTPUT_ADDR :
+STRUCT
+
+	(* the first ouput address, only needed *)
+	ADDR1: BYTE;
+	(* the second address used only for the VOLET function bloc *)
+	ADDR2: BYTE;
+
+	(* If SameAs <> -1, then a input is wired the same as the specified ID *)
+	SameAs: INT := -1;
+
+END_STRUCT
+END_TYPE
+(* @END_DECLARATION := '0' *)

@@ -1,0 +1,15 @@
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE enumDaliSensor :
+(
+	NoSensor := 0, (* default type is no sensor *)
+	MultiSensorType1,
+	PushbuttonSensorType1,
+	MultiSensorType2,
+	PushbuttonSensorType2,
+	DaliEcg,
+	DaliGroup
+);
+END_TYPE
+(* @END_DECLARATION := '0' *)

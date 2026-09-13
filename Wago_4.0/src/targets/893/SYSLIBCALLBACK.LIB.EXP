@@ -1,0 +1,10 @@
+LIBRARY
+SYSLIBCALLBACK.LIB
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 2
+SysCallbackRegister: 0
+SysCallbackUnregister: 0
+NumOfGVLs: 2
+Globale_Variablen: 0
+Version: 0
+END_LIBRARY

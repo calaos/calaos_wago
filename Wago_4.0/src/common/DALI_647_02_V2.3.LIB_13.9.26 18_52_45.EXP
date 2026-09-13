@@ -1,0 +1,45 @@
+LIBRARY
+DALI_647_02_v2.3.lib 13.9.26 18:52:45
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 38
+FbAddressingControlGears: 2048
+FbCalculateDimmLevel: 2048
+FbDALI_Command: 2048
+FbDaliConfigConstantLightControl: 2048
+FbDaliConstantLightControl: 2048
+FbDaliControlGearCommands: 2048
+FbDaliDimmDoubleButton: 2048
+FbDaliDimmSingleButton: 2048
+FbDaliLatchingRelay: 2048
+FbDaliMacroCommands: 2048
+FbDaliMemoryBank: 2048
+FbDaliOperatingHours: 2048
+FbDaliRecallScene: 2048
+FbDaliSendDimmValue: 2048
+FbDaliSendFadeRate: 2048
+FbDaliSendFadeTime: 2048
+FbDaliShowActualValue: 2048
+FbDaliStoreActualValueAsScene: 2048
+FbDaliSwitchOnOff: 2048
+FbDaliSwitchPowerSupply: 2048
+FbDaliToggle: 2048
+FbGroupConfig: 2048
+FbIdentifyControlGear: 2048
+FbMaster753_647: 2048
+FbSceneConfig: 2048
+FbSettingsControlGear: 2048
+FbStatusControlGear: 2048
+FDaliRestoreLastDimmValue: 2048
+FourPoint: 2048
+FuCalculateAddress: 2048
+FuCalculateMacroAddress: 2048
+FuCheckAddresses: 2048
+FuCheckConfigAddresses: 2048
+FuDaliDimmValue: 2048
+FuPercentDimmValue: 2048
+FuTypBallast: 2048
+FuVersion_753_647: 2048
+PrgDALIConfig: 2048
+NumOfGVLs: 1
+Globale_Variablen: 2048
+END_LIBRARY

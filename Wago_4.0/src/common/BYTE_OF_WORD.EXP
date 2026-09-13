@@ -1,0 +1,13 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Logic\/gate logic' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION BYTE_OF_WORD : BYTE
+VAR_INPUT
+	in : WORD;
+	N : BYTE;
+END_VAR
+(* @END_DECLARATION := '0' *)
+BYTE_OF_WORD := WORD_TO_BYTE(SHR(in,n));
+END_FUNCTION

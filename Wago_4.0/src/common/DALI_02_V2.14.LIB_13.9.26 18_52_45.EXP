@@ -1,0 +1,39 @@
+LIBRARY
+DALI_02_v2.14.lib 13.9.26 18:52:45
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 32
+DALI_Config: 2048
+FbDALI_ConfigDevice: 0
+FbDALI_ConfigScene: 0
+FbDALI_ConfigShortAddress: 0
+FbDALI_ConstantLightControl: 0
+FbDALI_DimmDoubleButton: 0
+FbDALI_DimmEasy: 2048
+FbDALI_DimmSingleButton: 0
+FbDALI_DSI: 2048
+FbDALI_Joblist: 0
+FbDALI_Joblist_IPC: 0
+FbDALI_LatchingRelay: 2048
+FbDALI_M_Sensor: 2048
+FbDALI_Master: 0
+FbDALI_Master_Adv: 0
+FbDALI_RecallScene: 0
+FbDALI_RestoreDimmValue: 2048
+FbDALI_ShowShortAdr: 0
+FbDALI_StatusDevice: 0
+FbDALI_StatusDimmValue: 2048
+FbDALI_SwitchRawValue: 0
+FbDALI_SwitchValue: 0
+FbResetControlGear: 2048
+FbSelectSceneFadeTime: 2048
+FbSelectSceneNo: 2048
+Fu_M_Sensor_Lux_Level: 2048
+Fu_Version_DALI: 2048
+FuAddress: 2048
+FuCheckAddress: 2048
+FuDALI_Command: 0
+FuDimmValue_DALI: 2048
+FuDimmValue_Percent: 2048
+NumOfGVLs: 1
+Globale_Variablen_1: 0
+END_LIBRARY

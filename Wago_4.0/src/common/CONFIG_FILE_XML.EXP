@@ -1,0 +1,85 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+PROGRAM Config_File_XML
+VAR RETAIN
+	wModuleCount : WORD;
+END_VAR
+VAR CONSTANT
+	STRING_1: STRING := '<?xml version="1.0" encoding="ISO-8859-1"?>$r$n';
+	STRING_2: STRING := '<?xml-stylesheet type="text/xsl" href="/webserv/cplcfg/EA-config.xsl" ?>$R$n';
+	STRING_3: STRING := '<WAGO>$R$n';
+	STRING_4: STRING := '<Module ARTIKELNR="" MAP="PLC" LOC="ALL"></Module>$R$n';
+	STRING_5: STRING := '</WAGO>$r$n';
+END_VAR
+VAR
+	info : ARRAY[0..63] OF MODULE_INFO;
+	access: MODULE_INFO_ACCESS;
+	i: INT := 0;
+	Status: BYTE := 0;
+	DetectedModules: INT;
+	FileHandle: DWORD;
+	dwWrite: DWORD;
+	NumberOfEntries: BYTE := 0;
+	FileIsClosed: BOOL;
+END_VAR
+
+
+(* @END_DECLARATION := '0' *)
+CASE Status OF
+	0 :	ADD_PI_INFORMATION(EN:=TRUE, pAccess:=ADR(access), pInfo:=ADR(info));
+		i:=0;
+		WHILE info[i].physicalPos<>0
+			DO
+			i:=i+1;
+		END_WHILE
+		DetectedModules := i;
+		Status := Status +1;
+	1 :	IF DetectedModules = wModuleCount
+			THEN
+			Status := 255; (* Done *)
+		ELSE
+			Status := 10;
+		END_IF
+	10:	FileHandle:=SysFileOpen(FileName:='\etc\EA-config.xml', Mode:='w');
+		IF FileHandle <> 0 THEN
+			Status := Status+1;
+		END_IF
+	11:	dwWrite:=SysFileWrite(File:=FileHandle, Buffer:=ADR(STRING_1), Size:=LEN(STRING_1));
+		IF dwWrite=LEN(STRING_1) THEN
+			Status := Status+1;
+		END_IF
+	12:	dwWrite:=SysFileWrite(File:=FileHandle, Buffer:=ADR(STRING_2), Size:=LEN(STRING_2));
+		IF dwWrite=LEN(STRING_2) THEN
+			Status := Status+1;
+		END_IF
+	13:	dwWrite:=SysFileWrite(File:=FileHandle, Buffer:=ADR(STRING_3), Size:=LEN(STRING_3));
+		IF dwWrite=LEN(STRING_3) THEN
+			Status := Status+1;
+		END_IF
+	14:	dwWrite:=SysFileWrite(File:=FileHandle, Buffer:=ADR(STRING_4), Size:=LEN(STRING_4));
+		IF dwWrite=LEN(STRING_4) THEN
+			Status := Status+1;
+			NumberOfEntries := NumberOfEntries+1;
+		END_IF
+	15: IF NumberOfEntries < DetectedModules
+			THEN
+			Status := Status -1;
+		ELSE
+			Status := Status +1;
+		END_IF
+	16:	dwWrite:=SysFileWrite(File:=FileHandle, Buffer:=ADR(STRING_5), Size:=LEN(STRING_5));
+		IF dwWrite=LEN(STRING_5) THEN
+			Status := Status+1;
+		END_IF
+	17:	FileIsClosed := SysFileClose(File:= FileHandle);
+		IF FileIsClosed
+			THEN
+			Status := 20;
+		END_IF
+	20:	wModuleCount := DetectedModules;
+		FirmwareReset(EN := TRUE);
+END_CASE
+END_PROGRAM

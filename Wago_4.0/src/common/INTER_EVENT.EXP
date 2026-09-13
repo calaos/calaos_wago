@@ -1,0 +1,26 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION_BLOCK INTER_EVENT
+VAR_INPUT
+	IN: BOOL;
+END_VAR
+VAR_OUTPUT
+	ON: BOOL;
+	OFF: BOOL;
+END_VAR
+VAR
+	MTRIG: R_TRIG;
+	DTRIG: F_TRIG;
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* Get the ON or OFF event on an input *)
+
+MTRIG(CLK := IN);
+ON := MTRIG.Q;
+DTRIG(CLK := IN);
+OFF := DTRIG.Q;
+
+END_FUNCTION_BLOCK

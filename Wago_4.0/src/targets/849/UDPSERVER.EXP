@@ -1,0 +1,621 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+PROGRAM UDPServer
+VAR
+	server: EthernetServer_FB;
+
+	rBuffer, wBuffer: POINTER TO BYTE;
+	buffer: ARRAY[1 .. 1500] OF BYTE;
+	cmd: STRING(255);
+	start_send: BOOL := FALSE;
+	i: WORD;
+	dali_group: BOOL;
+
+	HEARTBEAT_TIMER: TON;
+
+	p1: DINT;
+	p2: DINT;
+	p3: DINT;
+	p4: DINT;
+	p5: DINT;
+	p6: DINT;
+	p7: DINT;
+	p8: DINT;
+	ip1, ip2, ip3, ip4: DWORD;
+	DaliSend: BOOL := FALSE;
+
+	(* Used by dali config for answer
+	   0 = no action
+	   1 = Search all active address
+	   2 = Read groups for short adress
+	   3 = Switch on/off all lamps
+	  98 = Addresing query
+	  99 = Addressing in progress
+	*)
+	DaliSendAction: BYTE := 0;
+
+	(* Dali config FB *)
+	DALIShowShortAdr: FbDALI_ShowShortAdr;
+	DALIConfigDevice: FbDALI_ConfigDevice;
+	DALIConfigShortAddress: FbDALI_ConfigShortAddress;
+	DALIMaster: FbDALI_Master;
+	DALIMasterAdv: FbDALI_Master_Adv;
+
+	extendedAddr: BOOL;
+	newAddressing: BOOL;
+	resetAddr: BOOL;
+	replaceAddr: BOOL;
+	delAddressing: BOOL;
+	oldAddr, newAddr, delAddr: BYTE;
+	dali_master: BOOL;
+	group_address: BYTE;
+	groups_cmd_1_8: BYTE;
+	addr_1_16: WORD;
+	addr_17_32: WORD;
+
+	dmx_read_addr: BYTE;
+
+	daliShortAddr: BYTE;
+
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* Here we start an UDP server for other network functions *)
+
+HEARTBEAT_TIMER(IN:=TRUE, PT:=T#30s);
+
+rBuffer := ADR(buffer);
+wBuffer := ADR(cmd);
+
+(* cmd := CONCAT(cmd, ASCIIBYTE_TO_STRING(0)); *)
+
+server.tTIMEOUT	:= t#60s;
+server.xTCP_PROTOCOL := FALSE;
+server.wPORT := 4646;
+server.iBYTES_TO_SEND := LEN(cmd) + 1;
+server(xOPEN_SERVER := TRUE, xSTART_SEND := start_send, ptSEND_BUFFER := wBuffer, ptRECV_BUFFER := rBuffer);
+
+IF server.bDataReceived THEN
+
+	cmd := '';
+	FOR i := 1 TO server.iBYTES_RECEIVED DO
+		cmd := CONCAT(cmd, ASCIIBYTE_TO_STRING(buffer[i]));
+	END_FOR
+
+	IF (STRING_COMPARE(cmd, 'WAGO_HEARTBEAT') = TRUE) THEN
+		HEARTBEAT_TIMER(IN:=FALSE, PT:=T#30s);
+		HEARTBEAT_TIMER(IN:=TRUE, PT:=T#30s);
+
+		LedMode := 2;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_SET_OUTTYPE ', 17) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2);
+		CASE p2 OF
+		0: output_type[p1] := NONE;
+		1: output_type[p1] := TELERUPTEUR;
+		2: output_type[p1] := DIRECT;
+		3: output_type[p1] := VOLET;
+		4: output_type[p1] := VOLET_IMPULSE;
+		5: output_type[p1] := TELERUPTEUR_DALI;
+		6: output_type[p1] := TELERUPTEUR_DALI_GROUP;
+		7: output_type[p1] := TELERUPTEUR_KNX_OUTPUT;
+		8: output_type[p1] := DIRECT_KNX_OUTPUT;
+		END_CASE
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_SET_OUTADDR ', 17) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2);
+		p3 := GET_PARAM_DINT(cmd, 3);
+		p4 := GET_PARAM_DINT(cmd, 4);
+		output_addr[p1].ADDR1 := DINT_TO_BYTE(p2);
+		output_addr[p1].ADDR2 := DINT_TO_BYTE(p3);
+		output_addr[p1].SameAs := DINT_TO_INT(p4);
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_GET_OUTTYPE ', 17) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		cmd := 'WAGO_OUTTYPE ';
+		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
+		cmd := CONCAT(cmd, ' ');
+		CASE output_type[p1] OF
+		NONE: cmd := CONCAT(cmd, ITOA(0));;
+		TELERUPTEUR: cmd := CONCAT(cmd, ITOA(1));;
+		DIRECT: cmd := CONCAT(cmd, ITOA(2));;
+		VOLET: cmd := CONCAT(cmd, ITOA(3));;
+		VOLET_IMPULSE: cmd := CONCAT(cmd, ITOA(4));;
+		TELERUPTEUR_DALI: cmd := CONCAT(cmd, ITOA(5));;
+		TELERUPTEUR_DALI_GROUP: cmd := CONCAT(cmd, ITOA(6));;
+		TELERUPTEUR_KNX_OUTPUT: cmd := CONCAT(cmd, ITOA(7));;
+		DIRECT_KNX_OUTPUT: cmd := CONCAT(cmd, ITOA(8));;
+		END_CASE
+		start_send := TRUE;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_GET_OUTADDR ', 17) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		cmd := 'WAGO_OUTADDR ';
+		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(output_addr[p1].ADDR1));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(output_addr[p1].ADDR2));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(output_addr[p1].SameAs));
+		start_send := TRUE;
+	END_IF
+
+	IF (STRING_COMPARE(cmd, 'WAGO_GET_INFO') = TRUE) THEN
+		cmd := 'WAGO_INFO ';
+		cmd := CONCAT(cmd, ITOA(nb_module));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(nb_module_in));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(nb_module_out)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(nb_input_digital)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(nb_output_digital)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(nb_module_analog_in));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(nb_module_analog_out));
+		start_send := TRUE;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_GET_INFO_MODULE ', 21) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		cmd := 'WAGO_MODULE ';
+		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(info[p1].moduleType)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(info[p1].physicalPos));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(info[p1].desc.sizePAE));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(info[p1].desc.sizePAA));
+		start_send := TRUE;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_SET_SERVER_IP ', 19) = TRUE) THEN
+		cmd := DELETE(cmd, 19, 1);
+		(* deletes the dot  *)
+		cmd := REPLACE(cmd, ' ', 1, FIND(cmd, '.'));
+		cmd := REPLACE(cmd, ' ', 1, FIND(cmd, '.'));
+		cmd := REPLACE(cmd, ' ', 1, FIND(cmd, '.'));
+		ip1 := GET_PARAM_DINT(cmd, 0);
+		ip2 := GET_PARAM_DINT(cmd, 1);
+		ip3 := GET_PARAM_DINT(cmd, 2);
+		ip4 := GET_PARAM_DINT(cmd, 3);
+		Config.SERVER_IP := SHL(ip1, 24) OR SHL(ip2, 16) OR SHL(ip3, 8) OR ip4;
+	END_IF
+
+
+	IF (Strncmp(cmd, 'WAGO_SET_DMX_IP ', 16) = TRUE) THEN
+		cmd := DELETE(cmd, 16, 1);
+		DMX.IPaddress := cmd;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_SET_OUTPUT ', 16) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2);
+
+		p1 := start_addr_out + p1;
+
+		IF (p2 = 1) THEN
+			SetOutput(DINT_TO_UINT(p1), TRUE);
+		ELSE
+			SetOutput(DINT_TO_UINT(p1), FALSE);
+		END_IF
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_SET_KNX_OUTPUT ', 20) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2);
+
+		IF (p2 = 1) THEN
+			KNXOutputs[DINT_TO_UINT(p1)] := TRUE;
+		ELSE
+			KNXOutputs[DINT_TO_UINT(p1)] := FALSE;
+		END_IF
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_GET_VERSION', 16) = TRUE) THEN
+		cmd := 'WAGO_GET_VERSION ';
+		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(Config.CALAOS_VERSION_H)));
+		cmd := CONCAT(cmd, '.');
+		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(Config.CALAOS_VERSION_L)));
+		cmd := CONCAT(cmd, ' 750-849');
+		start_send := TRUE;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_SET ', 14) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1); (* Dali Line *)
+		p2 := GET_PARAM_DINT(cmd, 2); (* Short addr or group? *)
+		p3 := GET_PARAM_DINT(cmd, 3); (* Dali Address *)
+		p4 := GET_PARAM_DINT(cmd, 4); (* Dimm value in percent *)
+		p5 := GET_PARAM_DINT(cmd, 5); (* Fade time *)
+
+		IF (p2 = 1) THEN
+			dali_group := TRUE;
+		ELSE
+			dali_group := FALSE;
+		END_IF
+
+		IF (p3 > 99) THEN
+			abDMX_Values[DINT_TO_BYTE(p3 - 100)] := DINT_TO_BYTE(p4 * 255 / 100);
+		ELSE
+			Dali_switch(bAddress := DINT_TO_BYTE(p3), xGroup := dali_group, xButton := FALSE);
+			Dali_switch(bAddress := DINT_TO_BYTE(p3), xGroup := dali_group, bDimmLevel := DINT_TO_BYTE(p4),
+				bFadeTime := DINT_TO_BYTE(p5), xButton := TRUE);
+		END_IF
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_GET ', 14) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1); (* Dali Line *)
+		p2 := GET_PARAM_DINT(cmd, 2); (* Short addr *)
+		p3 := GET_PARAM_DINT(cmd, 3); (* Short addr or group? *)
+
+		IF (p3 = 1) THEN
+			dali_group := TRUE;
+		ELSE
+			dali_group := FALSE;
+		END_IF
+
+		IF (p2 < 99) THEN
+			IF Config.CONFIG_DALI = TRUE THEN
+				DALIDimmValue(xEnable := TRUE, bShortAddress := DINT_TO_BYTE(p2), tCycleTime := t#1s);
+			END_IF
+			daliShortAddr := DINT_TO_BYTE(p2);
+			dmx_read_addr := 0;
+		ELSE
+			dmx_read_addr := DINT_TO_BYTE(p3 - 100);
+		END_IF
+		DaliSend := TRUE;
+	END_IF
+
+    IF (Strncmp(cmd, 'WAGO_INFO_VOLET_GET ', 20) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		cmd := 'WAGO_INFO_VOLET ';
+		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, DWORD_TO_STRING(volets_position[p1]));
+		start_send := TRUE;
+	END_IF
+
+    IF (Strncmp(cmd, 'WAGO_INFO_VOLET_SET ', 20) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2);
+		volets_position[p1] := DINT_TO_DWORD(p2);
+	END_IF
+
+		IF (Strncmp(cmd, 'WAGO_DALI_GET_ADDR ', 18) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		dali_master := TRUE;
+		DALIMasterAdv(xStartDaliMaster := dali_master, iCommand := 506);
+		DaliSendAction := 1;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_GET_DEVICE_INFO ', 26) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2);
+		DALIConfigDevice(xQuery := FALSE);
+		DALIConfigDevice(xQuery := TRUE, bAddress := DINT_TO_BYTE(p2));
+		DaliSendAction := 2;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_GET_DEVICE_GROUP ', 27) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2); (* address *)
+		group_address := DINT_TO_BYTE(p2);
+		dali_master := TRUE;
+		DALIMaster(xStartDaliMaster := dali_master, iCommand := 192, bAddress := group_address);
+		DaliSendAction := 3;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_DEVICE_ADD_GROUP ', 27) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2); (* device address *)
+		p3 := GET_PARAM_DINT(cmd, 3); (* group *)
+		dali_master := TRUE;
+		DALIMasterAdv(xStartDaliMaster := dali_master, iCommand := 501, bCommandValue1 := 95 + DINT_TO_BYTE(p3), bAddress := DINT_TO_BYTE(p2));
+		DaliSendAction := 5;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_DEVICE_DEL_GROUP ', 27) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2); (* device address *)
+		p3 := GET_PARAM_DINT(cmd, 3); (* group *)
+		dali_master := TRUE;
+		DALIMasterAdv(xStartDaliMaster := dali_master, iCommand := 501, bCommandValue1 := 111 + DINT_TO_BYTE(p3), bAddress := DINT_TO_BYTE(p2));
+		DaliSendAction := 6;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_CENTRAL ', 18) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2);
+		DALIShowShortAdr(xCentr_ON := FALSE, xCentr_OFF := FALSE);
+		IF (p2 = 1) THEN
+			DALIShowShortAdr(xCentr_ON := TRUE);
+		ELSE
+			DALIShowShortAdr(xCentr_OFF := TRUE);
+		END_IF
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_BLINK ', 16) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2); (* address *)
+		p3 := GET_PARAM_DINT(cmd, 3); (* group? *)
+		p4 := GET_PARAM_DINT(cmd, 4); (* blink time *)
+		DALIShowShortAdr(xBlink := FALSE);
+		DALIShowShortAdr(xBlink := TRUE, bAddress := DINT_TO_BYTE(p2), bBlinkTime := DINT_TO_BYTE(p4), xGroup := DINT_TO_BOOL(p3));
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_BLINK_STOP ', 21) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		DALIShowShortAdr(xBlink_OFF := FALSE);
+		DALIShowShortAdr(xBlink_OFF := TRUE);
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_SET_DEVICE_CONFIG ', 28) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2); (* device address *)
+		p3 := GET_PARAM_DINT(cmd, 3); (* fade rate *)
+		p4 := GET_PARAM_DINT(cmd, 4); (* fade time *)
+		p5 := GET_PARAM_DINT(cmd, 5); (* max level *)
+		p6 := GET_PARAM_DINT(cmd, 6); (* min level *)
+		p7 := GET_PARAM_DINT(cmd, 7); (* system failure level *)
+		p8 := GET_PARAM_DINT(cmd, 8); (* power on level *)
+		DALIConfigDevice(xSetConfig := FALSE);
+		DALIConfigDevice(xSetConfig := TRUE, bAddress := DINT_TO_BYTE(p2),
+					bFade_Rate := DINT_TO_BYTE(p3), bFade_Time := DINT_TO_BYTE(p4),
+					bMax_Level := DINT_TO_BYTE(p5), bMin_Level := DINT_TO_BYTE(p6),
+					bSystem_Failure_Level := DINT_TO_BYTE(p7), bPower_On_Level := DINT_TO_BYTE(p8));
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_ADDRESSING_NEW ', 25) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2); (* reset? *)
+		DALIConfigShortAddress(xNewAddressing := FALSE);
+		DALIConfigShortAddress(xNewAddressing := TRUE, xReset := DINT_TO_BOOL(p2), xSwitchAtAddressing := TRUE);
+		DALIConfigShortAddress(xNewAddressing := FALSE); (* double click *)
+		DALIConfigShortAddress(xNewAddressing := TRUE, xReset := DINT_TO_BOOL(p2), xSwitchAtAddressing := TRUE);
+		replaceAddr := FALSE;
+		extendedAddr := FALSE;
+		newAddressing := TRUE;
+		delAddressing := FALSE;
+		resetAddr := DINT_TO_BOOL(p2);
+		DaliSendAction := 99; (* addressing in progress *)
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_ADDRESSING_ADD ', 25) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		DALIConfigShortAddress(xExtendedAddressing := FALSE);
+		DALIConfigShortAddress(xExtendedAddressing := TRUE, xSwitchAtAddressing := TRUE);
+		replaceAddr := FALSE;
+		extendedAddr := TRUE;
+		newAddressing := FALSE;
+		resetAddr := FALSE;
+		delAddressing := FALSE;
+		DaliSendAction := 99; (* addressing in progress *)
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_ADDRESSING_STATUS ', 28) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		DaliSendAction := 98; (* addressing in progress *)
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_ADDRESSING_CHANGE ', 28) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2); (* old address *)
+		p3 := GET_PARAM_DINT(cmd, 3); (* new address *)
+		oldAddr := DINT_TO_BYTE(p2);
+		newAddr := DINT_TO_BYTE(p3);
+		DALIConfigShortAddress(xReplaceShortAddress := FALSE);
+		DALIConfigShortAddress(xReplaceShortAddress := TRUE, bOldShortAddress := oldAddr, bNewShortAddress := newAddr);
+		replaceAddr := TRUE;
+		extendedAddr := FALSE;
+		newAddressing := FALSE;
+		resetAddr := FALSE;
+		delAddressing := FALSE;
+		DaliSendAction := 99; (* addressing in progress *)
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_DALI_ADDRESSING_DEL ', 25) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		p2 := GET_PARAM_DINT(cmd, 2); (* address to delete *)
+		delAddr := DINT_TO_BYTE(p2);
+		DALIConfigShortAddress(xDeleteShortAddress := FALSE);
+		DALIConfigShortAddress(xDeleteShortAddress := TRUE, bDeleteShortAddress := delAddr);
+		replaceAddr := TRUE;
+		extendedAddr := FALSE;
+		newAddressing := FALSE;
+		resetAddr := FALSE;
+		delAddressing := TRUE;
+		DaliSendAction := 99; (* addressing in progress *)
+	END_IF
+
+END_IF
+
+CASE DaliSendAction OF
+(*
+1: (* WAGO_DALI_GET_ADDR *)
+	IF (DALIShowShortAdr.xReady = TRUE) THEN
+		cmd := 'WAGO_DALI_GET_ADDR ';
+		cmd := CONCAT(cmd, WORD_TO_STRB(DALIShowShortAdr.wShortAddress_16_1));
+		cmd := CONCAT(cmd, WORD_TO_STRB(DALIShowShortAdr.wShortAddress_32_17));
+		cmd := CONCAT(cmd, WORD_TO_STRB(DALIShowShortAdr.wShortAddress_48_33));
+		cmd := CONCAT(cmd, WORD_TO_STRB(DALIShowShortAdr.wShortAddress_64_49));
+		start_send := TRUE;
+		DaliSendAction := 0;
+	ELSE
+		DALIShowShortAdr(xQuery := TRUE);
+	END_IF
+*)
+1: (* WAGO_DALI_GET_ADDR *)
+	IF (dali_master = FALSE) THEN
+		addr_1_16 := SHL(DaliMasterAdv.bByte_3, 8) + DaliMasterAdv.bByte_1;
+		addr_17_32 := SHL(DaliMasterAdv.bByte_5, 8) + DaliMasterAdv.bByte_4;
+		dali_master := TRUE;
+		DALIMasterAdv(xStartDaliMaster := dali_master, iCommand := 507);
+		DaliSendAction := 111;
+	ELSE
+		DaliMasterAdv(xStartDaliMaster := dali_master);
+	END_IF
+111: (* WAGO_DALI_GET_ADDR bis *)
+	IF (dali_master = FALSE) THEN
+		cmd := 'WAGO_DALI_GET_ADDR ';
+		cmd := CONCAT(cmd, WORD_TO_STRB(addr_1_16));
+		cmd := CONCAT(cmd, WORD_TO_STRB(addr_17_32));
+		cmd := CONCAT(cmd, WORD_TO_STRB( SHL(DaliMasterAdv.bByte_3, 8) + DaliMasterAdv.bByte_1 ));
+		cmd := CONCAT(cmd, WORD_TO_STRB( SHL(DaliMasterAdv.bByte_5, 8) + DaliMasterAdv.bByte_4 ));
+		start_send := TRUE;
+		DaliSendAction := 0;
+	ELSE
+		DaliMasterAdv(xStartDaliMaster := dali_master);
+	END_IF
+2: (* WAGO_DALI_GET_DEVICE_INFO *)
+	IF (DALIConfigDevice.xReady = TRUE) THEN
+		cmd := 'WAGO_DALI_GET_DEVICE_INFO ';
+		cmd := CONCAT(cmd, WORD_TO_STRING(DALIConfigDevice.bFadeRate));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, WORD_TO_STRING(DALIConfigDevice.bFadeTime));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, WORD_TO_STRING(DALIConfigDevice.bMaxLevel));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, WORD_TO_STRING(DALIConfigDevice.bMinLevel));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, WORD_TO_STRING(DALIConfigDevice.bSystemFailureLevel));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, WORD_TO_STRING(DALIConfigDevice.bPowerOnLevel));
+		start_send := TRUE;
+		DaliSendAction := 0;
+	ELSE
+		DALIConfigDevice(xQuery := TRUE);
+	END_IF
+3: (* WAGO_DALI_GET_DEVICE_GROUP *)
+	IF (dali_master = FALSE) THEN
+		groups_cmd_1_8 := DaliMaster.bQueryValue;
+		dali_master := TRUE;
+		DALIMaster(xStartDaliMaster := dali_master, iCommand := 193, bAddress := group_address);
+		DaliSendAction := 4;
+	ELSE
+		DaliMaster(xStartDaliMaster := dali_master);
+	END_IF
+4: (* WAGO_DALI_GET_DEVICE_GROUP bis *)
+	IF (dali_master = FALSE) THEN
+		cmd := 'WAGO_DALI_GET_DEVICE_GROUP ';
+		cmd := CONCAT(cmd, BYTE_TO_STRING(group_address));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, WORD_TO_STRB( SHL(DaliMaster.bQueryValue, 8) + groups_cmd_1_8 ));
+		start_send := TRUE;
+		DaliSendAction := 0;
+	ELSE
+		DaliMaster(xStartDaliMaster := dali_master);
+	END_IF
+5: (* WAGO_DALI_DEVICE_ADD_GROUP *)
+	IF (dali_master = FALSE) THEN
+		cmd := 'WAGO_DALI_DEVICE_ADD_GROUP 1';
+		start_send := TRUE;
+		DaliSendAction := 0;
+	ELSE
+		DALIMasterAdv(xStartDaliMaster := dali_master);
+	END_IF
+6: (* WAGO_DALI_DEVICE_DEL_GROUP *)
+	IF (dali_master = FALSE) THEN
+		cmd := 'WAGO_DALI_DEVICE_DEL_GROUP 1';
+		start_send := TRUE;
+		DaliSendAction := 0;
+	ELSE
+		DALIMasterAdv(xStartDaliMaster := dali_master);
+	END_IF
+98: (* WAGO_DALI_ADDRESSING_STATUS *)
+	IF (DALIConfigShortAddress.xReady = TRUE) THEN
+		cmd := 'WAGO_DALI_ADDRESSING_STATUS 1';
+		start_send := TRUE;
+		DaliSendAction := 0;
+	ELSE
+		cmd := 'WAGO_DALI_ADDRESSING_STATUS 0';
+		start_send := TRUE;
+		DaliSendAction := 99;
+		DALIConfigShortAddress(xNewAddressing := newAddressing, xExtendedAddressing := extendedAddr,
+							   xReset := resetAddr, xSwitchAtAddressing := TRUE,
+							   xReplaceShortAddress := replaceAddr, bOldShortAddress := oldAddr, bNewShortAddress := newAddr,
+							   xDeleteShortAddress := delAddressing, bDeleteShortAddress := delAddr);
+	END_IF
+99: (* Addressing in progress *)
+		DALIConfigShortAddress(xNewAddressing := newAddressing, xExtendedAddressing := extendedAddr,
+							   xReset := resetAddr, xSwitchAtAddressing := TRUE,
+							   xReplaceShortAddress := replaceAddr, bOldShortAddress := oldAddr, bNewShortAddress := newAddr,
+							   xDeleteShortAddress := delAddressing, bDeleteShortAddress := delAddr);
+END_CASE
+
+IF (DaliSend = TRUE) THEN
+	IF (dmx_read_addr > 0) THEN
+
+		cmd := 'WAGO_DALI_GET ';
+		IF (abDMX_Values[dmx_read_addr] < 1) THEN
+			cmd := CONCAT(cmd, '0 ');
+		ELSE
+			cmd := CONCAT(cmd, '1 ');
+		END_IF
+		cmd := CONCAT(cmd, ITOA(BYTE_TO_INT(abDMX_Values[dmx_read_addr] * 100 / 255)));
+		start_send := TRUE;
+		DaliSend := FALSE;
+	ELSE
+		IF Config.CONFIG_DALI = TRUE THEN
+			IF (DALIDimmValue.xReady = TRUE) THEN
+				cmd := 'WAGO_DALI_GET ';
+				cmd := CONCAT(cmd, ITOA(BOOL_TO_INT(DALIDimmValue.xStatus)));
+				cmd := CONCAT(cmd, ' ');
+				cmd := CONCAT(cmd, ITOA(BYTE_TO_INT(DALIDimmValue.bDimmValue)));
+				start_send := TRUE;
+				DaliSend := FALSE;
+			ELSE
+				DALIDimmValue(xEnable := TRUE, bShortAddress := DINT_TO_BYTE(p2), tCycleTime := t#1s);
+			END_IF
+		ELSE
+			cmd := 'WAGO_DALI_GET ';
+			IF dali_group = TRUE THEN
+				IF DaliSendValueGrp647[daliShortAddr].rActualLevel = 0 THEN
+					cmd := CONCAT(cmd, '0');
+				ELSE
+					cmd := CONCAT(cmd, '1');
+				END_IF
+				cmd := CONCAT(cmd, ' ');
+				cmd := CONCAT(cmd, ITOA(REAL_TO_INT(DaliSendValueGrp647[daliShortAddr].rActualLevel)));
+			ELSE
+				IF DaliSendValue647[daliShortAddr].rActualLevel = 0 THEN
+					cmd := CONCAT(cmd, '0');
+				ELSE
+					cmd := CONCAT(cmd, '1');
+				END_IF
+				cmd := CONCAT(cmd, ' ');
+				cmd := CONCAT(cmd, ITOA(REAL_TO_INT(DaliSendValue647[daliShortAddr].rActualLevel)));
+			END_IF
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(BYTE_TO_INT(DALIDimmValue.bDimmValue)));
+			start_send := TRUE;
+			DaliSend := FALSE;
+		END_IF
+	END_IF
+END_IF
+
+IF (HEARTBEAT_TIMER.Q = TRUE) THEN
+	(* We lost the connection with the server *)
+	(* The wago is now in standalone mode *)
+	HEARTBEAT := FALSE;
+
+	LedMode := 1;
+ELSE
+	HEARTBEAT := TRUE;
+END_IF
+
+
+
+END_PROGRAM

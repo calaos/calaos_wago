@@ -1,0 +1,22 @@
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* Enumerate all type of output.
+	NONE: Do nothing.
+	TELERUPTEUR: Simulate a telerupteur.
+	DIRECT: The input is directly "wired" to the output.
+	VOLET: Simulate a volet with one button and 2 output (up and down).
+	TELERUPTEUR_DALI: Controls a DALI lamp
+	TELERUPTEUR_DALI_GROUP: Controls a DALI group
+	KNX_OUTPUT: Simulate a telerupteur with a KNX bool output
+*)
+
+TYPE OUTPUT_TYPE : (NONE,
+					TELERUPTEUR, DIRECT,
+					VOLET, VOLET_IMPULSE,
+					TELERUPTEUR_DALI,
+					TELERUPTEUR_DALI_GROUP,
+					TELERUPTEUR_KNX_OUTPUT,
+					DIRECT_KNX_OUTPUT);
+END_TYPE
+(* @END_DECLARATION := '0' *)

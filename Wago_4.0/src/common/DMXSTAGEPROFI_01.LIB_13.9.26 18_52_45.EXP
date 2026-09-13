@@ -1,0 +1,8 @@
+LIBRARY
+DMXStageProfi_01.lib 13.9.26 18:52:45
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 2
+FbDMX_StageProfi: 2048
+FuVersionDMXStageProfi: 2048
+NumOfGVLs: 0
+END_LIBRARY

@@ -1,0 +1,13 @@
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* Enumerate all type of output.
+	NONE: Do nothing.
+	TELERUPTEUR: Simulate a telerupteur.
+	DIRECT: The input is directly "wired" to the output.
+	VOLET: Simulate a volet with one button and 2 output (up and down).
+*)
+
+TYPE VOLET_MODE : (VOLET_STOP, VOLET_UP, VOLET_DOWN, IMP_UP, IMP_DOWN, IMP_STOP);
+END_TYPE
+(* @END_DECLARATION := '0' *)

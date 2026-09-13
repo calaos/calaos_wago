@@ -1,0 +1,30 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION Strncmp : BOOL
+VAR_INPUT
+	str1: STRING;
+	str2: STRING;
+	n: BYTE;
+END_VAR
+VAR
+	tmp1: POINTER TO ARRAY[0..255] OF BYTE;
+	tmp2: POINTER TO ARRAY[0..255] OF BYTE;
+	i: BYTE;
+END_VAR
+(* @END_DECLARATION := '0' *)
+tmp1 := ADR(str1);
+tmp2 := ADR(str2);
+
+Strncmp := TRUE;
+
+FOR i := 0 TO n - 1 DO
+	IF (tmp1^[i] <> tmp2^[i]) THEN
+		Strncmp := FALSE;
+		i := n;
+	END_IF
+END_FOR
+
+END_FUNCTION

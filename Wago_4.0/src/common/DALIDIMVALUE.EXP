@@ -1,0 +1,47 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/DALI' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION_BLOCK DaliDimValue
+VAR_INPUT
+	xEnable: BOOL := TRUE;
+	bShortAddress: BYTE;
+	tCycleTime: TIME := t#10s;
+	bModule_750_641: BYTE := 1;
+END_VAR
+VAR_OUTPUT
+	xReady: BOOL := TRUE;
+	bFeedback: BYTE;
+	xStatus: BOOL;
+	bDimmValue: BYTE;
+END_VAR
+VAR
+	DimValue641: FbDALI_StatusDimmValue;
+	DimValue647: FbDaliShowActualValue;
+
+	axShortAddress: ARRAY [0..63] OF BOOL;
+	arActualValue: ARRAY [0..96] OF REAL;
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* Query dim value from an ECG *)
+
+IF Config.CONFIG_DALI = TRUE THEN
+	DimValue641(
+		xEnable := xEnable,
+		bShortAddress := bShortAddress,
+		tCycleTime := tCycleTime,
+		bModule_750_641 := bModule_750_641,
+
+		xReady => xReady,
+		bFeedback => bFeedback,
+		xStatus => xStatus,
+		bDimmValue => bDimmValue
+	);
+ELSIF Config.CONFIG_DALI_647 = TRUE THEN
+	DimValue647(bModule_753_647 := bModule_750_641);
+
+	bDimmValue := REAL_TO_BYTE(DimValue647.arActualValue[bShortAddress - 1]);
+	bFeedback := DimValue647.bFeedback;
+END_IF
+END_FUNCTION_BLOCK

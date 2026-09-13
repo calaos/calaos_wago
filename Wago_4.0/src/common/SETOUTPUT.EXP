@@ -1,0 +1,24 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION SetOutput : BOOL
+VAR_INPUT
+	bit_offset: UINT;
+	val: BOOL;
+END_VAR
+VAR
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* Set the bit in OutArrState Array *)
+
+IF (val = TRUE) THEN
+	OutArrState[bit_offset / 8] := OutArrState[bit_offset / 8] OR SHL(BYTE#01, bit_offset MOD 8);
+ELSE
+	OutArrState[bit_offset / 8] := OutArrState[bit_offset / 8] AND NOT SHL(BYTE#01, bit_offset MOD 8);
+END_IF
+
+SetOutput := TRUE;
+
+END_FUNCTION

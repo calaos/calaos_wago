@@ -1,0 +1,34 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+(*---------------------------------------------------------------------------------------
+  WAGO Kontakttechnik GmbH Hansastr. 27 32423 Minden(Westf.) 
+  Tel. +49571/887-0 Fax. +49571/887-0                
+                                                                                                
+  Project: IEC1131 internal library
+  
+  Function: MEMCPY
+  Description: This function copies BytesToCopy bytes from the source
+                         address pSourceAddress to the destination address
+                         pDestinationAddress
+  Date: 25.09.2000
+
+------------------------------------------------------------------------------------------*)
+FUNCTION MEMCPY:BOOL
+VAR_INPUT
+	pSourceAddress:							POINTER TO ARRAY[1..2] OF BYTE;
+	pDestinationAddress:						POINTER TO ARRAY[1..2] OF BYTE;
+	BytesToCopy:								DINT;
+END_VAR
+VAR
+END_VAR
+(* @END_DECLARATION := '0' *)
+WHILE (BytesToCopy > 0) DO
+	pDestinationAddress^[1]:=pSourceAddress^[1]; (* copy bytes from source to destination *)
+	pDestinationAddress:=ADR(pDestinationAddress^[2]); (* increment destination *)
+	pSourceAddress:=ADR(pSourceAddress^[2]);(* increment source *)
+	BytesToCopy:=BytesToCopy -1; (* decrement number of bytes to copy *)
+END_WHILE
+END_FUNCTION

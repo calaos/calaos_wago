@@ -1,0 +1,8 @@
+LIBRARY
+KNX_IP_750_849_01.lib 13.9.26 18:52:45
+(* @LIBRARYSYMFILEINFO := '0' *)
+NumOfPOUs: 1
+FbKNX_Master_849: 2048
+NumOfGVLs: 1
+Global_Variables: 2048
+END_LIBRARY

@@ -1,0 +1,172 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION_BLOCK EthernetServer_FB
+(************************************************************)
+(* ETHERNET_SERVER		                          		    *)
+(* Ver. 1.0   	                                         	*)
+(* Date:  10.02.2003					         	 		*)
+(* Author:  Volker Begemann                            		*)
+(************************************************************)
+VAR_INPUT
+	xOPEN_SERVER		:	BOOL;				(* Set TRUE to enable function block			*)
+	wPORT					:	WORD;				(* Port number											*)
+	xTCP_PROTOCOL		:	BOOL;				(* TRUE => TCP; FALSE => UDP						*)
+	tTIMEOUT				:	TIME:=t#20s;	(* Watchdog timeout value (seconds)				*)
+	iBYTES_TO_SEND		:	INT;				(* Number of bytes to transmit					*)
+	ptSEND_BUFFER		:	POINTER TO ARRAY[1..1500] OF BYTE;		(* Transmit Buffer	*)
+END_VAR
+VAR_IN_OUT
+	xSTART_SEND:		BOOL;						(* Set TRUE to initiate data transmittal, will be	*)
+														(* reset FALSE when transmittal is completed 		*)
+(* 	utRECEIVE_BUFFER:	typEthernetBuffer;	(* Receive Buffer *) *)
+	ptRECV_BUFFER		:	POINTER TO ARRAY[1..1500] OF BYTE;		(* Receive Buffer	*)
+END_VAR
+VAR_OUTPUT
+	utERROR					:	ETH_ERROR;	(* See ETH_ERROR datatype in ETHERNET.LIB	*)
+													(* for error codes and definitions			*)
+	xSERVER_OPEN:			BOOL;				(* TRUE if socket connection made			*)
+	wSOCKET:					WORD;				(* Socket connection number					*)
+	bDataReceived: 		BOOL := FALSE;
+	iBYTES_RECEIVED: INT; (* Number of bytes received *)
+END_VAR
+VAR
+	i: INT;
+	CloseState:			INT;
+	EthernetOpen:		ETHERNET_SERVER_OPEN;
+	EthernetClose:		ETHERNET_SERVER_CLOSE;
+	EthernetWrite:		ETHERNET_WRITE;
+	EthernetRead:		ETHERNET_READ;
+	GetConfig:			ETHERNET_GET_NETWORK_CONFIG;
+	EthernetBuffer:	ARRAY[1..1500] OF BYTE;
+	Status:				WORD:=0;
+	client_SRC_PORT:	WORD;
+	watchdog_timer1:	TON;
+	client_SRC_IP:		DWORD;
+END_VAR
+(* @END_DECLARATION := '0' *)
+IF xOPEN_SERVER THEN
+	watchdog_timer1(IN:=TRUE , PT:=tTIMEOUT );
+
+	IF watchdog_timer1.q THEN
+		watchdog_timer1(IN:=FALSE , PT:=tTIMEOUT );
+		EthernetClose(EN:= 1, SOCKET:= EthernetOpen.SOCKET);
+		EthernetClose(EN:= 0, SOCKET:= 0);
+		Status := 0; (* Try to open the server *)
+	END_IF
+
+	CASE Status OF
+		0:
+			GetConfig(EN:=FALSE );
+			GetConfig(EN:=TRUE );
+			utERROR		:=	0;
+			wSocket		:=	0;
+			CloseState	:=	0;
+			status		:=	1;
+		1:
+			GetConfig(EN:=TRUE );
+			IF GetConfig.ENO THEN
+				IF GetConfig.IP_ADR<>0 THEN
+					status:=4;
+					EthernetOpen (EN:=0);
+					EthernetRead(EN:= 0, SOCKET:=0 ,  DATA:=EthernetBuffer );
+					EthernetClose(EN:= 0);
+				ELSE
+					status:=0;
+				END_IF
+			END_IF
+		4: 	(* try to open a socket*)
+			IF xTCP_PROTOCOL THEN
+				EthernetOpen(EN:=1 , TYP:=SOCK_STREAM, PROTO := IPPROTO_TCP, PORT := wPort);
+			ELSE
+				EthernetOpen(EN:=1 , TYP:=SOCK_DGRAM, PROTO := IPPROTO_UDP, PORT := wPort);
+			END_IF
+			IF ((EthernetOpen.ERROR = 0) AND (EthernetOpen.ENO = 1)) THEN
+				Status  := 10; (* socket created, wait for data to process *)
+				EthernetOpen (EN:=0);
+				xServer_open:=TRUE;
+				wSocket:=EthernetOpen.socket;
+			ELSE
+				Status := 0; 	(* socket not available, try it again *)
+				EthernetOpen (EN:=0);
+				xServer_open:=FALSE;
+				wSocket:=0;
+			END_IF;
+
+		10: 	(* Wait for data to process *)
+			(* Monitor ethernet port for new data *)
+			bDataReceived	:= FALSE;
+	 		EthernetRead(	EN:= 1, SOCKET:=EthernetOpen.SOCKET, DATA:=EthernetBuffer);
+			EthernetRead(	EN:= 0, SOCKET:=0, DATA:=EthernetBuffer);
+
+			IF(EthernetRead.ERROR<>0) THEN  			(* Error reading the socket, close it *)
+				Status	:=	40;
+			ELSIF (EthernetRead.LEN_OUT <>0) THEN  (* Process the data received via the ethernet port *)
+				client_SRC_IP		:=	EthernetRead.SRC_IP;
+				client_SRC_PORT	:=	EthernetRead.SRC_PORT;
+				ptRECV_BUFFER^		:= EthernetBuffer;
+				bDataReceived		:= TRUE;
+				iBYTES_RECEIVED		:= EthernetRead.LEN_OUT;
+				watchdog_timer1(IN:=FALSE, PT:=tTIMEOUT );
+			ELSIF (iBytes_TO_SEND > 0 AND xSTART_SEND) THEN  (* Process the data received *)
+				EthernetWrite(EN:= 0, DATA:=EthernetBuffer);
+				status	:=	30;
+			END_IF
+
+		30: 	(* Process the data to send *)
+			EthernetBuffer :=ptSEND_BUFFER^;
+			(* Send data in transmit buffer out ethernet port *)
+			IF xTCP_PROTOCOL THEN
+					EthernetWrite(	EN:= 1,
+								SOCKET:= EthernetOpen.SOCKET,
+								LEN_IN:=iBYTES_TO_SEND,
+								DATA:=EthernetBuffer );
+			ELSE
+				IF client_SRC_IP>0 AND client_SRC_PORT>0 THEN
+					EthernetWrite(EN:=1, SOCKET:=EthernetOpen.SOCKET , LEN_IN:=iBYTES_TO_SENd , DST_IP:=client_SRC_IP,DST_PORT:=client_SRC_PORT,DATA:=EthernetBuffer );
+				ELSE
+					status:=10;
+				END_IF
+			END_IF
+
+			IF EthernetWrite.eno THEN
+				IF(EthernetWrite.ERROR <>0) THEN
+					Status:=40;(* Error writing to the socket, close it *)
+				ELSE
+					Status:=10; (* Comms complete, read more data *)
+				END_IF;
+				xStart_send:=FALSE;
+			END_IF
+		40:	(* Close the server *)
+			EthernetClose(EN:= 1, SOCKET:= EthernetOpen.SOCKET);
+			IF EthernetClose.eno THEN
+				EthernetClose(EN:= 0);
+				xOPEN_SERVER:=FALSE;
+				utERROR:=0;
+				wSocket:=0;
+				Status := 0; (* Try to open the server again *)
+			END_IF
+
+	END_CASE;
+ELSE
+	CASE CloseState OF
+	0:
+		EthernetClose(EN:= 0);
+		EthernetClose(EN:= 1, SOCKET:= EthernetOpen.SOCKET);
+		CloseState:=1;
+	1:
+		EthernetClose(EN:= 1, SOCKET:= EthernetOpen.SOCKET);
+		IF EthernetClose.eno THEN
+			EthernetClose(EN:= 0);
+			CloseState:=2;
+		END_IF
+	2:
+		xOPEN_SERVER:=FALSE;
+		utERROR:=0;
+		wSocket:=0;
+	END_CASE
+END_IF
+
+END_FUNCTION_BLOCK

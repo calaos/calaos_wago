@@ -1,0 +1,36 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION ITOA : STRING
+VAR_INPUT
+	VAL: INT;
+END_VAR
+VAR
+	tmp: INT;
+	conv: INT;
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* Convert a byte to string *)
+
+IF (VAL < 0) THEN
+	tmp := -VAL;
+ELSE
+	tmp := VAL;
+END_IF
+
+IF (tmp = 0) THEN
+	ITOA := ASCIIBYTE_TO_STRING(0 + 16#30);
+END_IF
+
+WHILE (tmp > 0) DO
+	conv := tmp MOD 10;
+	tmp := tmp / 10;
+	ITOA := INSERT(ITOA, ASCIIBYTE_TO_STRING(INT_TO_BYTE(conv) + 16#30), 0);
+END_WHILE
+
+IF (VAL < 0) THEN
+	ITOA := INSERT(ITOA, '-', 0);
+END_IF
+END_FUNCTION

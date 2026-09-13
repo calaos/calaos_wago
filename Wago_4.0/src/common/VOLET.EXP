@@ -1,0 +1,97 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION_BLOCK VOLET
+VAR
+	sens: BOOL;
+	imp: TP;
+	mode: VOLET_MODE;
+END_VAR
+VAR_INPUT
+	IN: BOOL;
+	IMPULSE: BOOL;
+END_VAR
+VAR_OUTPUT
+	MONTE: BOOL;
+	DESCENTE:BOOL;
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* Volet *)
+
+IF IMPULSE = FALSE THEN
+	(* Normal mode *)
+	IF (MONTE = TRUE OR DESCENTE = TRUE) THEN
+		MONTE := FALSE;
+		DESCENTE := FALSE;
+	ELSE
+
+		IF IN = TRUE THEN
+			IF sens = TRUE THEN
+				sens := FALSE;
+			ELSE
+				sens := TRUE;
+			END_IF;
+
+			IF sens = TRUE THEN
+				(*monte*)
+				DESCENTE := FALSE;
+				MONTE := TRUE;
+			ELSE
+				MONTE := FALSE;
+				DESCENTE := TRUE;
+			END_IF;
+		END_IF
+
+	END_IF
+ELSE
+	(* impulse mode *)
+	imp(IN := FALSE, PT:= impulse_time);
+
+	IF mode = IMP_STOP THEN
+		MONTE := imp.Q;
+		DESCENTE := imp.Q;
+		IF imp.Q = FALSE THEN
+			mode := VOLET_STOP;
+		END_IF;
+	END_IF;
+	IF mode = IMP_UP THEN
+		MONTE := imp.Q;
+		DESCENTE := FALSE;
+		IF imp.Q = FALSE THEN
+			mode := VOLET_UP;
+		END_IF;
+	END_IF;
+	IF mode = IMP_DOWN THEN
+		MONTE := FALSE;
+		DESCENTE := imp.Q;
+		IF imp.Q = FALSE THEN
+			mode := VOLET_DOWN;
+		END_IF;
+	END_IF;
+
+	IF mode = VOLET_UP OR mode = VOLET_DOWN THEN
+		IF IN = TRUE THEN
+			imp(IN := TRUE, PT:= impulse_time);
+			mode := IMP_STOP;
+		END_IF;
+	ELSE
+		IF IN = TRUE THEN
+			IF sens = TRUE THEN
+				sens := FALSE;
+			ELSE
+				sens := TRUE;
+			END_IF;
+
+			IF sens = TRUE THEN
+				imp(IN := TRUE, PT:= impulse_time);
+				mode := IMP_UP;
+			ELSE
+				imp(IN := TRUE, PT:= impulse_time);
+				mode := IMP_DOWN;
+			END_IF;
+		END_IF;
+	END_IF;
+END_IF;
+END_FUNCTION_BLOCK

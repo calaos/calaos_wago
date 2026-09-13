@@ -1,0 +1,24 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION WORD_TO_STRB : STRING(16)
+VAR_INPUT
+	IN : WORD;
+END_VAR
+VAR
+	pt : POINTER TO BYTE;
+	i: INT;
+END_VAR
+(* @END_DECLARATION := '0' *)
+pt := ADR(WORD_TO_STRB);
+
+FOR i := 1 TO 16 DO
+	pt^:= BOOL_TO_BYTE(in.0) + 48;
+	in := SHR(in,1);
+	pt := pt + 1;
+END_FOR;
+
+pt^ := 0;
+END_FUNCTION

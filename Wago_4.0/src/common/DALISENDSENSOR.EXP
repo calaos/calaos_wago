@@ -1,0 +1,41 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/DALI' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+PROGRAM DaliSendSensor
+VAR_INPUT
+	i: INT;
+END_VAR
+VAR
+	wBuffer: POINTER TO BYTE;
+	command: STRING(255);
+	Write: ETHERNET_WRITE_PT;
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* Send a Dali sensor input to calaos_server *)
+
+event[i + 512](IN := DaliSensorsInputs[i]);
+
+IF (event[i + 512].ON = TRUE) THEN
+	netDaliSensor[i / 8] := BIT_LOAD_B(netDaliSensor[i / 8], TRUE, i MOD 8);
+	command := 'WAGO INT ';
+	command := CONCAT(command,  INT_TO_STRING(i + 6656));
+	command := CONCAT(command,  ' 1');
+	wBuffer := ADR(command);
+
+	Write(EN := 0, SOCKET := 0, LEN_IN := 0, DST_IP:=0, DST_PORT:=0, DATA_PT := wBuffer);
+	Write(EN := 1, SOCKET := SendInput.socket, LEN_IN := LEN(command), DST_IP := Config.SERVER_IP, DST_PORT := 4646, DATA_PT := wBuffer);
+END_IF
+IF (event[i + 512].OFF = TRUE) THEN
+	netDaliSensor[i / 8] := BIT_LOAD_B(netDaliSensor[i / 8], FALSE, i MOD 8);
+	command := 'WAGO INT ';
+	command := CONCAT(command,  INT_TO_STRING(i + 6656));
+	command := CONCAT(command,  ' 0');
+	wBuffer := ADR(command);
+
+	Write(EN := 0, SOCKET := 0, LEN_IN := 0, DST_IP:=0, DST_PORT:=0, DATA_PT := wBuffer);
+	Write(EN := 1, SOCKET := SendInput.socket, LEN_IN := LEN(command), DST_IP := Config.SERVER_IP, DST_PORT := 4646, DATA_PT := wBuffer);
+END_IF
+
+END_PROGRAM

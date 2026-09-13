@@ -1,0 +1,154 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/DALI' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+PROGRAM DaliReadCsvFile
+(*
+	This program reads the configuration file for sensors on the DALI multi master bus
+	It helps maps the devices to calaos addresses.
+
+	The file calaos_dali_master.csv is read from internal memory
+*)
+VAR CONSTANT
+	sFilename: STRING := 'calaos_dali_master.csv';
+	RawDataSize: UINT := 4096;
+END_VAR
+VAR_IN_OUT
+	xStart:	BOOL;
+	daliSensors: ARRAY [1..MaxDaliSensors] OF typDaliSensorData;
+END_VAR
+VAR
+	bSeperator:	BYTE := 59; (* seperator semicolon : 59 *)
+	bEndLine:	BYTE := 13; (* seperator semicolon : 13 *)
+	fd: DWORD;
+	rawData: ARRAY[0..RawDataSize] OF BYTE;
+	fSize: DWORD;
+	tmpStr: STRING;
+	startposition: INT;
+	i: INT;
+	j: INT;
+	k: INT;
+	paramCount: BYTE;
+END_VAR
+(* @END_DECLARATION := '0' *)
+IF xStart THEN
+	fd := SysFileOpen(FileName := sFilename, Mode := 'r');
+	IF fd<>0 THEN
+		SysFileRead(File:=fd, Buffer:=ADR(rawData), Size:=SIZEOF(rawData));
+		fSize:=SysFileGetSize(FileName:=sFilename);
+		IF fSize>RawDataSize THEN
+			fSize:=RawDataSize;
+		END_IF
+		SysFileClose(File:=fd);(*this function is blocking*)
+	ELSE
+		xStart:=FALSE;
+		RETURN;(*no such file available*)
+	END_IF
+(*copy data to typData array*)
+	startposition:=0;
+	i:=0;
+	FOR j:=1 TO MaxDaliSensors DO
+
+		WHILE rawData[startposition+i]<>bSeperator AND
+				startposition+i < RawDataSize AND (* File Too  big *)
+				rawData[startposition+i] <> 0 DO (* EOF *)
+			i:=i+1;
+		END_WHILE
+		rawData[startposition+i]:=0;
+		MEMCPY(pSourceAddress:=ADR(rawData[startposition]), pDestinationAddress:=ADR(tmpStr), BytesToCopy:=i+1);
+
+		IF STRING_COMPARE(tmpStr, 'MultiSensorType1') = TRUE THEN
+			daliSensors[j].SensorType := MultiSensorType1;
+			daliSensors[j].offDelay := t#10m;
+			paramCount := 4;
+		ELSIF STRING_COMPARE(tmpStr, 'MultiSensorType2') = TRUE THEN
+			daliSensors[j].SensorType := MultiSensorType2;
+			daliSensors[j].offDelay := t#10m;
+			paramCount := 5;
+		ELSIF STRING_COMPARE(tmpStr, 'PushbuttonSensorType1') = TRUE THEN
+			daliSensors[j].SensorType := PushbuttonSensorType1;
+			paramCount := 5;
+		ELSIF STRING_COMPARE(tmpStr, 'PushbuttonSensorType2') = TRUE THEN
+			daliSensors[j].SensorType := PushbuttonSensorType2;
+			paramCount := 2;
+		ELSIF STRING_COMPARE(tmpStr, 'DaliEcg') = TRUE THEN
+			daliSensors[j].SensorType := DaliEcg;
+			paramCount := 2;
+		ELSIF STRING_COMPARE(tmpStr, 'DaliGroup') = TRUE THEN
+			daliSensors[j].SensorType := DaliGroup;
+			paramCount := 2;
+		END_IF
+
+		startposition:=startposition+i+1;
+		i:=0;
+
+		(*The parameter values are of type word. The following values are seperated by bSeperator*)
+		FOR k:=1 TO paramCount-1 DO
+			WHILE rawData[startposition+i]<>bSeperator AND
+					rawData[startposition+i]<>bEndLine AND
+					rawData[startposition+i]<>0 AND
+					startposition+i < RawDataSize DO
+				i:=i+1;
+			END_WHILE
+			rawData[startposition+i]:=0;
+			MEMCPY(pSourceAddress:=ADR(rawData[startposition]), pDestinationAddress:=ADR(tmpStr), BytesToCopy:=i+1);
+
+			IF daliSensors[j].SensorType = MultiSensorType1 THEN
+				IF k = 1 THEN
+					daliSensors[j].AddrPresence := STRING_TO_BYTE(tmpStr);
+				ELSIF k = 2 THEN
+					daliSensors[j].AddrLightLevel := STRING_TO_BYTE(tmpStr);
+				ELSIF k = 3 THEN
+					daliSensors[j].offDelay := DWORD_TO_TIME(STRING_TO_DWORD(tmpStr));
+				END_IF
+			ELSIF daliSensors[j].SensorType = MultiSensorType2 THEN
+				IF k = 1 THEN
+					daliSensors[j].AddrPresence := STRING_TO_BYTE(tmpStr);
+				ELSIF k = 2 THEN
+					daliSensors[j].AddrLightLevel := STRING_TO_BYTE(tmpStr);
+				ELSIF k = 3 THEN
+					daliSensors[j].AddrRemote := STRING_TO_BYTE(tmpStr);
+				ELSIF k = 4 THEN
+					daliSensors[j].offDelay := DWORD_TO_TIME(STRING_TO_DWORD(tmpStr));
+				END_IF
+			ELSIF daliSensors[j].SensorType = PushbuttonSensorType1 THEN
+				IF k = 1 THEN
+					daliSensors[j].AddrButton1 := STRING_TO_BYTE(tmpStr);
+				ELSIF k = 2 THEN
+					daliSensors[j].AddrButton2 := STRING_TO_BYTE(tmpStr);
+				ELSIF k = 3 THEN
+					daliSensors[j].AddrButton3 := STRING_TO_BYTE(tmpStr);
+				ELSIF k = 4 THEN
+					daliSensors[j].AddrButton4 := STRING_TO_BYTE(tmpStr);
+				END_IF
+			ELSIF daliSensors[j].SensorType = PushbuttonSensorType2 THEN
+				IF k = 1 THEN
+					daliSensors[j].AddrButtons := STRING_TO_BYTE(tmpStr);
+				END_IF
+			ELSIF daliSensors[j].SensorType = DaliEcg THEN
+				IF k = 1 THEN
+					daliSensors[j].Address := STRING_TO_BYTE(tmpStr);
+				END_IF
+			ELSIF daliSensors[j].SensorType = DaliGroup THEN
+				IF k = 1 THEN
+					daliSensors[j].Address := STRING_TO_BYTE(tmpStr);
+				END_IF
+			END_IF
+
+			startposition:=startposition+i;
+
+			IF k = paramCount - 1 THEN
+				startposition := startposition + 2;
+			ELSE
+				startposition := startposition + 1;
+			END_IF
+
+			i:=0;
+		END_FOR
+	END_FOR
+(*copy data to array finished*)
+	xStart:=FALSE;
+END_IF
+
+END_PROGRAM

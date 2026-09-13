@@ -1,0 +1,58 @@
+(* @PATH := '\/DALI 647\/Private' *)
+
+VISUALISATION visuIdentifyCurrentAddress _VISU_TYPES : 1,3
+_BG_BMP : ''
+_TEXT : 2
+_PAINTZOOM : 100
+
+_SIMPLE : 0
+_LINEWIDTH : 2
+_NOCOLORS : 1,1
+_POS : 0,0,21,21,10,10
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','PrgDALIConfig.IdentifyControlGear.bCurrentShortAddress = $$Index$$','',''
+_DSP : '','$$Index$$',''
+_ZOOM : ''
+_INPUT : 524288
+_TEXT : 5,4294967284,700,0,0,0,0,0
+_FONT : 'Arial'
+_EXEC : 'INTERN ASSIGN PrgDALIConfig.IdentifyControlGear.bCurrentShortAddress:=($$Index$$)'
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 2
+_NOCOLORS : 1,1
+_POS : 0,0,21,21,10,10
+_COLORS : 12632256,0,33023,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'PrgDALIConfig.IdentifyControlGear.axShortAddress[$$Index$$]','','',''
+_DSP : '$$Index$$','%s',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,1,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+_KEYINFOLIST : 0
+END_VISUALISATION

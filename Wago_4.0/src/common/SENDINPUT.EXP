@@ -1,0 +1,52 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+PROGRAM SendInput
+VAR
+	cpt: INT;
+
+	eth: Ethernet_Client;
+	wBuffer: POINTER TO BYTE;
+	command: STRING(255);
+	start_send: BOOL := FALSE;
+	ReceiveData: typEthernet_buffer;
+	Write: ETHERNET_WRITE_PT;
+	socket:	WORD;
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* Get all inputs *)
+
+(* Get the address of the first digital input *)
+FOR cpt := 0 TO UINT_TO_BYTE(nb_input_digital) - 1 DO
+	event[cpt](IN := GetInput(cpt + start_addr_in));
+
+	(* Send inputs to network *)
+	IF (event[cpt].ON = TRUE) THEN
+		command := 'WAGO INT ';
+		command := CONCAT(command,  INT_TO_STRING(cpt));
+		command := CONCAT(command,  ' 1');
+
+		Write(EN := 0, SOCKET := 0, LEN_IN := 0, DST_IP:=0, DST_PORT:=0, DATA_PT := wBuffer);
+		Write(EN := 1, SOCKET := socket, LEN_IN := LEN(command), DST_IP := Config.SERVER_IP, DST_PORT := 4646, DATA_PT := wBuffer);
+	END_IF
+	IF (event[cpt].OFF = TRUE) THEN
+		command := 'WAGO INT ';
+		command := CONCAT(command,  INT_TO_STRING(cpt));
+		command := CONCAT(command,  ' 0');
+
+		Write(EN := 0, SOCKET := 0, LEN_IN := 0, DST_IP:=0, DST_PORT:=0, DATA_PT := wBuffer);
+		Write(EN := 1, SOCKET := socket, LEN_IN := LEN(command), DST_IP := Config.SERVER_IP, DST_PORT := 4646, DATA_PT := wBuffer);
+	END_IF
+END_FOR
+
+wBuffer := ADR(command);
+
+eth(xOPEN_CLIENT := TRUE, wIP := Config.SERVER_IP, wPort := 4646,
+	xTCP_PROTOCOL := FALSE, iBYTES_TO_SEND := LEN(command) + 1,
+	ptSEND_BUFFER := wBuffer, xSTART_SEND := start_send,
+	utRECEIVE_BUFFER := ReceiveData);
+
+socket := eth.MyEthernetOpen.SOCKET;
+END_PROGRAM

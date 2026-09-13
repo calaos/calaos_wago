@@ -1,0 +1,21 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+FUNCTION GetInput : BOOL
+VAR_INPUT
+	bit_offset: UINT;
+END_VAR
+VAR
+END_VAR
+VAR CONSTANT
+	byBitArr: ARRAY[0..7] OF BYTE := 16#01,16#02,16#04,16#08,16#10,16#20,16#40,16#80;
+END_VAR
+(* @END_DECLARATION := '0' *)
+(* get the byte AND  select the bit *)
+
+read_bit(WORD_ADDRESS := bit_offset / 16, BIT_ADDRESS := bit_offset MOD 16);
+
+GetInput := read_bit.VALUE;
+END_FUNCTION

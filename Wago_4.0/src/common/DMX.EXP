@@ -1,0 +1,81 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+PROGRAM DMX
+VAR
+	DMX_Master				: FbDMX_StageProfi;
+		Enable				: BOOL := TRUE ;
+		PortNumber			: WORD := 10001;
+		FirstChannel		: WORD := 1;
+		NumberOfChannels	: BYTE := 255;
+		Ready				: BOOL;
+		Connect				: BOOL;
+		ErrorCode			: DINT;
+		ErrorWatchdog		: BOOL;
+END_VAR
+VAR_INPUT RETAIN
+		IPaddress			: STRING(16) := '192.168.1.120';
+END_VAR
+(* @END_DECLARATION := '0' *)
+_FBD_BODY
+_NETWORKS : 1
+_NETWORK
+
+_COMMENT
+''
+_END_COMMENT
+_ASSIGN
+_FUNCTIONBLOCK
+DMX_Master
+_BOX_EXPR : 6
+_OPERAND
+_EXPRESSION
+_POSITIV
+Enable
+_OPERAND
+_EXPRESSION
+_POSITIV
+IPaddress
+_OPERAND
+_EXPRESSION
+_POSITIV
+PortNumber
+_OPERAND
+_EXPRESSION
+_POSITIV
+FirstChannel
+_OPERAND
+_EXPRESSION
+_POSITIV
+NumberOfChannels
+_OPERAND
+_EXPRESSION
+_POSITIV
+abDMX_Values
+_EXPRESSION
+_POSITIV
+FbDMX_StageProfi
+_OUTPUTS : 3
+_OUTPUT
+_POSITIV
+_NO_SET
+Connect
+_OUTPUT
+_POSITIV
+_NO_SET
+ErrorCode
+_OUTPUT
+_POSITIV
+_NO_SET
+ErrorWatchdog
+_EXPRESSION
+_POSITIV
+_OUTPUTS : 1
+_OUTPUT
+_POSITIV
+_NO_SET
+Ready
+
+END_PROGRAM

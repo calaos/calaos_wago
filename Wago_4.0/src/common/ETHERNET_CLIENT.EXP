@@ -1,0 +1,167 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+FUNCTION_BLOCK Ethernet_Client
+(************************************************************)
+(* ETHERNET_CLIENT		                             			*)
+(* Ver. 1.0                                      			          			*)
+(* Date    :  10.02.2003					          			*)
+(* Author :  Volker Begemann                                       		*)
+(************************************************************)
+VAR_INPUT
+	xOPEN_CLIENT			:	BOOL;			(* Set TRUE to enable function block			*)
+	wIP						:	DWORD;		(* IP Address of server						*)
+	wPORT					:	WORD;		(* Port number								*)
+	xTCP_PROTOCOL		:	BOOL;			(* TRUE => TCP; FALSE => UDP				*)
+	iBYTES_TO_SEND		:	INT;			(* Number of bytes to transmit				*)
+	ptSEND_BUFFER			:	POINTER TO ARRAY[1..1500] OF BYTE;	(* Transmit Buffer	*)
+END_VAR
+VAR_IN_OUT
+	xSTART_SEND			:	BOOL;			(* Set TRUE to initiate data transmittal, will be	*)
+													(* reset FALSE when transmittal is completed 	*)
+	utRECEIVE_BUFFER		:	typEthernet_BUFFER;	(* Receive Buffer *)
+END_VAR
+VAR_OUTPUT
+	utERROR					:	ETH_ERROR;	(* See ETH_ERROR datatype in ETHERNET.LIB	*)
+													(* for error codes and definitions						*)
+	xCLIENT_OPEN			:	BOOL;			(* TRUE if socket connection made					*)
+	wSOCKET					:	WORD;		(* Socket connection number							*)
+END_VAR
+VAR
+	MyEthernetOpen				: ETHERNET_CLIENT_OPEN;
+	MyEthernetClose				: ETHERNET_CLIENT_CLOSE;
+	MyEthernetWrite				: ETHERNET_WRITE;
+	MyEthernetRead				: ETHERNET_READ;
+	EthernetBuffer					: ARRAY[1..1500] OF BYTE;
+	Status							: WORD:=0;
+	i								: INT;
+	GetConfig						: ETHERNET_GET_NETWORK_CONFIG;
+	Protocol						: WORD;
+	ProtocolType					: WORD;
+	CloseState						:INT;
+END_VAR
+(* @END_DECLARATION := '0' *)
+IF xOpen_Client THEN
+
+	CASE Status OF
+		0:(*Initialize functionblocks*)
+			GetConfig(EN:=FALSE );
+			GetConfig(EN:=TRUE );
+			status:=1;
+			utERROR:=0;
+			wSocket:=0;
+			closeState:=0;
+			xCLIENT_OPEN:=FALSE;
+
+			IF xTCP_PROTOCOL THEN
+				Protocol		:= IPPROTO_TCP; (*TCP*)
+				ProtocolType	:= SOCK_STREAM;
+			ELSE
+				Protocol		:= IPPROTO_UDP;(*UDP*)
+				ProtocolType	:= SOCK_DGRAM;
+			END_IF
+
+		1:(*check ethernet stack*)
+			GetConfig(EN:=TRUE );
+			IF GetConfig.ENO THEN
+				IF GetConfig.IP_ADR<>0 THEN
+					status:=4;(*stack initialized*)
+				ELSE
+					status:=0;(*try again*)
+				END_IF
+			END_IF
+
+	
+		4:(*open connection*)
+			MyEthernetRead(	EN:= 0, SOCKET:=0 ,  DATA:=EthernetBuffer );
+			MyEthernetClose(EN:= 0);
+			MyEthernetOpen(EN:=0);
+
+			MyEthernetOpen(EN:=1 , TYP:=ProtocolType	 , PROTO:=Protocol , IP_ADR:= wIP, PORT:=wPort );
+
+			status:=5;
+
+		5:(*wait for server response according to client  request to open the connection*)
+			MyEthernetOpen(EN:=1, TYP:=ProtocolType, PROTO:=Protocol, IP_ADR:= wIP, PORT:=wPort );
+			IF  MyEthernetOpen.ENO = 1 THEN
+				IF MyEthernetOpen.ERROR = 0 THEN
+					Status  := 10; (*socket available*)
+					xCLIENT_OPEN:=TRUE;
+					wSOCKET	:=MyEthernetOpen.socket;
+				ELSE
+					Status := 0; (*no socket available, try it again *)
+				END_IF;
+				utERROR:=MyEthernetOpen.ERROR;
+			END_IF
+
+
+		10:(* Monitor ethernet port for new data *)
+
+	 		MyEthernetRead(	EN:= 1, SOCKET:=MyEthernetOpen.SOCKET ,  DATA:=EthernetBuffer );
+			MyEthernetRead(	EN:= 0, SOCKET:=0 ,  DATA:=EthernetBuffer );
+
+			utERROR:=MyEthernetREAD.ERROR;
+			IF(MyEthernetRead.ERROR<>0) THEN  (* Error reading the socket, close it *)
+				Status:=40;
+			ELSIF (MyEthernetRead.LEN_OUT <>0) THEN  (* Process the data received via the ethernet port *)
+				Status:=20;
+				ELSIF (iBytes_TO_SEND > 0 AND xSTART_SEND) THEN  (* Process the data put in the send_buffer *)
+				status:=30;
+				MyEthernetWrite(	EN:= 0 , DATA:=EthernetBuffer );
+			END_IF
+
+		20:	(* Copy the data received via the ethernet port to the receive buffer*)
+
+			FOR i := 1 TO MyEthernetRead.LEN_OUT DO
+				utReceive_buffer.index :=(utReceive_buffer.index MOD 1500)+1;
+				utReceive_buffer.data[utReceive_buffer.index] := EthernetBuffer[i];
+			END_FOR
+			Status:=10;
+
+		30: (* Process the data in the send buffer *)
+
+			EthernetBuffer :=ptSEND_BUFFER^;
+			MyEthernetWrite(	EN:= 1,SOCKET:= MyEthernetOpen.SOCKET,
+								LEN_IN:=iBYTES_TO_SEND,DATA:=EthernetBuffer );
+
+			IF MyEthernetWrite.eno THEN
+				IF(MyEthernetWrite.ERROR <>0) THEN
+					Status:=40;(* Error writing to the socket, close it *)
+				ELSE
+					Status:=10; (* Comms complete, read more data *)
+				END_IF;
+				xSTART_SEND:=FALSE;
+				utERROR:=MyEthernetWrite.ERROR;
+			END_IF
+
+		40:	(* Close the client *)
+
+			MyEthernetClose(EN:= 1, SOCKET:= MyEthernetOpen.SOCKET);
+			IF MyEthernetClose.eno THEN
+				MyEthernetClose(EN:= 0);
+				xCLIENT_OPEN:=FALSE;
+				Status := 0; (* Try to open the server again *)
+			END_IF
+	
+	END_CASE;
+ELSE
+	CASE CloseState OF
+	0:
+		MyEthernetClose(EN:= 0);
+		MyEthernetClose(EN:= 1, SOCKET:= MyEthernetOpen.SOCKET);
+		CloseState:=1;
+	1:
+		MyEthernetClose(EN:= 1, SOCKET:= MyEthernetOpen.SOCKET);
+		IF MyEthernetClose.eno THEN
+			MyEthernetClose(EN:= 0);
+			CloseState:=2;
+		END_IF
+	2:
+		Status := 0;
+		utERROR:=0;
+		xCLIENT_OPEN:=FALSE;
+	END_CASE
+END_IF
+END_FUNCTION_BLOCK

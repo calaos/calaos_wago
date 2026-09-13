@@ -1,0 +1,15 @@
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @GLOBAL_VARIABLE_LIST := 'Variables_Configuration' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+VAR_CONFIG
+END_VAR
+
+(* @OBJECT_END := 'Variables_Configuration' *)
+(* @CONNECTIONS := Variables_Configuration
+FILENAME : ''
+FILETIME : 0
+EXPORT : 0
+NUMOFCONNECTIONS : 0
+*)

@@ -1,0 +1,166 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/DALI' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '2048' *)
+PROGRAM DaliPrg647
+VAR
+	i: INT;
+	iDali: INT;
+	daliFeedback: BYTE;
+
+	init_dali: BOOL := FALSE;
+	startCsvRead: BOOL := TRUE;
+
+	(* DALI 753-647 *)
+	DALIMaster647: FbMaster753_647;
+
+	DALI647_InReal AT %IB0: ARRAY[0..23] OF BYTE;
+	DALI647_OutReal AT %QB0: ARRAY[0..23] OF BYTE;
+
+END_VAR
+(* @END_DECLARATION := '0' *)
+
+(*
+	This needs to run on every cycle to update DALI status.
+	It is needed by the 647 module FB API which is not working as the
+	old 641 API. It should stay in the main cycle loop.
+*)
+
+(* read the CSV file listing all DALI sensors type and address available on the bus *)
+DaliReadCsvFile(xStart := startCsvRead, daliSensors := daliSensors);
+
+(* the master DALI FB *)
+DALIMaster647(
+	abIn_753_647 := DALI647_InReal,
+	bModule_753_647 := 1,
+	abOut_753_647 => DALI647_OutReal,
+	bFeedback => daliFeedback
+);
+
+(* This is for DALI config program *)
+PrgDALIConfig;
+(*PrgDALIConfigSensorType1;
+PrgDALIConfigSensorType2;*)
+
+(* After first cycle, init dali is done *)
+IF (init_dali = FALSE) THEN
+	init_dali := TRUE;
+END_IF
+
+(* instanciate all DALI sensors based on what is declared in the CSV file *)
+FOR i := 1 TO MaxDaliSensors DO
+	iDali := i - 1;
+
+	(* handle all dali sensors *)
+	IF daliSensors[i].SensorType = MultiSensorType1 THEN
+		DaliSensorT1[i](
+			typMultiSensorType1 := FuTypMultiSensorType1(
+				bAddressPresence := daliSensors[i].AddrPresence - 1,
+				bAddressLightLevel := daliSensors[i].AddrLightLevel - 1,
+				bModule_753_647 := 1
+			),
+			tOffDelay := daliSensors[i].offDelay
+		);
+		DaliSensorsInputs[iDali * 12] := DaliSensorT1[i].xPresence;
+		netDaliLevels[daliSensors[i].AddrLightLevel - 1] := REAL_TO_WORD(DaliSensorT1[i].rLightLevel);
+		DaliSendSensor(i := iDali * 12);
+	ELSIF daliSensors[i].SensorType = PushbuttonSensorType1 THEN
+		DaliButtonT1[i](
+			typPushButtonSensorType1 := FuTypPushButtonSensorType1(
+				bAddressButton1 := daliSensors[i].AddrButton1 - 1,
+				bAddressButton2 := daliSensors[i].AddrButton2 - 1,
+				bAddressButton3 := daliSensors[i].AddrButton3 - 1,
+				bAddressButton4 := daliSensors[i].AddrButton4 - 1,
+				bModule_753_647 := 1
+			),
+		);
+		DaliSensorsInputs[iDali* 12] := DaliButtonT1[i].xButton1;
+		DaliSensorsInputs[iDali * 12 + 1] := DaliButtonT1[i].xButton2;
+		DaliSensorsInputs[iDali * 12 + 2] := DaliButtonT1[i].xButton3;
+		DaliSensorsInputs[iDali * 12 + 3] := DaliButtonT1[i].xButton4;
+		DaliSendSensor(i := iDali * 12);
+		DaliSendSensor(i := iDali * 12 + 1);
+		DaliSendSensor(i := iDali * 12 + 2);
+		DaliSendSensor(i := iDali * 12 + 3);
+	ELSIF daliSensors[i].SensorType = MultiSensorType2 THEN
+		DaliSensorT2[i](
+			typMultiSensorType2 := FuTypMultiSensorType2(
+				bAddressPresence := daliSensors[i].AddrPresence - 1,
+				bAddressLightLevel := daliSensors[i].AddrLightLevel - 1,
+				bAddressRemoteControl := daliSensors[i].AddrRemote - 1,
+				bModule_753_647 := 1
+			),
+			tOffDelay := daliSensors[i].offDelay
+		);
+		DaliSensorsInputs[iDali * 12] := DaliSensorT2[i].xPresence;
+		DaliSensorsInputs[iDali * 12 + 1] := DaliSensorT2[i].xButton1;
+		DaliSensorsInputs[iDali * 12 + 2] := DaliSensorT2[i].xButton2;
+		DaliSensorsInputs[iDali * 12 + 3] := DaliSensorT2[i].xButton3;
+		DaliSensorsInputs[iDali * 12 + 4] := DaliSensorT2[i].xButton4;
+		DaliSensorsInputs[iDali * 12 + 5] := DaliSensorT2[i].xButton5;
+		DaliSensorsInputs[iDali * 12 + 6] := DaliSensorT2[i].xButton6;
+		DaliSensorsInputs[iDali * 12 + 7] := DaliSensorT2[i].xButton7;
+		DaliSensorsInputs[iDali * 12 + 8] := DaliSensorT2[i].xButton8;
+		DaliSensorsInputs[iDali * 12 + 9] := DaliSensorT2[i].xButton9;
+		DaliSensorsInputs[iDali * 12 + 10] := DaliSensorT2[i].xButton10;
+		DaliSensorsInputs[iDali * 12 + 11] := DaliSensorT2[i].xButton11;
+		netDaliLevels[daliSensors[i].AddrLightLevel - 1] := REAL_TO_WORD(DaliSensorT2[i].rLightLevel);
+		DaliSendSensor(i := iDali * 12);
+		DaliSendSensor(i := iDali * 12 + 1);
+		DaliSendSensor(i := iDali * 12 + 2);
+		DaliSendSensor(i := iDali * 12 + 3);
+		DaliSendSensor(i := iDali * 12 + 4);
+		DaliSendSensor(i := iDali * 12 + 5);
+		DaliSendSensor(i := iDali * 12 + 6);
+		DaliSendSensor(i := iDali * 12 + 7);
+		DaliSendSensor(i := iDali * 12 + 8);
+		DaliSendSensor(i := iDali * 12 + 9);
+		DaliSendSensor(i := iDali * 12 + 10);
+		DaliSendSensor(i := iDali * 12 + 11);
+	ELSIF daliSensors[i].SensorType = PushbuttonSensorType2 THEN
+		DaliButtonT2[i](
+			typPushButtonSensorType2 := FuTypPushbuttonSensorType2(
+				bAddress := daliSensors[i].AddrButtons - 1,
+				bModule_753_647 := 1
+			),
+		);
+		DaliSensorsInputs[iDali * 12] := DaliButtonT2[i].xButton1;
+		DaliSensorsInputs[iDali * 12 + 1] := DaliButtonT2[i].xButton2;
+		DaliSensorsInputs[iDali * 12 + 2] := DaliButtonT2[i].xButton3;
+		DaliSensorsInputs[iDali * 12 + 3] := DaliButtonT2[i].xButton4;
+		DaliSendSensor(i := iDali * 12);
+		DaliSendSensor(i := iDali * 12 + 1);
+		DaliSendSensor(i := iDali * 12 + 2);
+		DaliSendSensor(i := iDali * 12 + 3);
+
+	ELSIF daliSensors[i].SensorType = DaliEcg THEN
+		DaliSendValue647[daliSensors[i].Address](
+			typBallast := FuTypBallast (
+				bAddress :=  daliSensors[i].Address - 1,
+				xIsGroup := FALSE,
+				bModule_753_647 := 1
+			),
+			rDimmValue := BYTE_TO_REAL(DaliValue647[daliSensors[i].Address]),
+			rHysteresis := 1,
+			xUpdate := TRUE
+		);
+	ELSIF daliSensors[i].SensorType = DaliGroup THEN
+		DaliSendValueGrp647[daliSensors[i].Address](
+			typBallast := FuTypBallast (
+				bAddress :=  daliSensors[i].Address - 1,
+				xIsGroup := TRUE,
+				bModule_753_647 := 1
+			),
+			rDimmValue := BYTE_TO_REAL(DaliValueGrp647[daliSensors[i].Address]),
+			rHysteresis := 1,
+			xUpdate := TRUE
+		);
+
+	ELSIF daliSensors[i].SensorType = NoSensor THEN
+		(* stop after all devices are processed *)
+		EXIT;
+	END_IF
+END_FOR
+
+END_PROGRAM

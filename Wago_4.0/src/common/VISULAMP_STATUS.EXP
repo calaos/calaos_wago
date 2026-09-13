@@ -1,0 +1,6806 @@
+(* @PATH := '\/Private\/English' *)
+
+VISUALISATION visuLamp_status _VISU_TYPES : 1,1
+_BG_BMP : ''
+_TEXT : 274
+_PAINTZOOM : 100
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 30,0,771,591,400,295
+_COLORS : 8421504,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,272,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 45,15,756,576,400,295
+_COLORS : 12632256,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Query ECG status ',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 1,4294967267,700,0,265,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,530,476,566,400,548
+_COLORS : 33023,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Home page ','Back to home page '
+_ZOOM : 'visuFrontPageDALI'
+_INPUT : 262144
+_TEXT : 5,4294967280,700,0,0,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 1
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 100,50,701,86,400,68
+_COLORS : 16777215,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.keineJobliste','',''
+_DSP : 'DALI_Config.Dali_Linie','DALI Line  %s','You can change the DALI Line $R$Nonly on the home page. '
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967280,700,0,1,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 60,95,741,281,400,188
+_COLORS : 14342874,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Lamp arc power on ',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 1,4294967275,700,0,2,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,120,116,151,100,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[1]','',''
+_DSP : '','1',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,3,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,120,116,151,100,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[1]','DALI_Config.LampeEin[1]','',''
+_DSP : '','1',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,4,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,120,156,151,140,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[2]','',''
+_DSP : '','2',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,5,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,120,156,151,140,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[2]','DALI_Config.LampeEin[2]','DALI_Config.AlteAdresse[2]',''
+_DSP : '','2',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,6,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,120,196,151,180,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[3]','',''
+_DSP : '','3',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,7,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,120,196,151,180,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[3]','DALI_Config.LampeEin[3]','DALI_Config.AlteAdresse[3]',''
+_DSP : '','3',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,8,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,120,236,151,220,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[4]','',''
+_DSP : '','4',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,9,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,120,236,151,220,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[4]','DALI_Config.LampeEin[4]','DALI_Config.AlteAdresse[4]',''
+_DSP : '','4',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,10,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,120,276,151,260,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[5]','',''
+_DSP : '','5',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,11,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,120,276,151,260,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[5]','DALI_Config.LampeEin[5]','DALI_Config.AlteAdresse[5]',''
+_DSP : '','5',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,12,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,120,316,151,300,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[6]','',''
+_DSP : '','6',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,13,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,120,316,151,300,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[6]','DALI_Config.LampeEin[6]','DALI_Config.AlteAdresse[6]',''
+_DSP : '','6',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,14,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,120,356,151,340,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[7]','',''
+_DSP : '','7',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,15,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,120,356,151,340,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[7]','DALI_Config.LampeEin[7]','DALI_Config.AlteAdresse[7]',''
+_DSP : '','7',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,16,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,120,396,151,380,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[8]','',''
+_DSP : '','8',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,17,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,120,396,151,380,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[8]','DALI_Config.LampeEin[8]','DALI_Config.AlteAdresse[8]',''
+_DSP : '','8',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,18,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,120,436,151,420,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[9]','',''
+_DSP : '','9',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,19,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,120,436,151,420,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[9]','DALI_Config.LampeEin[9]','DALI_Config.AlteAdresse[9]',''
+_DSP : '','9',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,20,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,120,476,151,460,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[10]','',''
+_DSP : '','10',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,21,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,120,476,151,460,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[10]','DALI_Config.LampeEin[10]','DALI_Config.AlteAdresse[10]',''
+_DSP : '','10',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,22,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,120,516,151,500,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[11]','',''
+_DSP : '','11',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,23,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,120,516,151,500,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[11]','DALI_Config.LampeEin[11]','DALI_Config.AlteAdresse[11]',''
+_DSP : '','11',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,24,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,120,556,151,540,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[12]','',''
+_DSP : '','12',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,25,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,120,556,151,540,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[12]','DALI_Config.LampeEin[12]','DALI_Config.AlteAdresse[12]',''
+_DSP : '','12',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,26,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,120,596,151,580,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[13]','',''
+_DSP : '','13',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,27,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,120,596,151,580,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[13]','DALI_Config.LampeEin[13]','DALI_Config.AlteAdresse[13]',''
+_DSP : '','13',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,28,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,120,636,151,620,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[14]','',''
+_DSP : '','14',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,29,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,120,636,151,620,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[14]','DALI_Config.LampeEin[14]','DALI_Config.AlteAdresse[14]',''
+_DSP : '','14',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,30,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,120,676,151,660,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[15]','',''
+_DSP : '','15',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,31,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,120,676,151,660,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[15]','DALI_Config.LampeEin[15]','DALI_Config.AlteAdresse[15]',''
+_DSP : '','15',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,32,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,120,716,151,700,135
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[16]','',''
+_DSP : '','16',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,33,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,120,716,151,700,135
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[16]','DALI_Config.LampeEin[16]','DALI_Config.AlteAdresse[16]',''
+_DSP : '','16',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,34,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,160,116,191,100,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[17]','',''
+_DSP : '','17',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,35,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,160,116,191,100,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[17]','DALI_Config.LampeEin[17]','DALI_Config.AlteAdresse[17]',''
+_DSP : '','17',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,36,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,160,196,191,180,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[19]','',''
+_DSP : '','19',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,37,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,160,196,191,180,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[19]','DALI_Config.LampeEin[19]','DALI_Config.AlteAdresse[19]',''
+_DSP : '','19',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,38,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,160,156,191,140,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[18]','',''
+_DSP : '','18',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,39,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,160,156,191,140,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[18]','DALI_Config.LampeEin[18]','DALI_Config.AlteAdresse[18]',''
+_DSP : '','18',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,40,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,160,236,191,220,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[20]','',''
+_DSP : '','20',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,41,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,160,236,191,220,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[20]','DALI_Config.LampeEin[20]','DALI_Config.AlteAdresse[20]',''
+_DSP : '','20',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,42,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,160,276,191,260,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[21]','',''
+_DSP : '','21',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,43,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,160,276,191,260,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[21]','DALI_Config.LampeEin[21]','DALI_Config.AlteAdresse[21]',''
+_DSP : '','21',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,44,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,160,316,191,300,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[22]','',''
+_DSP : '','22',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,45,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,160,316,191,300,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[22]','DALI_Config.LampeEin[22]','DALI_Config.AlteAdresse[22]',''
+_DSP : '','22',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,46,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,160,356,191,340,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[23]','',''
+_DSP : '','23',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,47,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,160,356,191,340,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[23]','DALI_Config.LampeEin[23]','DALI_Config.AlteAdresse[23]',''
+_DSP : '','23',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,48,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,160,396,191,380,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[24]','',''
+_DSP : '','24',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,49,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,160,396,191,380,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[24]','DALI_Config.LampeEin[24]','DALI_Config.AlteAdresse[24]',''
+_DSP : '','24',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,50,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,160,436,191,420,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[25]','',''
+_DSP : '','25',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,51,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,160,436,191,420,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[25]','DALI_Config.LampeEin[25]','DALI_Config.AlteAdresse[25]',''
+_DSP : '','25',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,52,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,160,596,191,580,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[29]','',''
+_DSP : '','29',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,53,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,160,596,191,580,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[29]','DALI_Config.LampeEin[29]','DALI_Config.AlteAdresse[29]',''
+_DSP : '','29',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,54,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,160,556,191,540,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[28]','',''
+_DSP : '','28',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,55,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,160,556,191,540,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[28]','DALI_Config.LampeEin[28]','DALI_Config.AlteAdresse[28]',''
+_DSP : '','28',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,56,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,160,516,191,500,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[27]','',''
+_DSP : '','27',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,57,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,160,516,191,500,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[27]','DALI_Config.LampeEin[27]','DALI_Config.AlteAdresse[27]',''
+_DSP : '','27',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,58,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,160,476,191,460,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[26]','',''
+_DSP : '','26',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,59,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,160,476,191,460,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[26]','DALI_Config.LampeEin[26]','DALI_Config.AlteAdresse[26]',''
+_DSP : '','26',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,60,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,160,636,191,620,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[30]','',''
+_DSP : '','30',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,61,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,160,636,191,620,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[30]','DALI_Config.LampeEin[30]','DALI_Config.AlteAdresse[30]',''
+_DSP : '','30',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,62,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,160,676,191,660,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[31]','',''
+_DSP : '','31',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,63,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,160,676,191,660,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[31]','DALI_Config.LampeEin[31]','DALI_Config.AlteAdresse[31]',''
+_DSP : '','31',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,64,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,160,716,191,700,175
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[32]','',''
+_DSP : '','32',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,65,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,160,716,191,700,175
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[32]','DALI_Config.LampeEin[32]','DALI_Config.AlteAdresse[32]',''
+_DSP : '','32',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,66,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,200,116,231,100,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[33]','',''
+_DSP : '','33',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,67,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,200,116,231,100,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[33]','DALI_Config.LampeEin[33]','DALI_Config.AlteAdresse[33]',''
+_DSP : '','33',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,68,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,200,156,231,140,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[34]','',''
+_DSP : '','34',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,69,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,200,156,231,140,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[34]','DALI_Config.LampeEin[34]','DALI_Config.AlteAdresse[34]',''
+_DSP : '','34',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,70,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,200,236,231,220,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[36]','',''
+_DSP : '','36',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,71,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,200,236,231,220,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[36]','DALI_Config.LampeEin[36]','DALI_Config.AlteAdresse[36]',''
+_DSP : '','36',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,72,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,200,316,231,300,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[38]','',''
+_DSP : '','38',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,73,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,200,316,231,300,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[38]','DALI_Config.LampeEin[38]','DALI_Config.AlteAdresse[38]',''
+_DSP : '','38',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,74,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,200,356,231,340,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[39]','',''
+_DSP : '','39',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,75,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,200,356,231,340,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[39]','DALI_Config.LampeEin[39]','DALI_Config.AlteAdresse[39]',''
+_DSP : '','39',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,76,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,200,276,231,260,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[37]','',''
+_DSP : '','37',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,77,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,200,276,231,260,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[37]','DALI_Config.LampeEin[37]','DALI_Config.AlteAdresse[37]',''
+_DSP : '','37',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,78,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,200,196,231,180,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[35]','',''
+_DSP : '','35',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,79,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,200,196,231,180,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[35]','DALI_Config.LampeEin[35]','DALI_Config.AlteAdresse[35]',''
+_DSP : '','35',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,80,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,200,436,231,420,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[41]','',''
+_DSP : '','41',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,81,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,200,436,231,420,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[41]','DALI_Config.LampeEin[41]','DALI_Config.AlteAdresse[41]',''
+_DSP : '','41',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,82,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,200,476,231,460,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[42]','',''
+_DSP : '','42',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,83,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,200,476,231,465,220
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[42]','DALI_Config.LampeEin[42]','DALI_Config.AlteAdresse[42]',''
+_DSP : '','42',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,84,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,200,396,231,380,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[40]','',''
+_DSP : '','40',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,85,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,200,396,231,380,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[40]','DALI_Config.LampeEin[40]','DALI_Config.AlteAdresse[40]',''
+_DSP : '','40',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,86,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,200,516,231,500,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[43]','',''
+_DSP : '','43',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,87,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,200,516,231,500,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[43]','DALI_Config.LampeEin[43]','DALI_Config.AlteAdresse[43]',''
+_DSP : '','43',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,88,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,200,556,231,540,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[44]','',''
+_DSP : '','44',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,89,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,200,556,231,540,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[44]','DALI_Config.LampeEin[44]','DALI_Config.AlteAdresse[44]',''
+_DSP : '','44',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,90,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,200,596,231,580,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[45]','',''
+_DSP : '','45',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,91,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,200,596,231,580,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[45]','DALI_Config.LampeEin[45]','DALI_Config.AlteAdresse[45]',''
+_DSP : '','45',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,92,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,200,636,231,620,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[46]','',''
+_DSP : '','46',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,93,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,200,636,231,620,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[46]','DALI_Config.LampeEin[46]','DALI_Config.AlteAdresse[46]',''
+_DSP : '','46',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,94,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,200,676,231,660,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[47]','',''
+_DSP : '','47',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,95,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,200,676,231,660,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[47]','DALI_Config.LampeEin[47]','DALI_Config.AlteAdresse[47]',''
+_DSP : '','47',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,96,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,200,716,231,700,215
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[48]','',''
+_DSP : '','48',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,97,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,200,716,231,700,215
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[48]','DALI_Config.LampeEin[48]','DALI_Config.AlteAdresse[48]',''
+_DSP : '','48',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,98,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,240,116,271,100,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[49]','',''
+_DSP : '','49',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,99,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,240,116,271,100,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[49]','DALI_Config.LampeEin[49]','DALI_Config.AlteAdresse[49]',''
+_DSP : '','49',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,100,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,240,156,271,140,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[50]','',''
+_DSP : '','50',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,101,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,240,156,271,140,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[50]','DALI_Config.LampeEin[50]','DALI_Config.AlteAdresse[50]',''
+_DSP : '','50',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,102,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,240,196,271,180,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[51]','',''
+_DSP : '','51',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,103,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,240,196,271,180,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[51]','DALI_Config.LampeEin[51]','DALI_Config.AlteAdresse[51]',''
+_DSP : '','51',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,104,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,240,236,271,220,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[52]','',''
+_DSP : '','52',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,105,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,240,236,271,220,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[52]','DALI_Config.LampeEin[52]','DALI_Config.AlteAdresse[52]',''
+_DSP : '','52',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,106,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,240,276,271,260,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[53]','',''
+_DSP : '','53',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,107,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,240,276,271,260,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[53]','DALI_Config.LampeEin[53]','DALI_Config.AlteAdresse[53]',''
+_DSP : '','53',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,108,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,240,316,271,300,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[54]','',''
+_DSP : '','54',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,109,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,240,316,271,300,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[54]','DALI_Config.LampeEin[54]','DALI_Config.AlteAdresse[54]',''
+_DSP : '','54',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,110,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,240,356,271,340,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[55]','',''
+_DSP : '','55',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,111,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,240,356,271,340,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[55]','DALI_Config.LampeEin[55]','DALI_Config.AlteAdresse[55]',''
+_DSP : '','55',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,112,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,240,396,271,380,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[56]','',''
+_DSP : '','56',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,113,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,240,396,271,380,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[56]','DALI_Config.LampeEin[56]','DALI_Config.AlteAdresse[56]',''
+_DSP : '','56',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,114,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,240,436,271,420,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[57]','',''
+_DSP : '','57',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,115,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,240,436,271,420,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[57]','DALI_Config.LampeEin[57]','DALI_Config.AlteAdresse[57]',''
+_DSP : '','57',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,116,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,240,516,271,500,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[59]','',''
+_DSP : '','59',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,117,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,240,516,271,500,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[59]','DALI_Config.LampeEin[59]','DALI_Config.AlteAdresse[59]',''
+_DSP : '','59',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,118,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,240,556,271,540,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[60]','',''
+_DSP : '','60',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,119,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,240,556,271,540,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[60]','DALI_Config.LampeEin[60]','DALI_Config.AlteAdresse[60]',''
+_DSP : '','60',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,120,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,240,596,271,580,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[61]','',''
+_DSP : '','61',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,121,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,240,596,271,580,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[61]','DALI_Config.LampeEin[61]','DALI_Config.AlteAdresse[61]',''
+_DSP : '','61',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,122,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,240,636,271,620,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[62]','',''
+_DSP : '','62',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,123,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,240,636,271,620,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[62]','DALI_Config.LampeEin[62]','DALI_Config.AlteAdresse[62]',''
+_DSP : '','62',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,124,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,240,476,271,460,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[58]','',''
+_DSP : '','58',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,125,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,240,476,271,460,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[58]','DALI_Config.LampeEin[58]','DALI_Config.AlteAdresse[58]',''
+_DSP : '','58',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,126,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,240,676,271,660,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[63]','',''
+_DSP : '','63',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,127,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,240,676,271,660,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[63]','DALI_Config.LampeEin[63]','DALI_Config.AlteAdresse[63]',''
+_DSP : '','63',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,128,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,240,716,271,700,255
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[64]','',''
+_DSP : '','64',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,129,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,240,716,271,700,255
+_COLORS : 16744448,0,65280,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[64]','DALI_Config.LampeEin[64]','DALI_Config.AlteAdresse[64]',''
+_DSP : '','64',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,130,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,130,86,131,85,130
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,131,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 60,290,741,476,400,383
+_COLORS : 14738146,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Lamp failure ',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 1,4294967275,700,0,132,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,315,116,346,100,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[1]','',''
+_DSP : '','1',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,133,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,315,116,346,100,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[1]','DALI_Config.Lampenausfall[1]','DALI_Config.AlteAdresse[1]',''
+_DSP : '','1',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,134,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,315,156,346,140,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[2]','',''
+_DSP : '','2',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,135,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,315,156,346,140,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[2]','DALI_Config.Lampenausfall[2]','DALI_Config.AlteAdresse[2]',''
+_DSP : '','2',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,136,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,315,196,346,180,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[3]','',''
+_DSP : '','3',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,137,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,315,196,346,180,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[3]','DALI_Config.Lampenausfall[3]','DALI_Config.AlteAdresse[3]',''
+_DSP : '','3',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,138,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,315,236,346,220,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[4]','',''
+_DSP : '','4',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,139,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,315,236,346,220,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[4]','DALI_Config.Lampenausfall[4]','DALI_Config.AlteAdresse[4]',''
+_DSP : '','4',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,140,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,315,276,346,260,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[5]','',''
+_DSP : '','5',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,141,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,315,276,346,260,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[5]','DALI_Config.Lampenausfall[5]','DALI_Config.AlteAdresse[5]',''
+_DSP : '','5',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,142,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,315,316,346,300,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[6]','',''
+_DSP : '','6',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,143,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,315,316,346,300,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[6]','DALI_Config.Lampenausfall[6]','DALI_Config.AlteAdresse[6]',''
+_DSP : '','6',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,144,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,315,356,346,340,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[7]','',''
+_DSP : '','7',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,145,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,315,356,346,340,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[7]','DALI_Config.Lampenausfall[7]','DALI_Config.AlteAdresse[7]',''
+_DSP : '','7',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,146,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,315,396,346,380,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[8]','',''
+_DSP : '','8',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,147,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,315,396,346,380,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[8]','DALI_Config.Lampenausfall[8]','DALI_Config.AlteAdresse[8]',''
+_DSP : '','8',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,148,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,315,436,346,420,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[9]','',''
+_DSP : '','9',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,149,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,315,436,346,420,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[9]','DALI_Config.Lampenausfall[9]','DALI_Config.AlteAdresse[9]',''
+_DSP : '','9',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,150,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,315,476,346,460,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[10]','',''
+_DSP : '','10',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,151,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,315,476,346,460,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[10]','DALI_Config.Lampenausfall[10]','DALI_Config.AlteAdresse[10]',''
+_DSP : '','10',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,152,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,315,516,346,500,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[11]','',''
+_DSP : '','11',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,153,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,315,516,346,500,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[11]','DALI_Config.Lampenausfall[11]','DALI_Config.AlteAdresse[11]',''
+_DSP : '','11',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,154,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,315,556,346,540,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[12]','',''
+_DSP : '','12',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,155,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,315,556,346,540,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[12]','DALI_Config.Lampenausfall[12]','DALI_Config.AlteAdresse[12]',''
+_DSP : '','12',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,156,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,315,596,346,580,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[13]','',''
+_DSP : '','13',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,157,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,315,596,346,580,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[13]','DALI_Config.Lampenausfall[13]','DALI_Config.AlteAdresse[13]',''
+_DSP : '','13',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,158,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,315,636,346,620,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[14]','',''
+_DSP : '','14',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,159,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,315,636,346,620,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[14]','DALI_Config.Lampenausfall[14]','DALI_Config.AlteAdresse[14]',''
+_DSP : '','14',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,160,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,315,676,346,660,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[15]','',''
+_DSP : '','15',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,161,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,315,676,346,660,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[15]','DALI_Config.Lampenausfall[15]','DALI_Config.AlteAdresse[15]',''
+_DSP : '','15',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,162,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,315,716,346,700,330
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[16]','',''
+_DSP : '','16',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,163,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,315,716,346,700,330
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[16]','DALI_Config.Lampenausfall[16]','DALI_Config.AlteAdresse[16]',''
+_DSP : '','16',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,164,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,355,116,386,100,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[17]','',''
+_DSP : '','17',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,165,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,355,116,386,100,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[17]','DALI_Config.Lampenausfall[17]','DALI_Config.AlteAdresse[17]',''
+_DSP : '','17',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,166,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,355,196,386,180,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[19]','',''
+_DSP : '','19',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,167,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,355,196,386,180,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[19]','DALI_Config.Lampenausfall[19]','DALI_Config.AlteAdresse[19]',''
+_DSP : '','19',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,168,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,355,156,386,140,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[18]','',''
+_DSP : '','18',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,169,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,355,156,386,140,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[18]','DALI_Config.Lampenausfall[18]','DALI_Config.AlteAdresse[18]',''
+_DSP : '','18',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,170,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,355,236,386,220,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[20]','',''
+_DSP : '','20',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,171,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,355,236,386,220,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[20]','DALI_Config.Lampenausfall[20]','DALI_Config.AlteAdresse[20]',''
+_DSP : '','20',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,172,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,355,276,386,260,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[21]','',''
+_DSP : '','21',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,173,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,355,276,386,260,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[21]','DALI_Config.Lampenausfall[21]','DALI_Config.AlteAdresse[21]',''
+_DSP : '','21',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,174,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,355,316,386,300,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[22]','',''
+_DSP : '','22',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,175,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,355,316,386,300,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[22]','DALI_Config.Lampenausfall[22]','DALI_Config.AlteAdresse[22]',''
+_DSP : '','22',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,176,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,355,356,386,340,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[23]','',''
+_DSP : '','23',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,177,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,355,356,386,340,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[23]','DALI_Config.Lampenausfall[23]','DALI_Config.AlteAdresse[23]',''
+_DSP : '','23',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,178,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,355,396,386,380,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[24]','',''
+_DSP : '','24',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,179,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,355,396,386,380,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[24]','DALI_Config.Lampenausfall[24]','DALI_Config.AlteAdresse[24]',''
+_DSP : '','24',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,180,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,355,436,386,420,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[25]','',''
+_DSP : '','25',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,181,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,355,436,386,420,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[25]','DALI_Config.Lampenausfall[25]','DALI_Config.AlteAdresse[25]',''
+_DSP : '','25',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,182,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,355,596,386,580,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[29]','',''
+_DSP : '','29',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,183,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,355,596,386,580,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[29]','DALI_Config.Lampenausfall[29]','DALI_Config.AlteAdresse[29]',''
+_DSP : '','29',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,184,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,355,556,386,540,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[28]','',''
+_DSP : '','28',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,185,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,355,556,386,540,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[28]','DALI_Config.Lampenausfall[28]','DALI_Config.AlteAdresse[28]',''
+_DSP : '','28',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,186,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,355,516,386,500,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[27]','',''
+_DSP : '','27',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,187,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,355,516,386,500,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[27]','DALI_Config.Lampenausfall[27]','DALI_Config.AlteAdresse[27]',''
+_DSP : '','27',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,188,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,355,476,386,460,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[26]','',''
+_DSP : '','26',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,189,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,355,476,386,460,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[26]','DALI_Config.Lampenausfall[26]','DALI_Config.AlteAdresse[26]',''
+_DSP : '','26',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,190,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,355,636,386,620,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[30]','',''
+_DSP : '','30',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,191,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,355,636,386,620,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[30]','DALI_Config.Lampenausfall[30]','DALI_Config.AlteAdresse[30]',''
+_DSP : '','30',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,192,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,355,676,386,660,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[31]','',''
+_DSP : '','31',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,193,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,355,676,386,660,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[31]','DALI_Config.Lampenausfall[31]','DALI_Config.AlteAdresse[31]',''
+_DSP : '','31',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,194,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,355,716,386,700,370
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[32]','',''
+_DSP : '','32',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,195,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,355,716,386,700,370
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[32]','DALI_Config.Lampenausfall[32]','DALI_Config.AlteAdresse[32]',''
+_DSP : '','32',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,196,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,395,116,426,100,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[33]','',''
+_DSP : '','33',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,197,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,395,116,426,100,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[33]','DALI_Config.Lampenausfall[33]','DALI_Config.AlteAdresse[33]',''
+_DSP : '','33',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,198,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,395,156,426,140,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[34]','',''
+_DSP : '','34',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,199,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,395,156,426,140,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[34]','DALI_Config.Lampenausfall[34]','DALI_Config.AlteAdresse[34]',''
+_DSP : '','34',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,200,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,395,236,426,220,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[36]','',''
+_DSP : '','36',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,201,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,395,236,426,220,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[36]','DALI_Config.Lampenausfall[36]','DALI_Config.AlteAdresse[36]',''
+_DSP : '','36',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,202,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,395,316,426,300,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[38]','',''
+_DSP : '','38',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,203,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,395,316,426,300,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[38]','DALI_Config.Lampenausfall[38]','DALI_Config.AlteAdresse[38]',''
+_DSP : '','38',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,204,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,395,356,426,340,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[39]','',''
+_DSP : '','39',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,205,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,395,356,426,340,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[39]','DALI_Config.Lampenausfall[39]','DALI_Config.AlteAdresse[39]',''
+_DSP : '','39',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,206,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,395,276,426,260,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[37]','',''
+_DSP : '','37',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,207,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,395,276,426,260,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[37]','DALI_Config.Lampenausfall[37]','DALI_Config.AlteAdresse[37]',''
+_DSP : '','37',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,208,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,395,196,426,180,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[35]','',''
+_DSP : '','35',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,209,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,395,196,426,180,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[35]','DALI_Config.Lampenausfall[35]','DALI_Config.AlteAdresse[35]',''
+_DSP : '','35',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,210,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,395,436,426,420,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[41]','',''
+_DSP : '','41',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,211,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,395,436,426,420,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[41]','DALI_Config.Lampenausfall[41]','DALI_Config.AlteAdresse[41]',''
+_DSP : '','41',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,212,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,395,476,426,460,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[42]','',''
+_DSP : '','42',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,213,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,395,476,426,465,415
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[42]','DALI_Config.Lampenausfall[42]','DALI_Config.AlteAdresse[42]',''
+_DSP : '','42',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,214,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,395,396,426,380,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[40]','',''
+_DSP : '','40',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,215,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,395,396,426,380,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[40]','DALI_Config.Lampenausfall[40]','DALI_Config.AlteAdresse[40]',''
+_DSP : '','40',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,216,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,395,516,426,500,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[43]','',''
+_DSP : '','43',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,217,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,395,516,426,500,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[43]','DALI_Config.Lampenausfall[43]','DALI_Config.AlteAdresse[43]',''
+_DSP : '','43',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,218,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,395,556,426,540,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[44]','',''
+_DSP : '','44',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,219,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,395,556,426,540,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[44]','DALI_Config.Lampenausfall[44]','DALI_Config.AlteAdresse[44]',''
+_DSP : '','44',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,220,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,395,596,426,580,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[45]','',''
+_DSP : '','45',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,221,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,395,596,426,580,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[45]','DALI_Config.Lampenausfall[45]','DALI_Config.AlteAdresse[45]',''
+_DSP : '','45',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,222,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,395,636,426,620,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[46]','',''
+_DSP : '','46',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,223,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,395,636,426,620,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[46]','DALI_Config.Lampenausfall[46]','DALI_Config.AlteAdresse[46]',''
+_DSP : '','46',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,224,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,395,676,426,660,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[47]','',''
+_DSP : '','47',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,225,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,395,676,426,660,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[47]','DALI_Config.Lampenausfall[47]','DALI_Config.AlteAdresse[47]',''
+_DSP : '','47',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,226,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,395,716,426,700,410
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[48]','',''
+_DSP : '','48',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,227,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,395,716,426,700,410
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[48]','DALI_Config.Lampenausfall[48]','DALI_Config.AlteAdresse[48]',''
+_DSP : '','48',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,228,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,435,116,466,100,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[49]','',''
+_DSP : '','49',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,229,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,435,116,466,100,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[49]','DALI_Config.Lampenausfall[49]','DALI_Config.AlteAdresse[49]',''
+_DSP : '','49',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,230,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,435,156,466,140,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[50]','',''
+_DSP : '','50',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,231,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 125,435,156,466,140,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[50]','DALI_Config.Lampenausfall[50]','DALI_Config.AlteAdresse[50]',''
+_DSP : '','50',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,232,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,435,196,466,180,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[51]','',''
+_DSP : '','51',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,233,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 165,435,196,466,180,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[51]','DALI_Config.Lampenausfall[51]','DALI_Config.AlteAdresse[51]',''
+_DSP : '','51',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,234,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,435,236,466,220,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[52]','',''
+_DSP : '','52',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,235,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 205,435,236,466,220,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[52]','DALI_Config.Lampenausfall[52]','DALI_Config.AlteAdresse[52]',''
+_DSP : '','52',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,236,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,435,276,466,260,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[53]','',''
+_DSP : '','53',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,237,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 245,435,276,466,260,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[53]','DALI_Config.Lampenausfall[53]','DALI_Config.AlteAdresse[53]',''
+_DSP : '','53',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,238,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,435,316,466,300,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[54]','',''
+_DSP : '','54',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,239,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 285,435,316,466,300,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[54]','DALI_Config.Lampenausfall[54]','DALI_Config.AlteAdresse[54]',''
+_DSP : '','54',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,240,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,435,356,466,340,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[55]','',''
+_DSP : '','55',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,241,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 325,435,356,466,340,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[55]','DALI_Config.Lampenausfall[55]','DALI_Config.AlteAdresse[55]',''
+_DSP : '','55',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,242,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,435,396,466,380,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[56]','',''
+_DSP : '','56',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,243,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 365,435,396,466,380,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[56]','DALI_Config.Lampenausfall[56]','DALI_Config.AlteAdresse[56]',''
+_DSP : '','56',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,244,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,435,436,466,420,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[57]','',''
+_DSP : '','57',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,245,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 405,435,436,466,420,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[57]','DALI_Config.Lampenausfall[57]','DALI_Config.AlteAdresse[57]',''
+_DSP : '','57',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,246,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,435,516,466,500,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[59]','',''
+_DSP : '','59',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,247,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 485,435,516,466,500,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[59]','DALI_Config.Lampenausfall[59]','DALI_Config.AlteAdresse[59]',''
+_DSP : '','59',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,248,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,435,556,466,540,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[60]','',''
+_DSP : '','60',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,249,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 525,435,556,466,540,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[60]','DALI_Config.Lampenausfall[60]','DALI_Config.AlteAdresse[60]',''
+_DSP : '','60',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,250,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,435,596,466,580,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[61]','',''
+_DSP : '','61',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,251,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 565,435,596,466,580,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[61]','DALI_Config.Lampenausfall[61]','DALI_Config.AlteAdresse[61]',''
+_DSP : '','61',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,252,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,435,636,466,620,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[62]','',''
+_DSP : '','62',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,253,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 605,435,636,466,620,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[62]','DALI_Config.Lampenausfall[62]','DALI_Config.AlteAdresse[62]',''
+_DSP : '','62',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,254,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,435,476,466,460,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[58]','',''
+_DSP : '','58',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,255,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 445,435,476,466,460,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[58]','DALI_Config.Lampenausfall[58]','DALI_Config.AlteAdresse[58]',''
+_DSP : '','58',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,256,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,435,676,466,660,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[63]','',''
+_DSP : '','63',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,257,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 645,435,676,466,660,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[63]','DALI_Config.Lampenausfall[63]','DALI_Config.AlteAdresse[63]',''
+_DSP : '','63',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,258,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,435,716,466,700,450
+_COLORS : 12632256,0,16744448,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','DALI_Config.Kurzadr[64]','',''
+_DSP : '','64',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,259,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 685,435,716,466,700,450
+_COLORS : 16744448,0,255,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'not DALI_Config.Kurzadr[64]','DALI_Config.Lampenausfall[64]','DALI_Config.AlteAdresse[64]',''
+_DSP : '','64',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,700,0,260,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 85,325,86,326,85,325
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,261,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_BUTTON : ''
+_POS : 325,485,476,521,400,503
+_THRESH : '','','','DALI_Config.Status'
+_INPUT : 131072
+_DSP : '','Query status ','If you click the button "Query Status", $R$Nyou will get the status "Lamp failure" $R$Nand "Lamp arc power on" from the ECG. '
+_ZOOM : ''
+_TEXT : 5,4294967284,700,0,264,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0,157
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @BUTTONCOLORS := '_COLORS : 13158600,0,14474460,0,0' *)
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @GRADIENT_AND_FRAME := '_GRADIENT_AND_FRAME: 0,0,0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+(* @NO_FRAME_AROUND_BITMAP := '_NO_FRAME_AROUND_BITMAP: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 60,485,81,506,70,495
+_COLORS : 16744448,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,266,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 60,515,81,536,70,525
+_COLORS : 255,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,267,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 1,1
+_POS : 60,545,81,566,70,555
+_COLORS : 65280,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 5,4294967284,400,0,268,0,0,0
+_FONT : ''
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 98,485,259,506,178,495
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Short address available ',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 4,4294967284,400,0,269,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 97,515,228,536,162,525
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Lamp failure ',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 4,4294967284,400,0,270,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 97,545,168,566,132,555
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : '','','',''
+_DSP : '','Lamp on ',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 4,4294967284,400,0,271,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+
+_SIMPLE : 0
+_LINEWIDTH : 0
+_NOCOLORS : 0,0
+_POS : 55,13,755,576,405,294
+_COLORS : 16777215,0,16777215,0,0
+_VARIABLES : '','','','','','','',''
+_THRESH : 'NOT DALI_Config.mStatus','','',''
+_DSP : '','Please wait!',''
+_ZOOM : ''
+_INPUT : 0
+_TEXT : 4,4294967248,400,0,273,0,0,0
+_FONT : 'Arial'
+_EXEC : ''
+_TEXTVARIABLES : '','','','',''
+_COLORVARIABLES : '','','','','',''
+_ACCESSLEVELS : 2,2,2,2,2,2,2,2
+_OBJECT : 0,0
+_THRESH2 : '','','',''
+_INPUTTYPE : '','',''
+_HIDDENINPUT : 0
+_END_ELEM
+(* @TEXTSCALINGVARS := '_TEXTSCALINGVARS: $'$',$'$'' *)
+(* @EXTENDEDSIMPLESHAPE := '_SIMPLE: 0' *)
+(* @INPUTTAPFALSE := '_INPUTTAPFALSE: 0' *)
+_KEYINFOLIST : 0
+END_VISUALISATION
