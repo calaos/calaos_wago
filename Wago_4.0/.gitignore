@@ -1,0 +1,17 @@
+# Artefacts de build / export (regeneres par les scripts)
+build/*
+!build/.gitkeep
+
+# Fichiers temporaires CoDeSys 2.3
+DEFAULT.DFR
+*.bak
+*.ci
+*.ri
+*.sdb
+*.sym
+*.SYM_XML
+*.log
+
+# Boot projects : a regenerer volontairement, pas a commiter par accident
+*.PRG
+*.CHK
