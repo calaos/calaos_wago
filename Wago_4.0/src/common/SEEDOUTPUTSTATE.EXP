@@ -1,0 +1,52 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '' *)
+(* @OBJECTFLAGS := '0, 8' *)
+(* @SYMFILEFLAGS := '0' *)
+PROGRAM SeedOutputState
+VAR
+	cpt: INT;
+	tmp: INT;
+	addr: WORD;
+	val: BOOL;
+END_VAR
+
+(* @END_DECLARATION := '0' *)
+(* Rebuild the internal state of the telerupteurs from the output image.
+   Called on the FALLING edge of HEARTBEAT only: the server has just gone away
+   and ManageOutput takes over. Without this, lights[] still holds what it had
+   before the server took control, and the first key press goes the wrong way
+   (it turns a lit lamp on again instead of off).
+   Seeding on the LEVEL instead of the edge would be wrong: it would overwrite
+   the state ManageOutput just produced, every cycle.
+
+   Only TELERUPTEUR is seeded. The other types cannot be:
+   - TELERUPTEUR_DALI / _DALI_GROUP drive DALI or DMX, not OutArrState, so the
+     image holds nothing about them;
+   - VOLET / VOLET_IMPULSE keep their state in MONTE / DESCENTE / mode / imp,
+     which are VAR_OUTPUT and VAR of the VOLET FB. CoDeSys 2.3 refuses to write
+     them from outside the FB ("Operands of ST must be variables with write
+     access"), so they are out of reach without changing the VOLET interface;
+   - DIRECT reasserts its level every cycle and needs no seeding. *)
+
+FOR cpt := 0 TO 512 DO
+
+	IF (output_type[cpt] = TELERUPTEUR) THEN
+
+		tmp := cpt;
+		IF (output_addr[cpt].SameAs >= 0) THEN
+			tmp := output_addr[cpt].SameAs;
+		END_IF
+
+		addr := output_addr[tmp].ADDR1 + start_addr_out;
+		val := BYTE_TO_BOOL(SHR(OutArrState[addr / 8], addr MOD 8) AND 16#01);
+		IF (val = TRUE) THEN
+			lights[tmp / 8] := lights[tmp / 8] OR SHL(BYTE#1, tmp MOD 8);
+		ELSE
+			lights[tmp / 8] := lights[tmp / 8] AND NOT SHL(BYTE#1, tmp MOD 8);
+		END_IF
+
+	END_IF
+
+END_FOR
+END_PROGRAM
