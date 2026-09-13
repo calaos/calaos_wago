@@ -219,7 +219,8 @@ IF server.bDataReceived THEN
 		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(Config.CALAOS_VERSION_H)));
 		cmd := CONCAT(cmd, '.');
 		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(Config.CALAOS_VERSION_L)));
-		cmd := CONCAT(cmd, ' 750-849');
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, Config.CALAOS_MODEL);
 		start_send := TRUE;
 	END_IF
 
