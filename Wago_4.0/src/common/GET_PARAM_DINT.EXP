@@ -20,7 +20,6 @@ VAR
 	found: INT;
 END_VAR
 (* @END_DECLARATION := '0' *)
-
 (* cut before the value we want *)
 FOR i := 1 TO pos DO
 	found := FIND(str, ' ');
@@ -63,5 +62,4 @@ IF (neg = TRUE) THEN
 ELSE
 	GET_PARAM_DINT := val;
 END_IF
-
 END_FUNCTION

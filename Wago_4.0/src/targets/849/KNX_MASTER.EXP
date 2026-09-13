@@ -69,5 +69,4 @@ IF (Config.CONFIG_KNX = TRUE) THEN
 		LedMode := 3;
 	END_IF
 END_IF
-
 END_PROGRAM

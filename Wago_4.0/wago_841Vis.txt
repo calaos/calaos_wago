@@ -1,0 +1,40 @@
+0
+c:\programdata\codesys v2.3\compile\visu_ini.xml
+c:\programdata\codesys v2.3\compile\alm_ini.xml
+c:\program files (x86)\wago software\codesys v2.3\visu\minml.jar
+c:\program files (x86)\wago software\codesys v2.3\visu\webvisu.jar
+c:\program files (x86)\wago software\codesys v2.3\visu\webvisu.htm
+c:\programdata\codesys v2.3\compile\dali_647_main.xml
+c:\programdata\codesys v2.3\compile\visuaddressing.xml
+c:\programdata\codesys v2.3\compile\visudali_devicetype_menue.xml
+c:\programdata\codesys v2.3\compile\visudali_menue.xml
+c:\programdata\codesys v2.3\compile\visudalicontrolgearaddressing.xml
+c:\programdata\codesys v2.3\compile\visudalicontrolgearidentify.xml
+c:\programdata\codesys v2.3\compile\visudalicontrolgearsettings.xml
+c:\programdata\codesys v2.3\compile\visudalicontrolgearstatus.xml
+c:\programdata\codesys v2.3\compile\visudalidevicetype.xml
+c:\programdata\codesys v2.3\compile\visudaligroups.xml
+c:\programdata\codesys v2.3\compile\visudalioperatinghours.xml
+c:\programdata\codesys v2.3\compile\visudaliscenes.xml
+c:\programdata\codesys v2.3\compile\visuecg_settings.xml
+c:\programdata\codesys v2.3\compile\visufrontpagedali.xml
+c:\programdata\codesys v2.3\compile\visugroup_assignment.xml
+c:\programdata\codesys v2.3\compile\visugroupsceneconfiguration.xml
+c:\programdata\codesys v2.3\compile\visulamp_status.xml
+c:\programdata\codesys v2.3\compile\visuscene_configuration.xml
+c:\programdata\codesys v2.3\compile\visusort_short_address.xml
+c:\programdata\codesys v2.3\compile\visudaliselect.xml
+c:\programdata\codesys v2.3\compile\visugroupbutton.xml
+c:\programdata\codesys v2.3\compile\visuidentifycurrentaddress.xml
+c:\programdata\codesys v2.3\compile\visunewshortaddress.xml
+c:\programdata\codesys v2.3\compile\visuoperatinghours.xml
+c:\programdata\codesys v2.3\compile\visuscenevalues.xml
+c:\programdata\codesys v2.3\compile\visustatus.xml
+c:\programdata\codesys v2.3\compile\addressing.xml
+c:\programdata\codesys v2.3\compile\ecg_settings.xml
+c:\programdata\codesys v2.3\compile\group_assignment.xml
+c:\programdata\codesys v2.3\compile\groupsceneconfiguration.xml
+c:\programdata\codesys v2.3\compile\lamp_status.xml
+c:\programdata\codesys v2.3\compile\scene_configuration.xml
+c:\programdata\codesys v2.3\compile\sort_short_address.xml
+c:\programdata\codesys v2.3\compile\wago_841vis.txt

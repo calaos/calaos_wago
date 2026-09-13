@@ -20,5 +20,4 @@ ELSE
 END_IF
 
 SetOutput := TRUE;
-
 END_FUNCTION

@@ -150,5 +150,4 @@ FOR cpt := 0 TO 512 DO
 		KNXOutputs[output_addr[tmp].ADDR1] := in;
 	END_CASE
 END_FOR
-
 END_PROGRAM

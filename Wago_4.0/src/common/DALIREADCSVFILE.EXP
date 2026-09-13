@@ -150,5 +150,4 @@ IF xStart THEN
 (*copy data to array finished*)
 	xStart:=FALSE;
 END_IF
-
 END_PROGRAM

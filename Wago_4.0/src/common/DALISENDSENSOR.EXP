@@ -37,5 +37,4 @@ IF (event[i + 512].OFF = TRUE) THEN
 	Write(EN := 0, SOCKET := 0, LEN_IN := 0, DST_IP:=0, DST_PORT:=0, DATA_PT := wBuffer);
 	Write(EN := 1, SOCKET := SendInput.socket, LEN_IN := LEN(command), DST_IP := Config.SERVER_IP, DST_PORT := 4646, DATA_PT := wBuffer);
 END_IF
-
 END_PROGRAM
