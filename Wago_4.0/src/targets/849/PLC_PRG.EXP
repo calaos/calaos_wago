@@ -59,27 +59,31 @@ IF Config.CONFIG_DALI_647 = TRUE THEN
 	DaliPrg647;
 END_IF
 
-IF (HEARTBEAT = FALSE) THEN
+(* No digital output: start_addr_out is 0 and both loops would write over
+   whatever byte oriented module sits at the head of the image. *)
+IF (nb_module_out > 0) THEN
+	IF (HEARTBEAT = FALSE) THEN
 
-	j := start_addr_out / 8;
-	FOR i := start_addr_out / 16 TO 255 DO
-		valw := OutArrState[j + 1];
-		write_word(WORD_ADDRESS := i, VALUE := SHL(valw, 8) + OutArrState[j]);
-		j := j + 2;
-	END_FOR
-ELSE
+		j := start_addr_out / 8;
+		FOR i := start_addr_out / 16 TO 255 DO
+			valw := OutArrState[j + 1];
+			write_word(WORD_ADDRESS := i, VALUE := SHL(valw, 8) + OutArrState[j]);
+			j := j + 2;
+		END_FOR
+	ELSE
 
-	(* 16 words covers the 32 bytes of netOutStandard. Publishing the last two
-	   means an output above the 240th follows the server instead of keeping
-	   what ManageOutput left at the last changeover. *)
-	j := 0;
-	FOR i := 0 TO 15 DO
-		valw := netOutStandard[j + 1];
-		write_word(WORD_ADDRESS := i + start_addr_out / 16, VALUE := SHL(valw, 8) + netOutStandard[j]);
-		OutArrState[start_addr_out / 8 + j] := netOutStandard[j];
-		OutArrState[start_addr_out / 8 + j + 1] := netOutStandard[j + 1];
-		j := j + 2;
-	END_FOR
+		(* 16 words covers the 32 bytes of netOutStandard. Publishing the last two
+		   means an output above the 240th follows the server instead of keeping
+		   what ManageOutput left at the last changeover. *)
+		j := 0;
+		FOR i := 0 TO 15 DO
+			valw := netOutStandard[j + 1];
+			write_word(WORD_ADDRESS := i + start_addr_out / 16, VALUE := SHL(valw, 8) + netOutStandard[j]);
+			OutArrState[start_addr_out / 8 + j] := netOutStandard[j];
+			OutArrState[start_addr_out / 8 + j + 1] := netOutStandard[j + 1];
+			j := j + 2;
+		END_FOR
 
+	END_IF
 END_IF
 END_PROGRAM

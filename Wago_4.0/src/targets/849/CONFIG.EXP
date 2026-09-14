@@ -40,6 +40,7 @@ VAR CONSTANT
 	SCAN_ERR_OUT_ALIGN: BYTE := 4;
 	SCAN_ERR_DALI647_ALIGN: BYTE := 8;
 	SCAN_ERR_DIGITAL_WIDE: BYTE := 16;
+	SCAN_ERR_DALI647_ABOVE: BYTE := 32;
 END_VAR
 
 (* @END_DECLARATION := '0' *)
@@ -121,6 +122,12 @@ END_FOR
 (* PLC_PRG divides start_addr_out by 16 and would truncate silently. *)
 IF (start_addr_out MOD 16 <> 0) THEN
 	ScanError := ScanError OR SCAN_ERR_OUT_ALIGN;
+END_IF
+
+(* The 647 words must sit below the digital block: the standalone loop runs
+   from start_addr_out up to word 255 and would cross its mailbox otherwise. *)
+IF ((CONFIG_DALI_647 = TRUE) AND (first_out = TRUE) AND (AddrDali647Out + 12 > start_addr_out / 16)) THEN
+	ScanError := ScanError OR SCAN_ERR_DALI647_ABOVE;
 END_IF
 
 (* Start the heartbeat timer *)

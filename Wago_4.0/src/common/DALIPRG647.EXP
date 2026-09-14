@@ -15,8 +15,13 @@ VAR
 	(* DALI 753-647 *)
 	DALIMaster647: FbMaster753_647;
 
-	DALI647_InReal AT %IB0: ARRAY[0..23] OF BYTE;
-	DALI647_OutReal AT %QB0: ARRAY[0..23] OF BYTE;
+	(* Plain copies moved by read_word / write_word from Config.AddrDali647In/Out.
+	   A located variable would pin the module to the head of the rack and, with
+	   the module absent, let the image refresh clobber the first 24 output bytes. *)
+	abDali647In: ARRAY[0..23] OF BYTE;
+	abDali647Out: ARRAY[0..23] OF BYTE;
+	j: INT;
+	daliFeedbackLast: BYTE;
 
 END_VAR
 (* @END_DECLARATION := '0' *)
@@ -29,13 +34,30 @@ END_VAR
 (* read the CSV file listing all DALI sensors type and address available on the bus *)
 DaliReadCsvFile(xStart := startCsvRead, daliSensors := daliSensors);
 
+(* Little-endian pairing, the same as the PLC_PRG output loops. *)
+FOR j := 0 TO 11 DO
+	read_word(WORD_ADDRESS := Config.AddrDali647In + INT_TO_WORD(j));
+	abDali647In[2 * j] := WORD_TO_BYTE(read_word.VALUE AND 16#00FF);
+	abDali647In[2 * j + 1] := WORD_TO_BYTE(SHR(read_word.VALUE, 8));
+END_FOR
+
 (* the master DALI FB *)
 DALIMaster647(
-	abIn_753_647 := DALI647_InReal,
+	abIn_753_647 := abDali647In,
 	bModule_753_647 := 1,
-	abOut_753_647 => DALI647_OutReal,
+	abOut_753_647 => abDali647Out,
 	bFeedback => daliFeedback
 );
+
+FOR j := 0 TO 11 DO
+	write_word(WORD_ADDRESS := Config.AddrDali647Out + INT_TO_WORD(j),
+		VALUE := SHL(BYTE_TO_WORD(abDali647Out[2 * j + 1]), 8) + abDali647Out[2 * j]);
+END_FOR
+
+(* bFeedback lives one cycle; keep the last non-zero code for the bench. *)
+IF (daliFeedback <> 0) THEN
+	daliFeedbackLast := daliFeedback;
+END_IF
 
 (* This is for DALI config program *)
 PrgDALIConfig;
