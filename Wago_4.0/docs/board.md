@@ -1,4 +1,4 @@
-# Board — suivi des tickets Wago_4.0
+﻿# Board — suivi des tickets Wago_4.0
 
 Dernière mise à jour : 2026-09-14
 
@@ -31,7 +31,7 @@ Dernière mise à jour : 2026-09-14
 | [T-1](done/T-1.md) | `WAGO_GET_VERSION` annonçait `750-849` sur les 7 cibles | ✅ clos *(partiel)* | `40a9d25` |
 | [T-2](done/T-2.md) | Le miroir serveur → dégradé écrivait à côté et éteignait les sorties | ✅ clos *(partiel)* | `6725cac` |
 | [T-3](done/T-3.md) | La relecture DMX lisait son adresse dans le mauvais paramètre | ✅ clos | `684e347`, `c9cf37d`, `08ef59a` |
-| [T-4](todo/T-4.md) | 16 sorties Modbus (coils 4336..4351) ne sont jamais relues | 📋 ouvert ⛔ bloqué | — |
+| [T-4](done/T-4.md) | 16 sorties Modbus (coils 4336..4351) ne sont jamais relues | ✅ clos *(partiel)* | `89c4cca` |
 | [T-5](todo/T-5.md) | `lights[]` trop court d'un octet pour la règle 512 | 📋 ouvert | — |
 | [T-6](todo/T-6.md) | Le drapeau groupe est ignoré sur un des deux chemins de relecture DALI | 📋 ouvert | — |
 | [T-7](todo/T-7.md) | Après une bascule, le premier appui relance un volet au lieu de l'arrêter | 📋 ouvert | — |
@@ -44,6 +44,10 @@ Dernière mise à jour : 2026-09-14
 - **T-2** : l'ensemencement ne couvre que `TELERUPTEUR`. Les volets sont hors de portée sans
   modifier l'interface du FB `VOLET` → **T-7**. Le §5.3 de la fiche était faux, il a été amendé
   sur place.
+- **T-4** : la question « le serveur écrit-il au-delà de la coil 4335 ? » reste ouverte, faute de
+  `calaos_base`. Le correctif est juste dans les deux cas ; la réponse décide de son intérêt, pas
+  de sa justesse. Effet de bord assumé : une sortie au-delà de la 240e suit désormais le serveur
+  en mode serveur, au lieu de conserver sa dernière valeur dégradée.
 
 ## Ce qui bloque, et où est la réponse
 

@@ -64,8 +64,17 @@ IF (HEARTBEAT = FALSE) THEN
 	END_FOR
 ELSE
 
+	(* 16 words = the 32 bytes of netOutStandard, i.e. the 256 coils
+	   4096..4351 of the address map; the loop stopped at 15 words and
+	   left coils 4336..4351 unread.
+	   Side effect worth knowing: these last two bytes are now published
+	   every cycle in server mode. An output above the 240th therefore
+	   follows the server, where it used to keep whatever ManageOutput had
+	   left there at the last changeover.
+	   Whether calaos_server writes past coil 4335 cannot be checked from
+	   this repository; the loop is correct either way. *)
 	j := 0;
-	FOR i := 0 TO 14 DO
+	FOR i := 0 TO 15 DO
 		valw := netOutStandard[j + 1];
 		write_word(WORD_ADDRESS := i + start_addr_out / 16, VALUE := SHL(valw, 8) + netOutStandard[j]);
 		OutArrState[start_addr_out / 8 + j] := netOutStandard[j];
