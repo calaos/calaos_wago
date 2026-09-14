@@ -12,8 +12,10 @@ VAR
 	CONFIG_DALI_647: BOOL := FALSE;
 	first_in: BOOL := FALSE;
 	first_out: BOOL := FALSE;
-	AddrDali647In: INT;
-	AddrDali647Out: INT;
+	AddrDali647In: WORD;
+	AddrDali647Out: WORD;
+	ScanError: BYTE;
+	isComplex: BOOL;
 END_VAR
 VAR_INPUT RETAIN
 	SERVER_IP: DWORD;
@@ -31,6 +33,12 @@ VAR CONSTANT
 	   address is DMX_ADDR_BASE + 1 and this value itself is not one. *)
 	DMX_ADDR_BASE: DINT := 100;
 	DMX_CHANNELS: DINT := 255;
+	(* Diagnostic only: the scan never changes what it does when a bit is set. *)
+	SCAN_ERR_IN_GAP: BYTE := 1;
+	SCAN_ERR_OUT_GAP: BYTE := 2;
+	SCAN_ERR_OUT_ALIGN: BYTE := 4;
+	SCAN_ERR_DALI647_ALIGN: BYTE := 8;
+	SCAN_ERR_DIGITAL_WIDE: BYTE := 16;
 END_VAR
 
 (* @END_DECLARATION := '0' *)
@@ -45,54 +53,69 @@ ADD_PI_INFORMATION( 1, ADR(access), ADR(info[0]) );
 
 FOR cpt := 0 TO 63 DO
 	IF (info[cpt].moduleType = 0 AND info[cpt].physicalPos = 0) THEN
-		cpt := 63; (* the end *)
-	ELSE
-		IF (info[cpt].moduleType = 641) THEN
-			(* This is a DALI 641 module *)
-			CONFIG_DALI := TRUE;
-		END_IF
+		EXIT;
+	END_IF
 
-		IF (info[cpt].moduleType = 647) THEN
-			(* This is a DALI 753-647 module (multi master) *)
-			CONFIG_DALI_647 := TRUE;
-		END_IF
+	IF (info[cpt].moduleType = 641) THEN
+		(* This is a DALI 641 module *)
+		CONFIG_DALI := TRUE;
+	END_IF
 
-		nb_module := nb_module + 1;
-		IF ((info[cpt].desc.sizePAE > 8) AND (info[cpt].desc.channels > 0)) THEN
+	IF (info[cpt].moduleType = 647) THEN
+		(* This is a DALI 753-647 module (multi master) *)
+		CONFIG_DALI_647 := TRUE;
+		(* Word offsets for read_word / write_word, straight from the K-Bus placement. *)
+		AddrDali647In := info[cpt].desc.posPAE / 16;
+		AddrDali647Out := info[cpt].desc.posPAA / 16;
+		IF ((info[cpt].desc.posPAE MOD 16 <> 0) OR (info[cpt].desc.posPAA MOD 16 <> 0)) THEN
+			ScanError := ScanError OR SCAN_ERR_DALI647_ALIGN;
+		END_IF
+	END_IF
+
+	nb_module := nb_module + 1;
+	(* Byte oriented modules are mapped before every bit oriented one whatever
+	   their slot; that is what keeps start_addr_* a single scalar. *)
+	isComplex := (info[cpt].desc.channels > 0) OR (info[cpt].moduleType = 641) OR (info[cpt].moduleType = 647);
+	IF (isComplex = TRUE) THEN
+		IF (info[cpt].desc.sizePAE > 0) THEN
 			nb_module_analog_in := nb_module_analog_in + 1;
-(*			start_addr_in := start_addr_in + info[cpt].desc.sizePAE; *)
-			IF CONFIG_DALI_647 = FALSE THEN
-				AddrDali647In := AddrDali647In + (info[cpt].desc.sizePAE / 8);
-			END_IF
 		END_IF
-		IF ((info[cpt].desc.sizePAA > 8) AND (info[cpt].desc.channels > 0)) THEN
+		IF (info[cpt].desc.sizePAA > 0) THEN
 			nb_module_analog_out := nb_module_analog_out + 1;
-(*			start_addr_out := start_addr_out + info[cpt].desc.sizePAA; *)
-			IF CONFIG_DALI_647 = FALSE THEN
-				AddrDali647Out := AddrDali647Out + (info[cpt].desc.sizePAA / 8);
-			END_IF
 		END_IF
-		IF ((info[cpt].desc.sizePAE <= 16) AND (info[cpt].desc.sizePAE > 0) AND (info[cpt].desc.channels = 0)) THEN
-			nb_module_in := nb_module_in + 1;
-			nb_input_digital := nb_input_digital + info[cpt].desc.sizePAE;
-
+	ELSE
+		(* Wider than 16 bits, this is either a 32 way card or a byte oriented
+		   module whose channels field reads 0 - the size bound used to hide both. *)
+		IF ((info[cpt].desc.sizePAE > 16) OR (info[cpt].desc.sizePAA > 16)) THEN
+			ScanError := ScanError OR SCAN_ERR_DIGITAL_WIDE;
+		END_IF
+		IF (info[cpt].desc.sizePAE > 0) THEN
 			IF (first_in = FALSE) THEN
 				first_in := TRUE;
 				start_addr_in := info[cpt].desc.posPAE;
+			ELSIF (info[cpt].desc.posPAE <> start_addr_in + nb_input_digital) THEN
+				ScanError := ScanError OR SCAN_ERR_IN_GAP;
 			END_IF
+			nb_module_in := nb_module_in + 1;
+			nb_input_digital := nb_input_digital + info[cpt].desc.sizePAE;
 		END_IF
-		IF ((info[cpt].desc.sizePAA <= 16) AND (info[cpt].desc.sizePAA > 0) AND (info[cpt].desc.channels = 0)) THEN
-			nb_module_out := nb_module_out + 1;
-			nb_output_digital := nb_output_digital + info[cpt].desc.sizePAA;
-
+		IF (info[cpt].desc.sizePAA > 0) THEN
 			IF (first_out = FALSE) THEN
 				first_out := TRUE;
 				start_addr_out := info[cpt].desc.posPAA;
+			ELSIF (info[cpt].desc.posPAA <> start_addr_out + nb_output_digital) THEN
+				ScanError := ScanError OR SCAN_ERR_OUT_GAP;
 			END_IF
+			nb_module_out := nb_module_out + 1;
+			nb_output_digital := nb_output_digital + info[cpt].desc.sizePAA;
 		END_IF
-
 	END_IF
 END_FOR
+
+(* PLC_PRG divides start_addr_out by 16 and would truncate silently. *)
+IF (start_addr_out MOD 16 <> 0) THEN
+	ScanError := ScanError OR SCAN_ERR_OUT_ALIGN;
+END_IF
 
 (* Start the heartbeat timer *)
 (*HEARTBEAT_TIMER(IN:=FALSE, PT:=T#30s);*)
