@@ -16,6 +16,11 @@ VAR
 
 	HEARTBEAT_TIMER: TON;
 
+	(* p1..p8 carry the parameters of the command being handled. Every handler of
+	   this POU shares them and overwrites them, so they are valid for the cycle of
+	   their arrival only. Any processing that spans several cycles must latch what
+	   it needs into its own variable at reception - see daliShortAddr, daliGroupRead
+	   and dmx_read_addr below - and never read p1..p8 afterwards. *)
 	p1: DINT;
 	p2: DINT;
 	p3: DINT;
@@ -25,6 +30,12 @@ VAR
 	p7: DINT;
 	p8: DINT;
 	ip1, ip2, ip3, ip4: DWORD;
+	(* Single token: only one DALI read can be in flight. A second WAGO_DALI_GET
+	   arriving before the first one has answered takes the token over, and the first
+	   client gets the answer built for the second request, which nothing in the frame
+	   lets it tell from its own. Not addressed here: a queue or an explicit
+	   refusal is a protocol decision, and the Calaos protocol is not documented in
+	   this repository. *)
 	DaliSend: BOOL := FALSE;
 
 	(* Used by dali config for answer
@@ -289,6 +300,15 @@ IF server.bDataReceived THEN
 				dmx_read_addr := DINT_TO_BYTE(p2 - Config.DMX_ADDR_BASE);
 				dmx_read := TRUE;
 			ELSE
+				(* Out of range: no DMX read, but DaliSend is set all the same below, so the
+				   answer is built by the DALI branch of the DaliSend block. Two of its four
+				   outcomes read daliShortAddr, which still holds an earlier read: the retry
+				   when xReady is FALSE, and the 647 path. The other two answer without it:
+				   -1 -1 for a group, and the retained outputs of DALIDimmValue when xReady
+				   stayed TRUE. Pre-existing - DaliSend was already set unconditionally - but
+				   note the answer now looks more plausible than before, since the latch is a
+				   real short address where p2 MOD 256 usually was not. Answering nothing, or
+				   an error, is a protocol decision. *)
 				dmx_read := FALSE;
 			END_IF
 		END_IF
@@ -610,11 +630,16 @@ IF (DaliSend = TRUE) THEN
 				start_send := TRUE;
 				DaliSend := FALSE;
 			ELSE
-				DALIDimmValue(xEnable := TRUE, bShortAddress := DINT_TO_BYTE(p2), tCycleTime := t#1s);
+				(* daliShortAddr, not p2: this retry runs several cycles after the request
+				   and p2 belongs to whatever command came in since. *)
+				DALIDimmValue(xEnable := TRUE, bShortAddress := daliShortAddr, tCycleTime := t#1s);
 			END_IF
 		ELSE
 			cmd := 'WAGO_DALI_GET ';
-			IF dali_group = TRUE THEN
+			(* daliGroupRead, like the 641 path: this branch answers in the cycle of the
+			   request so dali_group would be fresh, but reading the latch keeps a single
+			   rule - nothing past the reception block reads dali_group. *)
+			IF daliGroupRead = TRUE THEN
 				IF DaliSendValueGrp647[daliShortAddr].rActualLevel = 0 THEN
 					cmd := CONCAT(cmd, '0');
 				ELSE
