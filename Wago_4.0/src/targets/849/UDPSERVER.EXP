@@ -57,6 +57,10 @@ VAR
 	addr_17_32: WORD;
 
 	dmx_read_addr: BYTE;
+	(* Tells a pending DMX read from a DALI one. A separate flag is needed
+	   because DMX channel DMX_ADDR_BASE maps to dmx_read_addr = 0, so 0
+	   cannot double as "no DMX read pending". *)
+	dmx_read: BOOL;
 
 	daliShortAddr: BYTE;
 
@@ -275,9 +279,10 @@ IF server.bDataReceived THEN
 				DALIDimmValue(xEnable := TRUE, bShortAddress := DINT_TO_BYTE(p2), tCycleTime := t#1s);
 			END_IF
 			daliShortAddr := DINT_TO_BYTE(p2);
-			dmx_read_addr := 0;
+			dmx_read := FALSE;
 		ELSE
 			dmx_read_addr := DINT_TO_BYTE(p2 - Config.DMX_ADDR_BASE); (* DMX channel comes in p2, like in WAGO_DALI_SET p3 ; p2 is never the group flag here *)
+			dmx_read := TRUE;
 		END_IF
 		DaliSend := TRUE;
 	END_IF
@@ -559,7 +564,7 @@ CASE DaliSendAction OF
 END_CASE
 
 IF (DaliSend = TRUE) THEN
-	IF (dmx_read_addr > 0) THEN
+	IF (dmx_read = TRUE) THEN
 
 		cmd := 'WAGO_DALI_GET ';
 		IF (abDMX_Values[dmx_read_addr] < 1) THEN
