@@ -131,12 +131,12 @@ function Write-WagoRegister {
 }
 
 function Invoke-WagoSoftReset {
-  # Redemarrage logiciel du coupleur : 0x55AA puis 0xAA55 dans 0x2040. L'automate
-  # coupe la connexion aussitot ; le second write peut donc rester sans reponse.
+  # Redemarrage logiciel du coupleur, la meme trame que WagoConnect::ResetWago de
+  # calaos_installer : un seul FC6 de 0x55AA dans 0x2040, qui suffit sur 841 et 889.
+  # L'automate coupe la connexion aussitot, la reponse peut manquer.
   # Ne jamais generaliser a 0x2041..0x2043 (formatage flash, reglages usine).
   param([Parameter(Mandatory)][string]$Ip)
-  Write-WagoRegister -Ip $Ip -Address 0x2040 -Value 0x55AA
-  try { Write-WagoRegister -Ip $Ip -Address 0x2040 -Value 0xAA55 } catch {}
+  try { Write-WagoRegister -Ip $Ip -Address 0x2040 -Value 0x55AA } catch {}
 }
 
 # --- Cartographie WAGO 750-8xx, registres de description -----------------------
