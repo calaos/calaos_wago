@@ -1,0 +1,1 @@
+Tout le travail se passe dans le sous-dossier Wago_4.0\ de ce dépôt. Lis Wago_4.0\HANDOFF.md et Wago_4.0\CLAUDE.md, puis exécute la mission décrite. Les chemins du HANDOFF sont relatifs à Wago_4.0\ : lance les scripts depuis ce dossier (cd Wago_4.0). Commence par tools\diag.cmd 881.
