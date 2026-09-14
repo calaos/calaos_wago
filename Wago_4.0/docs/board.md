@@ -37,6 +37,9 @@ Dernière mise à jour : 2026-09-14
 | [T-7](done/T-7.md) | Après une bascule, le premier appui relance un volet au lieu de l'arrêter | ✅ clos | `a857e72` |
 | [T-8](done/T-8.md) | Une lecture DALI en attente peut être détournée ou privée de réponse | ✅ clos *(partiel)* | `0bb27c9` |
 | [T-9](done/T-9.md) | La réponse d'erreur de T-6 est lue comme « allumée » par `calaos_server` | ✅ clos *(partiel)* | `7febc40`, `100455d` |
+| [T-10](todo/T-10.md) | Le balayage de modules ne classe pas tout et recalcule l'offset de la 647 à la main | 📋 ouvert | — |
+| [T-11](todo/T-11.md) | La 753-647 est clouée en tête du rack et condamne 24 octets sans elle | 📋 ouvert | — |
+| [T-12](todo/T-12.md) | Rien ne permet d'observer le rack, les offsets ni la 647 de l'extérieur | 📋 ouvert | — |
 
 ## Clôtures partielles — ce qui reste
 
