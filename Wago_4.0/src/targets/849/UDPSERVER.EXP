@@ -600,7 +600,9 @@ IF (DaliSend = TRUE) THEN
 				(* Keep the verb: calaos_server drops any other WAGO_ reply while a DALI read
 				   is in flight. ERR is non-numeric because the server reads any first field
 				   other than "0" as lit, so a sentinel taken from the value domain would be
-				   read as a state. Contract in docs/PROTOCOL-4.0.md. *)
+				   read as a state. Contract in docs/PROTOCOL-4.0.md.
+				   CONFIG_DALI and CONFIG_DALI_647 are not exclusive and 641 wins above, so a
+				   cabinet carrying both answers this even though the 647 could have served. *)
 				cmd := 'WAGO_DALI_GET ERR GROUP_UNSUPPORTED';
 				start_send := TRUE;
 				DaliSend := FALSE;

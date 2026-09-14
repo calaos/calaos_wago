@@ -55,6 +55,8 @@ Dernière mise à jour : 2026-09-14
   instruit.
 - **T-9** : moitié automate faite. `calaos_server` doit apprendre `WAGO_DALI_GET ERR <raison>`,
   sinon rien ne change pour l'utilisateur. Contrat dans [PROTOCOL-4.0.md](PROTOCOL-4.0.md).
+  Son critère ⭐ n'est pas atteint non plus : deux réponses encodent encore « je ne sais pas » dans
+  le domaine des valeurs (adresse hors plage DMX, armoire sans module DALI).
 - **T-4** : la question « le serveur écrit-il au-delà de la coil 4335 ? » reste ouverte, faute de
   `calaos_base`. Le correctif est juste dans les deux cas ; la réponse décide de son intérêt, pas
   de sa justesse. Effet de bord assumé : une sortie au-delà de la 240e suit désormais le serveur

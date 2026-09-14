@@ -42,10 +42,31 @@ annoncée est ≥ 3.0.
 `WAGO_DALI_GET ERR <raison>`
 
 Un programme annonçant **4.0 ou plus** peut répondre cette forme à une lecture qu'il ne sait pas
-servir. Raison émise aujourd'hui : `GROUP_UNSUPPORTED` — relecture d'un groupe sur un bus DALI
-standard, impossible par construction (une trame retour DALI vient d'un seul appareil, une requête
-adressée à un groupe provoquerait une collision ; le chemin 753-647, lui, répond car il tient sa
-propre image côté programme).
+servir. Raison émise aujourd'hui : `GROUP_UNSUPPORTED`, pour la relecture d'un groupe sur un bus
+DALI standard.
+
+Ce qui est **vérifié dans ce dépôt** : `DaliDimValue` n'a aucune entrée de groupe, et `DALI_02` ne
+porte aucun bloc fonctionnel de statut par groupe — établi par une sonde de compilation. L'explication
+de fond — une trame retour DALI vient d'un seul appareil, une requête adressée à un groupe
+provoquerait une collision — relève de la norme et n'est pas vérifiée ici.
+
+⚠️ **La réponse suit `Config.CONFIG_DALI`, pas le matériel présent.** `CONFIG_DALI` (module 641) et
+`CONFIG_DALI_647` sont posés par deux tests indépendants du balayage de modules ; rien ne les rend
+exclusifs, et le 641 l'emporte — ici comme dans `DaliSwitch` et `DaliDimValue`. Sur une armoire
+portant les deux modules, une relecture de groupe répond donc `ERR GROUP_UNSUPPORTED` **alors que le
+chemin 753-647 aurait su répondre**, celui-ci tenant sa propre image côté programme. Ne pas conclure
+d'un `GROUP_UNSUPPORTED` que l'armoire n'a pas de 647.
+
+### Ce qui n'a pas encore de forme d'erreur
+
+Deux réponses restent des valeurs plausibles pour une question qui n'en a pas :
+
+- **adresse au-delà de `DMX_ADDR_BASE + DMX_CHANNELS`** : la requête retombe sur la voie DALI et
+  répond avec l'adresse latchée de la lecture précédente ;
+- **armoire sans aucun module DALI** : le chemin 647 répond depuis des tableaux jamais alimentés,
+  soit « éteint, niveau 0 ».
+
+Les traiter suppose de décider ce que le serveur doit voir — une raison `ERR` de plus, ou un refus.
 
 Deux contraintes ont façonné cette forme, et elles sont à connaître avant de la modifier :
 
