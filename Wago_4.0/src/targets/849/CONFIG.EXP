@@ -21,21 +21,15 @@ VAR_INPUT RETAIN
 	DALI_MODE: BYTE;
 END_VAR
 VAR CONSTANT
-	(* Announced by WAGO_GET_VERSION. calaos_server gates protocol features on
-	   it, so it must be bumped whenever the UDP contract changes. 4.0 is the
-	   first program that answers an unservable DALI read with an explicit
-	   error instead of a plausible value - see the WAGO_DALI_GET handler. *)
+	(* calaos_server gates protocol features on this, so bump it whenever the
+	   UDP contract changes. See docs/PROTOCOL-4.0.md. *)
 	CALAOS_VERSION_H: WORD := 4;
 	CALAOS_VERSION_L: WORD := 0;
 	CALAOS_MODEL: STRING(8) := '750-849';
 	DALI: BYTE := 1;
 	DSI: BYTE := 2;
-	(* DALI/DMX boundary of the address field. An address STRICTLY above
-	   DMX_ADDR_BASE is a DMX channel, numbered address - DMX_ADDR_BASE.
-	   abDMX_Values is an ARRAY [1..255] and DMX starts at FirstChannel 1, so
-	   the first DMX address is DMX_ADDR_BASE + 1 and the last is
-	   DMX_ADDR_BASE + DMX_CHANNELS. DMX_ADDR_BASE itself is NOT a DMX
-	   address: it would index abDMX_Values[0], which is out of bounds. *)
+	(* Exclusive bound: abDMX_Values is an ARRAY [1..255], so the first DMX
+	   address is DMX_ADDR_BASE + 1 and this value itself is not one. *)
 	DMX_ADDR_BASE: DINT := 100;
 	DMX_CHANNELS: DINT := 255;
 END_VAR

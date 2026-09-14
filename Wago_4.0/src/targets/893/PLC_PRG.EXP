@@ -38,8 +38,8 @@ SendInput;
 (* Read a command from UDP *)
 UDPServer;
 
-(* Server just went away: rebuild the internal state from the mirrored
-   output image before ManageOutput starts driving the outputs. *)
+(* Edge, never level: reseeding every cycle would stop standalone mode from
+   driving anything. *)
 hb_trig(CLK := HEARTBEAT);
 IF (hb_trig.Q = TRUE) THEN
 	SeedOutputState;
@@ -64,15 +64,9 @@ IF (HEARTBEAT = FALSE) THEN
 	END_FOR
 ELSE
 
-	(* 16 words = the 32 bytes of netOutStandard, i.e. the 256 coils
-	   4096..4351 of the address map; the loop stopped at 15 words and
-	   left coils 4336..4351 unread.
-	   Side effect worth knowing: these last two bytes are now published
-	   every cycle in server mode. An output above the 240th therefore
-	   follows the server, where it used to keep whatever ManageOutput had
-	   left there at the last changeover.
-	   Whether calaos_server writes past coil 4335 cannot be checked from
-	   this repository; the loop is correct either way. *)
+	(* 16 words covers the 32 bytes of netOutStandard. Publishing the last two
+	   means an output above the 240th follows the server instead of keeping
+	   what ManageOutput left at the last changeover. *)
 	j := 0;
 	FOR i := 0 TO 15 DO
 		valw := netOutStandard[j + 1];

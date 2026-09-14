@@ -74,8 +74,7 @@ FOR cpt := 0 TO 512 DO
 			_light(IN := FALSE, STATE := BYTE_TO_BOOL(SHR(lights[tmp / 8], tmp MOD 8) AND 16#01));
 			_light(IN := TRUE, STATE := BYTE_TO_BOOL(SHR(lights[tmp / 8], tmp MOD 8) AND 16#01));
 
-			(* Same DALI/DMX boundary as UDPServer: strictly above DMX_ADDR_BASE is a DMX channel.
-			   ADDR2 is a BYTE, so the high end cannot reach past abDMX_Values. *)
+			(* Same boundary as UDPServer; ADDR2 being a BYTE bounds the high end. *)
 			IF (BYTE_TO_DINT(output_addr[tmp].ADDR2) > Config.DMX_ADDR_BASE) THEN
 				IF (_light.OUT = TRUE) THEN
 					abDMX_Values[DINT_TO_BYTE(BYTE_TO_DINT(output_addr[tmp].ADDR2) - Config.DMX_ADDR_BASE)] := 255;

@@ -13,30 +13,11 @@ VAR
 END_VAR
 
 (* @END_DECLARATION := '0' *)
-(* Rebuild the internal state of the telerupteurs from the output image.
-   Called on the FALLING edge of HEARTBEAT only: the server has just gone away
-   and ManageOutput takes over. Without this, lights[] still holds what it had
-   before the server took control, and the first key press goes the wrong way
-   (it turns a lit lamp on again instead of off).
-   Seeding on the LEVEL instead of the edge would be wrong: it would overwrite
-   the state ManageOutput just produced, every cycle.
-
-   TELERUPTEUR and VOLET are seeded. The other types are not:
-   - TELERUPTEUR_DALI / _DALI_GROUP drive DALI or DMX, not OutArrState, so the
-     image holds nothing about them;
-   - VOLET_IMPULSE is left out on purpose: ManageOutput calls it on every cycle
-     and publishes MONTE / DESCENTE OUTSIDE the event guard, so it reasserts its
-     own state from the first standalone cycle. Seeding its two bits here would
-     be latched forever by that unconditional publication. Its mode and imp are
-     not reconstructible from the output image anyway;
-   - DIRECT reasserts its level every cycle and needs no seeding.
-
-   VOLET is seeded through the SEED / SEED_MONTE / SEED_DESCENTE inputs of the
-   FB, because CoDeSys 2.3 refuses to write its VAR_OUTPUT from outside
-   ("Operands of ST must be variables with write access"). What stays unseeded
-   even there is sens, the direction the next press picks: it is not in the
-   output image. The first press after a changeover does stop the volet, which
-   is the point, but the direction of the press after it may be wrong once. *)
+(* Only TELERUPTEUR and VOLET are seeded. DALI and DMX do not go through
+   OutArrState; DIRECT reasserts itself every cycle; VOLET_IMPULSE publishes
+   its bits outside the event guard, so a seeded bit would stay latched.
+   sens, mode and imp are not in the output image: the first press after a
+   changeover stops the volet, the one after may pick the wrong way. *)
 
 FOR cpt := 0 TO 512 DO
 
@@ -64,10 +45,8 @@ FOR cpt := 0 TO 512 DO
 			tmp := output_addr[cpt].SameAs;
 		END_IF
 
-		(* The rule resolved through SameAs must be a VOLET too. If it were a
-		   VOLET_IMPULSE, ManageOutput would publish the seeded bits outside its
-		   event guard, on every cycle, with nothing to make them fall back: the
-		   relay would stay latched and the volet would run to its end stop. *)
+		(* The rule reached through SameAs must be a VOLET too: seeding a
+		   VOLET_IMPULSE instance would latch its relay for good. *)
 		IF (output_type[tmp] = VOLET) THEN
 			addr := output_addr[tmp].ADDR1 + start_addr_out;
 			val := BYTE_TO_BOOL(SHR(OutArrState[addr / 8], addr MOD 8) AND 16#01);
