@@ -12,6 +12,10 @@ END_VAR
 VAR_INPUT
 	IN: BOOL;
 	IMPULSE: BOOL;
+	(* Seeding, written only by SeedOutputState on the falling edge of HEARTBEAT *)
+	SEED: BOOL;
+	SEED_MONTE: BOOL;
+	SEED_DESCENTE: BOOL;
 END_VAR
 VAR_OUTPUT
 	MONTE: BOOL;
@@ -19,6 +23,21 @@ VAR_OUTPUT
 END_VAR
 (* @END_DECLARATION := '0' *)
 (* Volet *)
+
+(* Seeding of the internal state after a server -> standalone changeover.
+   MONTE and DESCENTE are VAR_OUTPUT: CoDeSys 2.3 refuses to write them from
+   outside the FB, so the write has to happen here, in the body. SEED clears
+   itself, so the next ordinary call - which does not pass it - runs the
+   normal logic untouched.
+   NOT seeded, because not reconstructible from the output image: sens (the
+   direction the next press picks in normal mode), and mode / imp (impulse
+   mode). The seeding is therefore partial by construction. *)
+IF SEED = TRUE THEN
+	SEED := FALSE;
+	MONTE := SEED_MONTE;
+	DESCENTE := SEED_DESCENTE;
+	RETURN;
+END_IF
 
 IF IMPULSE = FALSE THEN
 	(* Normal mode *)
