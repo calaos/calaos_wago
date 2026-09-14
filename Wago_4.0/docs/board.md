@@ -40,6 +40,7 @@ Dernière mise à jour : 2026-09-14
 | [T-10](done/T-10.md) | Le balayage de modules ne classe pas tout et recalcule l'offset de la 647 à la main | ✅ clos *(partiel)* | `cef4d2c` |
 | [T-11](done/T-11.md) | La 753-647 est clouée en tête du rack et condamne 24 octets sans elle | ✅ clos *(partiel)* | `2c743d1` |
 | [T-12](done/T-12.md) | Rien ne permet d'observer le rack, les offsets ni la 647 de l'extérieur | ✅ clos *(partiel)* | `6461362` |
+| [T-13](todo/T-13.md) | En 4.0 avec une 647, les sorties digitales ne sont plus pilotées (régression T-11) | 📋 ouvert | — |
 
 ## Clôtures partielles — ce qui reste
 
@@ -60,13 +61,16 @@ Dernière mise à jour : 2026-09-14
   sinon rien ne change pour l'utilisateur. Contrat dans [PROTOCOL-4.0.md](PROTOCOL-4.0.md).
   Son critère ⭐ n'est pas atteint non plus : deux réponses encodent encore « je ne sais pas » dans
   le domaine des valeurs (adresse hors plage DMX, armoire sans module DALI).
-- **T-10, T-11, T-12** : le code est en place et compile, mais **rien n'a tourné sur un rack**. Les
-  essais E3 (647 en tête, au milieu, après un analogique) et E4 (sans 647, même binaire) de
-  [BENCH-647.md](BENCH-647.md) décident si la piste tient. Deux hypothèses y sont mesurées pour
-  la première fois : le regroupement K-Bus (`SCAN_ERR_DALI647_ABOVE` sur R2) et la valeur de
-  `channels` pour une 647 (`WAGO_GET_INFO_MODULE`). T-12 attend aussi une vérification côté
-  `calaos_base` : `WAGO_MODULE` est-il parsé par nombre de champs ? Sinon, repli
+- **T-10, T-11, T-12** : le code a **enfin tourné sur un rack** (750-889 + 647, 2026-09-14). Le
+  balayage T-10 est juste (`scan_error=0`, `start_addr_out=192`, `AddrDali647Out=0`) et la 647 vit
+  (`feedback_last` non nul). Les verbes T-12 remontent tout. **Mais** les sorties digitales ne sont
+  plus pilotées — régression du chemin d'écriture ouverte en **T-13**. `channels` d'une 647 = 1 (et
+  non 0, l'inconnue fermée par le `OR moduleType=647` était donc superflue mais inoffensive). Reste
+  la vérification côté `calaos_base` : `WAGO_MODULE` est-il parsé par nombre de champs ? Sinon, repli
   `WAGO_GET_MODULE_DESC`.
+- **T-13** : ouvert le 2026-09-14. Régression introduite par T-11 (boîte 647 par `write_word` au lieu
+  de la variable localisée). Sur un rack avec 647, aucune sortie digitale ne bouge alors que la 3.0
+  les pilote. La 4.0 n'est pas déployable sur un rack DALI tant que ce point n'est pas réglé.
 - **T-4** : la question « le serveur écrit-il au-delà de la coil 4335 ? » reste ouverte, faute de
   `calaos_base`. Le correctif est juste dans les deux cas ; la réponse décide de son intérêt, pas
   de sa justesse. Effet de bord assumé : une sortie au-delà de la 240e suit désormais le serveur
