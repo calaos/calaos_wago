@@ -35,7 +35,7 @@ Dernière mise à jour : 2026-09-14
 | [T-5](done/T-5.md) | `lights[]` trop court d'un octet pour la règle 512 | ✅ clos | `0fa011c` |
 | [T-6](done/T-6.md) | Le drapeau groupe est ignoré sur un des deux chemins de relecture DALI | ✅ clos *(partiel)* | `25e8b9f` |
 | [T-7](done/T-7.md) | Après une bascule, le premier appui relance un volet au lieu de l'arrêter | ✅ clos | `a857e72` |
-| [T-8](todo/T-8.md) | Une lecture DALI en attente peut être détournée ou privée de réponse | 📋 ouvert | — |
+| [T-8](done/T-8.md) | Une lecture DALI en attente peut être détournée ou privée de réponse | ✅ clos *(partiel)* | `0bb27c9` |
 
 ## Clôtures partielles — ce qui reste
 
@@ -44,6 +44,10 @@ Dernière mise à jour : 2026-09-14
 - **T-2** : l'ensemencement ne couvre que `TELERUPTEUR`. Les volets sont hors de portée sans
   modifier l'interface du FB `VOLET` → **T-7**. Le §5.3 de la fiche était faux, il a été amendé
   sur place.
+- **T-8** : défaut 1 corrigé, **défaut 2 non traité** — `DaliSend` reste un jeton unique. Ce n'est
+  pas un report de confort : le POU n'a qu'un emplacement de réponse, et les trames ne portent ni
+  adresse ni numéro, donc aucune file ni aucun refus n'est décidable côté automate seul. Voir le
+  §6 bis de la fiche.
 - **T-6** : repli du §4.1 — `-1 -1` au lieu d'une valeur fausse. ⛔ **Cette convention d'erreur
   n'existe pas dans le protocole Calaos et engage `calaos_server`, hors dépôt : à valider là-bas.**
   Le §4.2 est inatteignable et était déjà faux (arité différente entre les deux chemins) ; le §5
