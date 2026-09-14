@@ -74,6 +74,18 @@ END_VAR
 - Le Library Manager est exporte comme un objet par bibliotheque, horodatage
   dans le nom. Ne pas "nettoyer" ces fichiers.
 
+### Commentaires
+
+- Commenter le **pourquoi** et les pièges qui ne se déduisent pas du code.
+- Ne pas écrire : ce que le code fait, des numéros de ticket, des phases, des
+  jalons, des emojis, l'historique du débug, ou « on a trouvé que ».
+- Max ~8 lignes pour un bloc vraiment non évident. Sinon 1 à 3 lignes.
+- Les décisions d'architecture vont dans `docs/`, pas dans le code.
+- Ne pas « documenter pour le prochain LLM ». Écrire pour un humain qui relira
+  le diff.
+- S'aligner sur les fichiers déjà propres ; ne pas amplifier le style verbeux
+  existant.
+
 ### Modification minimale
 
 Editer un `.exp` = changer les lignes concernees et rien d'autre. Pas de

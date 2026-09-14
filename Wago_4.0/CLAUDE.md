@@ -23,6 +23,17 @@ du code de `../Wago_3.0`, retravaillee ici. Tout se passe dans ce dossier.
    - modif dans `src/targets/X/` -> `build.cmd X` suffit
 5. Committer `src/` **et** les `*.pro` ensemble apres un build vert (sinon ils divergent).
 
+## Commentaires
+- Commenter le **pourquoi** et les pieges qui ne se deduisent pas du code.
+- Ne pas ecrire : ce que le code fait, des numeros de ticket, des phases, des
+  jalons, des emojis, l'historique du debug, ou « on a trouve que ».
+- Max ~8 lignes pour un bloc vraiment non evident. Sinon 1 a 3 lignes.
+- Les decisions d'architecture vont dans `docs/`, pas dans le code.
+- Ne pas « documenter pour le prochain LLM ». Ecrire pour un humain qui relira
+  le diff.
+- S'aligner sur les fichiers deja propres ; ne pas amplifier le style verbeux
+  existant.
+
 ## Tickets
 `docs/board.md` est le tableau de suivi : il porte la convention complete et l'etat
 de chaque fiche. En bref : une fiche ouverte est dans `docs/todo/`, une fiche close
