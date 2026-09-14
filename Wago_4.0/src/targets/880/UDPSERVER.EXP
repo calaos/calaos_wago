@@ -63,6 +63,10 @@ VAR
 	dmx_read: BOOL;
 
 	daliShortAddr: BYTE;
+	(* Group flag of the pending read, latched at reception like daliShortAddr above.
+	   dali_group itself cannot be used when the answer is built: the WAGO_DALI_SET
+	   handler writes it too, and the answer is built several cycles later. *)
+	daliGroupRead: BOOL;
 
 END_VAR
 (* @END_DECLARATION := '0' *)
@@ -264,10 +268,16 @@ IF server.bDataReceived THEN
 		ELSE
 			dali_group := FALSE;
 		END_IF
+		(* Latched here, together with the address below: from this point on the answer
+		   reads daliGroupRead and never dali_group. *)
+		daliGroupRead := dali_group;
 
 		(* Same boundary as WAGO_DALI_SET: up to DMX_ADDR_BASE the address is DALI, above it it is DMX *)
 		IF (p2 <= Config.DMX_ADDR_BASE) THEN
-			IF Config.CONFIG_DALI = TRUE THEN
+			(* No bus read is started for a group here. The reason is in the DALI standard, not in
+			   this repository: a backward frame comes from a single device, so a query addressed to
+			   a group would collide. Not verified here - see the group branch of the DaliSend block. *)
+			IF (Config.CONFIG_DALI = TRUE) AND (daliGroupRead = FALSE) THEN
 				DALIDimmValue(xEnable := TRUE, bShortAddress := DINT_TO_BYTE(p2), tCycleTime := t#1s);
 			END_IF
 			daliShortAddr := DINT_TO_BYTE(p2);
@@ -575,7 +585,24 @@ IF (DaliSend = TRUE) THEN
 		DaliSend := FALSE;
 	ELSE
 		IF Config.CONFIG_DALI = TRUE THEN
-			IF (DALIDimmValue.xReady = TRUE) THEN
+			IF daliGroupRead = TRUE THEN
+				(* No group read back on this path: FbDALI_StatusDimmValue takes no group input and
+				   DALI_02 carries no group status FB - a DALI answer comes from one device only.
+				   Answering for the short address of the same number gave a wrong value that looked
+				   right. The frame keeps its shape and carries -1 in both fields, out of domain for
+				   both: -1 is neither 0 nor 1 for the on/off field, and outside 0..100 for the level.
+				   The assumption is that a client checking the range of what it reads will not take
+				   that for a state; calaos_server is not in this repo, so it is not verified here.
+				   Note this branch follows Config.CONFIG_DALI, not the hardware: CONFIG_DALI and
+				   CONFIG_DALI_647 are set independently by the module scan in Config, and nothing
+				   makes them exclusive. On a cabinet carrying both modules CONFIG_DALI wins here, as
+				   it already does in DaliSwitch and DaliDimValue, so the answer is -1 -1 even though
+				   the 753-647 present could have answered. Note DaliSwitch states that both modules
+				   cannot be used at the same time, so that cabinet may be out of scope anyway. *)
+				cmd := 'WAGO_DALI_GET -1 -1';
+				start_send := TRUE;
+				DaliSend := FALSE;
+			ELSIF (DALIDimmValue.xReady = TRUE) THEN
 				cmd := 'WAGO_DALI_GET ';
 				cmd := CONCAT(cmd, ITOA(BOOL_TO_INT(DALIDimmValue.xStatus)));
 				cmd := CONCAT(cmd, ' ');
