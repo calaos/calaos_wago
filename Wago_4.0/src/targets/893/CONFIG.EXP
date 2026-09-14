@@ -20,7 +20,11 @@ VAR_INPUT RETAIN
 	DALI_MODE: BYTE;
 END_VAR
 VAR CONSTANT
-	CALAOS_VERSION_H: WORD := 3;
+	(* Announced by WAGO_GET_VERSION. calaos_server gates protocol features on
+	   it, so it must be bumped whenever the UDP contract changes. 4.0 is the
+	   first program that answers an unservable DALI read with an explicit
+	   error instead of a plausible value - see the WAGO_DALI_GET handler. *)
+	CALAOS_VERSION_H: WORD := 4;
 	CALAOS_VERSION_L: WORD := 0;
 	CALAOS_MODEL: STRING(8) := '750-893';
 	DALI: BYTE := 1;
