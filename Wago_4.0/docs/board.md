@@ -36,6 +36,7 @@ Dernière mise à jour : 2026-09-14
 | [T-6](done/T-6.md) | Le drapeau groupe est ignoré sur un des deux chemins de relecture DALI | ✅ clos *(partiel)* | `25e8b9f` |
 | [T-7](done/T-7.md) | Après une bascule, le premier appui relance un volet au lieu de l'arrêter | ✅ clos | `a857e72` |
 | [T-8](done/T-8.md) | Une lecture DALI en attente peut être détournée ou privée de réponse | ✅ clos *(partiel)* | `0bb27c9` |
+| [T-9](done/T-9.md) | La réponse d'erreur de T-6 est lue comme « allumée » par `calaos_server` | ✅ clos *(partiel)* | `7febc40`, `100455d` |
 
 ## Clôtures partielles — ce qui reste
 
@@ -48,10 +49,12 @@ Dernière mise à jour : 2026-09-14
   pas un report de confort : le POU n'a qu'un emplacement de réponse, et les trames ne portent ni
   adresse ni numéro, donc aucune file ni aucun refus n'est décidable côté automate seul. Voir le
   §6 bis de la fiche.
-- **T-6** : repli du §4.1 — `-1 -1` au lieu d'une valeur fausse. ⛔ **Cette convention d'erreur
-  n'existe pas dans le protocole Calaos et engage `calaos_server`, hors dépôt : à valider là-bas.**
-  Le §4.2 est inatteignable et était déjà faux (arité différente entre les deux chemins) ; le §5
-  reste non instruit.
+- **T-6** : repli du §4.1. La forme `-1 -1` livrée par ce ticket était **fausse** — `calaos_server`
+  la lisait comme « allumé » — et a été remplacée par `ERR <raison>` dans **T-9**. Le §4.2 est
+  inatteignable et était déjà faux (arité différente entre les deux chemins) ; le §5 reste non
+  instruit.
+- **T-9** : moitié automate faite. `calaos_server` doit apprendre `WAGO_DALI_GET ERR <raison>`,
+  sinon rien ne change pour l'utilisateur. Contrat dans [PROTOCOL-4.0.md](PROTOCOL-4.0.md).
 - **T-4** : la question « le serveur écrit-il au-delà de la coil 4335 ? » reste ouverte, faute de
   `calaos_base`. Le correctif est juste dans les deux cas ; la réponse décide de son intérêt, pas
   de sa justesse. Effet de bord assumé : une sortie au-delà de la 240e suit désormais le serveur
