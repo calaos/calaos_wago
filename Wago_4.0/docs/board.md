@@ -34,7 +34,7 @@ Dernière mise à jour : 2026-09-14
 | [T-4](done/T-4.md) | 16 sorties Modbus (coils 4336..4351) ne sont jamais relues | ✅ clos *(partiel)* | `c081aa7` |
 | [T-5](done/T-5.md) | `lights[]` trop court d'un octet pour la règle 512 | ✅ clos | `0fa011c` |
 | [T-6](done/T-6.md) | Le drapeau groupe est ignoré sur un des deux chemins de relecture DALI | ✅ clos *(partiel)* | `25e8b9f` |
-| [T-7](todo/T-7.md) | Après une bascule, le premier appui relance un volet au lieu de l'arrêter | 📋 ouvert | — |
+| [T-7](done/T-7.md) | Après une bascule, le premier appui relance un volet au lieu de l'arrêter | ✅ clos | `a857e72` |
 | [T-8](todo/T-8.md) | Une lecture DALI en attente peut être détournée ou privée de réponse | 📋 ouvert | — |
 
 ## Clôtures partielles — ce qui reste
