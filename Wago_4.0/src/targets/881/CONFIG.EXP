@@ -22,8 +22,9 @@ VAR_INPUT RETAIN
 	DALI_MODE: BYTE;
 END_VAR
 VAR CONSTANT
-	(* calaos_server gates protocol features on this, so bump it whenever the
-	   UDP contract changes. See docs/PROTOCOL-4.0.md. *)
+	(* Names the released UDP contract: calaos_server gates protocol features on
+	   it, so bump it when the contract changes after a release, not while one is
+	   being built. See docs/PROTOCOL-4.0.md. *)
 	CALAOS_VERSION_H: WORD := 4;
 	CALAOS_VERSION_L: WORD := 0;
 	CALAOS_MODEL: STRING(8) := '750-881';

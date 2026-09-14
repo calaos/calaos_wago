@@ -71,6 +71,8 @@ VAR
 	   answer is built several cycles later. *)
 	daliGroupRead: BOOL;
 
+	read_out_word: READ_OUTPUT_WORD;
+
 END_VAR
 (* @END_DECLARATION := '0' *)
 (* Here we start an UDP server for other network functions *)
@@ -182,14 +184,64 @@ IF server.bDataReceived THEN
 		p1 := GET_PARAM_DINT(cmd, 1);
 		cmd := 'WAGO_MODULE ';
 		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
+		(* Out of range: NA in every field, rather than another module's values. *)
+		IF ((p1 >= 0) AND (p1 <= 63)) THEN
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(WORD_TO_INT(info[p1].moduleType)));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(info[p1].physicalPos));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(info[p1].desc.sizePAE));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(info[p1].desc.sizePAA));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(WORD_TO_INT(info[p1].desc.posPAE)));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(WORD_TO_INT(info[p1].desc.posPAA)));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(BYTE_TO_INT(info[p1].desc.channels)));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(BYTE_TO_INT(info[p1].desc.altFormat)));
+		ELSE
+			cmd := CONCAT(cmd, ' NA NA NA NA NA NA NA NA');
+		END_IF
+		start_send := TRUE;
+	END_IF
+
+	IF (STRING_COMPARE(cmd, 'WAGO_GET_LAYOUT') = TRUE) THEN
+		cmd := 'WAGO_LAYOUT ';
+		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(start_addr_in)));
 		cmd := CONCAT(cmd, ' ');
-		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(info[p1].moduleType)));
+		cmd := CONCAT(cmd, ITOA(WORD_TO_INT(start_addr_out)));
 		cmd := CONCAT(cmd, ' ');
-		cmd := CONCAT(cmd, ITOA(info[p1].physicalPos));
+		cmd := CONCAT(cmd, ITOA(BYTE_TO_INT(Config.ScanError)));
 		cmd := CONCAT(cmd, ' ');
-		cmd := CONCAT(cmd, ITOA(info[p1].desc.sizePAE));
+		(* NA, not 0: nobody writes daliFeedbackLast without the module, and 0 is
+		   its "all good". *)
+		IF (Config.CONFIG_DALI_647 = TRUE) THEN
+			cmd := CONCAT(cmd, ITOA(WORD_TO_INT(Config.AddrDali647In)));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(WORD_TO_INT(Config.AddrDali647Out)));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(BYTE_TO_INT(DaliPrg647.daliFeedbackLast)));
+		ELSE
+			cmd := CONCAT(cmd, 'NA NA NA');
+		END_IF
+		start_send := TRUE;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_GET_OUTPUT_WORD ', 21) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		read_out_word(WORD_ADDRESS := DINT_TO_WORD(p1));
+		cmd := 'WAGO_OUTPUT_WORD ';
+		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
 		cmd := CONCAT(cmd, ' ');
-		cmd := CONCAT(cmd, ITOA(info[p1].desc.sizePAA));
+		(* NA on ERROR: a refused read must not look like a word that reads 0. *)
+		IF (read_out_word.ERROR = TRUE) THEN
+			cmd := CONCAT(cmd, 'NA');
+		ELSE
+			cmd := CONCAT(cmd, WORD_TO_STRING(read_out_word.VALUE));
+		END_IF
 		start_send := TRUE;
 	END_IF
 
