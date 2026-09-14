@@ -252,9 +252,12 @@ IF server.bDataReceived THEN
 			dali_group := FALSE;
 		END_IF
 
-		(* From DMX_ADDR_BASE up the address is a DMX channel: neither a DALI short address nor a DALI group *)
-		IF (p3 >= Config.DMX_ADDR_BASE) THEN
-			abDMX_Values[DINT_TO_BYTE(p3 - Config.DMX_ADDR_BASE)] := DINT_TO_BYTE(p4 * 255 / 100);
+		(* Above DMX_ADDR_BASE the address is a DMX channel: neither a DALI short address nor a DALI group.
+		   Outside 1..DMX_CHANNELS the command is dropped rather than writing outside abDMX_Values. *)
+		IF (p3 > Config.DMX_ADDR_BASE) THEN
+			IF (p3 <= Config.DMX_ADDR_BASE + Config.DMX_CHANNELS) THEN
+				abDMX_Values[DINT_TO_BYTE(p3 - Config.DMX_ADDR_BASE)] := DINT_TO_BYTE(p4 * 255 / 100);
+			END_IF
 		ELSE
 			Dali_switch(bAddress := DINT_TO_BYTE(p3), xGroup := dali_group, xButton := FALSE);
 			Dali_switch(bAddress := DINT_TO_BYTE(p3), xGroup := dali_group, bDimmLevel := DINT_TO_BYTE(p4),
@@ -273,16 +276,22 @@ IF server.bDataReceived THEN
 			dali_group := FALSE;
 		END_IF
 
-		(* Same boundary as WAGO_DALI_SET: below DMX_ADDR_BASE the address is DALI, from it up it is DMX *)
-		IF (p2 < Config.DMX_ADDR_BASE) THEN
+		(* Same boundary as WAGO_DALI_SET: up to DMX_ADDR_BASE the address is DALI, above it it is DMX *)
+		IF (p2 <= Config.DMX_ADDR_BASE) THEN
 			IF Config.CONFIG_DALI = TRUE THEN
 				DALIDimmValue(xEnable := TRUE, bShortAddress := DINT_TO_BYTE(p2), tCycleTime := t#1s);
 			END_IF
 			daliShortAddr := DINT_TO_BYTE(p2);
 			dmx_read := FALSE;
 		ELSE
-			dmx_read_addr := DINT_TO_BYTE(p2 - Config.DMX_ADDR_BASE); (* DMX channel comes in p2, like in WAGO_DALI_SET p3 ; p2 is never the group flag here *)
-			dmx_read := TRUE;
+			(* DMX channel comes in p2, like in WAGO_DALI_SET p3 ; p2 is never the group flag here.
+			   Out of range, no DMX read at all rather than an out of bounds access on abDMX_Values. *)
+			IF (p2 <= Config.DMX_ADDR_BASE + Config.DMX_CHANNELS) THEN
+				dmx_read_addr := DINT_TO_BYTE(p2 - Config.DMX_ADDR_BASE);
+				dmx_read := TRUE;
+			ELSE
+				dmx_read := FALSE;
+			END_IF
 		END_IF
 		DaliSend := TRUE;
 	END_IF

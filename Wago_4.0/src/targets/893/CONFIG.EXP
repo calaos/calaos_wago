@@ -25,7 +25,14 @@ VAR CONSTANT
 	CALAOS_MODEL: STRING(8) := '750-893';
 	DALI: BYTE := 1;
 	DSI: BYTE := 2;
-	DMX_ADDR_BASE: DINT := 100; (* DALI/DMX boundary of the address field: >= this value means DMX channel (address - DMX_ADDR_BASE) *)
+	(* DALI/DMX boundary of the address field. An address STRICTLY above
+	   DMX_ADDR_BASE is a DMX channel, numbered address - DMX_ADDR_BASE.
+	   abDMX_Values is an ARRAY [1..255] and DMX starts at FirstChannel 1, so
+	   the first DMX address is DMX_ADDR_BASE + 1 and the last is
+	   DMX_ADDR_BASE + DMX_CHANNELS. DMX_ADDR_BASE itself is NOT a DMX
+	   address: it would index abDMX_Values[0], which is out of bounds. *)
+	DMX_ADDR_BASE: DINT := 100;
+	DMX_CHANNELS: DINT := 255;
 END_VAR
 
 (* @END_DECLARATION := '0' *)
