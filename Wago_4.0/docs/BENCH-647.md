@@ -1,7 +1,7 @@
 # Banc — la 753-647 n'importe où, et sans elle
 
 Protocole des essais E2, E3, E4 du §8 de [WAGO_750-647.md](WAGO_750-647.md). Prérequis : T-10, T-11
-et T-12 en place, `WAGO_GET_VERSION` répondant `4.1`.
+et T-12 en place, `WAGO_GET_VERSION` répondant `4.0`.
 
 ## Avant de commencer
 
@@ -12,6 +12,9 @@ et T-12 en place, `WAGO_GET_VERSION` répondant `4.1`.
   de la machine dont l'adresse a été donnée par `WAGO_SET_SERVER_IP` (un `nc -u -l 4646` suffit).
 - Ne pas enchaîner une commande de banc pendant une lecture `WAGO_DALI_GET` en vol : le serveur
   jette tout verbe `WAGO_*` inconnu dans cette fenêtre.
+- **Pas de `\n` terminal.** `WAGO_GET_LAYOUT` et `WAGO_GET_INFO` sont comparés strictement, un
+  retour à la ligne les rend muets — `printf 'WAGO_GET_LAYOUT' | nc -u <ip> 4646`, jamais `echo`.
+  Les verbes à paramètre (`WAGO_GET_OUTPUT_WORD 0`) sont comparés par préfixe et tolèrent le `\n`.
 - **Jamais** de variable localisée pour instrumenter : elle recréerait la condition mesurée.
 
 ## Les racks
@@ -76,16 +79,22 @@ seule depuis ce dépôt : à faire à la main.
 
 **Échec** ⇒ le conflit n'est pas la déclaration. Retour à E1/E2.
 
-## E2 — si un résultat est ambigu
+## E2 — seulement si E4 échoue
 
-Rack R0, avec le binaire **3.0** (variables localisées), en dégradé : `WAGO_SET_OUTPUT 0 1`, puis
+Le verbe n'existe pas en 3.0 : E2 se joue avec le binaire **4.0**, sur R0, en dégradé, et n'a de
+sens que si les sorties 0..15 restent mortes malgré T-11. `WAGO_SET_OUTPUT 0 1`, puis
 `WAGO_GET_OUTPUT_WORD 0` dix fois à 1 s.
+
+`read_out_word` lit l'image laissée par le **cycle précédent**, toujours au même point du cycle —
+entre `SendInput` et nos propres `write_word`. Il ne peut donc pas dire *où* dans le cycle une
+écriture concurrente survient, seulement *si* elle survient.
 
 | lecture | cause | remède |
 |---|---|---|
-| figée à 0 malgré nos écritures | écrasement au rafraîchissement d'image — la déclaration | T-11 |
+| `NA` | lecture refusée par `mod_com` — l'instrument, pas l'image | vérifier l'adresse mot envoyée |
+| figée à 0 malgré nos écritures | quelque chose écrase l'image après notre `write_word` | ce n'est plus la déclaration ; chercher dans la bibliothèque 647, ou ailleurs |
 | change sans nous | quelqu'un d'autre écrit — la bibliothèque | il ne reste que deux builds |
-| `1` stable et relais mort | écrasement au transfert K-Bus, après notre lecture — la déclaration | T-11, et noter **où** dans le cycle |
+| `1` stable et relais mort | l'image est juste, le K-Bus ne la transfère pas | hors du programme : coupleur, câblage, module |
 
 ## Ce qu'un écart implique
 

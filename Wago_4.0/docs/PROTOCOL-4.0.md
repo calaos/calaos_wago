@@ -89,6 +89,33 @@ Tant que ce n'est pas fait, `ERR` est lu comme « allumé », exactement comme `
 3. Ne pas ajouter de verbe dédié côté automate sans lever d'abord le filtre de
    `udpReplyMisattributedToDaliGet`.
 
+## Verbes de diagnostic
+
+Pour le banc ([BENCH-647.md](BENCH-647.md)). `calaos_server` ne les consomme pas ; `WAGO_INFO` n'a
+pas bougé. Ils font partie du contrat **4.0** — la version en cours de construction, pas encore
+sortie ; la version annoncée n'est incrémentée qu'après une sortie.
+
+| requête | réponse |
+|---|---|
+| `WAGO_GET_LAYOUT` | `WAGO_LAYOUT <start_addr_in> <start_addr_out> <scan_error> <dali647_in> <dali647_out> <feedback_last>` |
+| `WAGO_GET_INFO_MODULE <n>` | `WAGO_MODULE <n> <moduleType> <physicalPos> <sizePAE> <sizePAA> <posPAE> <posPAA> <channels> <altFormat>` — les quatre derniers sont nouveaux, **en fin**. Hors `0..63`, les huit champs valent `NA` : la trame garde ses 10 champs |
+| `WAGO_GET_OUTPUT_WORD <w>` | `WAGO_OUTPUT_WORD <w> <valeur>` — lecture de l'image de sortie par `READ_OUTPUT_WORD`, sans variable localisée. `<valeur>` vaut `NA` si le bloc rend `ERROR` : une lecture refusée ne doit pas ressembler à un mot qui vaut 0 |
+
+Unités : `start_addr_*` et `posPA*` en **bits**, `dali647_*` et `<w>` en **mots**. `scan_error` est le
+`ScanError` de [PROCESS-IMAGE.md](PROCESS-IMAGE.md).
+
+`dali647_in`, `dali647_out` et `feedback_last` valent la chaîne **`NA`** quand `CONFIG_DALI_647` est
+faux. Pas `0` : personne n'écrit le feedback sans la borne, et `0` est son « tout va bien » — la
+même règle que `WAGO_DALI_GET ERR`, appliquée à nous-mêmes. `feedback_last` est le dernier
+`bFeedback` **non nul** du maître 647 ; il n'est jamais remis à zéro.
+
+⚠️ `WAGO_MODULE` gagne quatre champs en fin. Si `calaos_server` ou `calaos_installer` parse cette
+réponse par **nombre** de champs, il faut le vérifier dans `calaos_base` avant de déployer ; un
+lecteur positionnel qui ne lit que les cinq premiers ne voit rien.
+
+Ces verbes tombent sous le filtre `udpReplyMisattributedToDaliGet` **uniquement** pendant une lecture
+DALI en vol : sur banc, ne pas enchaîner les deux.
+
 ## Sérialisation des requêtes
 
 `WagoMap::UDPCommand_cb` ne sort rien tant que la commande en tête est `inProgress`, et

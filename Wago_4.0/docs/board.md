@@ -39,7 +39,7 @@ Dernière mise à jour : 2026-09-14
 | [T-9](done/T-9.md) | La réponse d'erreur de T-6 est lue comme « allumée » par `calaos_server` | ✅ clos *(partiel)* | `7febc40`, `100455d` |
 | [T-10](done/T-10.md) | Le balayage de modules ne classe pas tout et recalcule l'offset de la 647 à la main | ✅ clos *(partiel)* | `cef4d2c` |
 | [T-11](done/T-11.md) | La 753-647 est clouée en tête du rack et condamne 24 octets sans elle | ✅ clos *(partiel)* | `2c743d1` |
-| [T-12](todo/T-12.md) | Rien ne permet d'observer le rack, les offsets ni la 647 de l'extérieur | 📋 ouvert | — |
+| [T-12](done/T-12.md) | Rien ne permet d'observer le rack, les offsets ni la 647 de l'extérieur | ✅ clos *(partiel)* | `6461362` |
 
 ## Clôtures partielles — ce qui reste
 
