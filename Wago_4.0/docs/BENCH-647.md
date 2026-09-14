@@ -27,7 +27,7 @@ réellement lus par `WAGO_GET_INFO_MODULE`.
 | **R2** | DI16 DO16 **647** DI16 DO16 | 192 / 192 | 0 / 0 | **l'hypothèse de regroupement** : la 647 est mappée en tête bien qu'au milieu, `scan_error = 0` |
 | **R3** | AI4 **647** DI16 DO16 | 256 / 192 | 4 / 0 | entrée et sortie se décalent indépendamment |
 | **R4** | DI16 DO16 AI4 | 64 / 0 | NA | le prérequis « analogiques après les digitaux » n'est plus nécessaire |
-| **R5** | 647 DO32 DO16 | — / 192 | 0 / 0 | `nb_output_digital = 48` ; la 3.0 disait 16 : l'angle mort mesuré |
+| **R5** | 647 DO32 DO16 | — / 192 | 0 / 0 | `nb_output_digital = 48` ; la 3.0 disait 16 : l'angle mort mesuré. `SCAN_ERR_DIGITAL_WIDE` (16) **est attendu** ici, c'est le DO32 |
 
 ## Pour chaque rack
 

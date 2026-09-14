@@ -42,6 +42,7 @@ Ce que `ScanError` vérifie, sans rien changer au comportement :
 | `SCAN_ERR_OUT_GAP` | un digital de sortie dont `posPAA ≠ start_addr_out + cumul` |
 | `SCAN_ERR_OUT_ALIGN` | `start_addr_out MOD 16 ≠ 0` |
 | `SCAN_ERR_DALI647_ALIGN` | `posPAE` ou `posPAA` de la 647 non multiple de 16 |
+| `SCAN_ERR_DIGITAL_WIDE` | un module classé digital de plus de 16 bits — un 32 voies légitime, **ou** un complexe dont `channels` vaut 0 et que le garde `OR moduleType` ne connaît pas ; l'ancienne borne de taille faisait tomber ce second cas dans le vide, sans nuire |
 
 Si l'hypothèse tombe — un rack R2 de [BENCH-647.md](BENCH-647.md) qui donne `start_addr_out = 32`
 au lieu de 192 — la boucle dégradée de `PLC_PRG`, qui écrit jusqu'au mot 255, passerait par-dessus
