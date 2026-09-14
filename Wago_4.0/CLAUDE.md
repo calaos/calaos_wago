@@ -12,7 +12,9 @@ du code de `../Wago_3.0`, retravaillee ici. Tout se passe dans ce dossier.
   3.0 porte `..\Additionnal` et doit etre corrige, sinon les libs ne se
   resolvent plus.
 - **Jamais** `../Wago_3.0/` : c'est la reference, en lecture seule.
-- Pas de `online login`, pas de telechargement vers un automate. Jamais.
+- Pas de `online login`, pas de telechargement vers un automate. Jamais. Seule
+  exception : `online bootproject`, que `build.cmd` emet **hors ligne** pour ecrire
+  `pro\*.PRG` + `.CHK` a cote du `.pro` - aucune connexion, aucun envoi.
 
 ## Boucle de travail obligatoire
 1. Modifier les `.exp`.
@@ -21,7 +23,8 @@ du code de `../Wago_3.0`, retravaillee ici. Tout se passe dans ce dossier.
 4. Une tache n'est terminee que si **toutes** les cibles impactees compilent.
    - modif dans `src/common/`  -> `build_all.cmd` obligatoire
    - modif dans `src/targets/X/` -> `build.cmd X` suffit
-5. Committer `src/` **et** les `*.pro` ensemble apres un build vert (sinon ils divergent).
+5. Committer `src/` **et** `pro/` ensemble apres un build vert - les `.pro` et les boot
+   projects `.PRG` + `.CHK` que le build regenere (sinon ils divergent).
 
 ## Commentaires
 - Commenter le **pourquoi** et les pieges qui ne se deduisent pas du code.

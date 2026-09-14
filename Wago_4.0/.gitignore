@@ -12,10 +12,6 @@ DEFAULT.DFR
 *.SYM_XML
 *.log
 
-# Boot projects : a regenerer volontairement, pas a commiter par accident
-*.PRG
-*.CHK
-
 # Artefacts generes a chaque rebuild par CoDeSys a cote du .pro
 *.ECI
 *.wibu.ini

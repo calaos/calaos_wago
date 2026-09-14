@@ -26,10 +26,21 @@ Claude Code.
 | `tools\export.cmd <c>` | `.pro` -> `build\export\<c>\*.exp` (un par objet) |
 | `tools\export_all.cmd` | idem pour toutes les cibles |
 | `tools\sort_exports.ps1` | classe les exports en common / targets, ecrit `build\export_report.txt` |
-| `tools\build.cmd <c>` | `.exp` -> import dans `.pro` -> rebuild -> `build\logs\build_<c>.log` |
+| `tools\build.cmd <c>` | `.exp` -> import dans `.pro` -> rebuild -> boot project `pro\wago_<c>.PRG` + `.CHK` -> `build\logs\build_<c>.log` |
 | `tools\build_all.cmd` | toutes les cibles (`--keep-going` pour ne pas s'arreter) |
 | `tools\open.cmd <c>` | ouvre le `.pro` dans l'IDE pour debloquer / verifier |
 | `tools\diag.cmd <c>` | export minimal instrumente : affiche le `.cds`, la commande et le log |
+
+## Boot projects
+
+`pro\wago_<cible>.PRG` et `.CHK` sont les binaires a charger dans l'automate. Ils sont
+**versionnes**, comme dans les versions 3.0 et anterieures, pour pouvoir etre telecharges
+directement depuis GitHub sans installer WAGO-I/O-PRO. `build.cmd` les regenere a chaque
+build et les supprime avant : un build rate n'en laisse pas un perime derriere lui.
+
+Ils sont produits par la commande cmdfile `online bootproject`, executee **hors ligne** :
+elle ecrit les deux fichiers a cote du `.pro` et n'ouvre aucune connexion vers un automate
+(verifie sur le log). C'est la seule commande `online ...` que les scripts emettent.
 
 ## Ce qui a ete valide
 - `tools\export_all.cmd` : 7/7 `EXPORT OK` (87 objets, 88 pour la 849).
