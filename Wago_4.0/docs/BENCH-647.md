@@ -90,9 +90,11 @@ Rack R0, avec le binaire **3.0** (variables localisées), en dégradé : `WAGO_S
 ## Ce qu'un écart implique
 
 - **R2 donne `start_addr_out = 32`** ⇒ le K-Bus mappe dans l'ordre physique, l'hypothèse de
-  regroupement tombe. La boucle dégradée de `PLC_PRG` (`FOR i := start_addr_out / 16 TO 255`)
-  écrirait par-dessus la 647 : la borner à `(start_addr_out + nb_output_digital - 1) / 16`,
-  nouvelle fiche. Le reste tient.
+  regroupement tombe. `SCAN_ERR_DALI647_ABOVE` (32) **doit** se lever — c'est exactement ce qu'il
+  mesure. La boucle dégradée de `PLC_PRG` (`FOR i := start_addr_out / 16 TO 255`) écrirait
+  par-dessus la 647 : la borner à `(start_addr_out + nb_output_digital - 1) / 16`, nouvelle
+  fiche. Le reste tient. ⛔ Ne pas laisser l'automate en mode dégradé sur ce rack tant que la
+  boucle n'est pas bornée.
 - **`SCAN_ERR_OUT_GAP` sur R2** ⇒ complexe intercalé dans le bloc digital : les scalaires ne
   suffisent plus, c'est le seul résultat qui rouvre la table d'indirection.
 - **`SCAN_ERR_DALI647_ALIGN` sur R3** ⇒ l'AI4 n'est pas aligné mot, `AddrDali647In` en mots est
