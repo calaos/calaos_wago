@@ -11,6 +11,8 @@
  Brut :
    -Function 3 -Address 8241 -Count 64        (FC1..FC4)
    -WriteCoil 4096 -Value 1 -AllowWrite       (FC5, automate de test seulement)
+   -Reset -AllowWrite                         redemarrage logiciel (0x2040), puis attend
+                                              le retour de l'automate
 
  Usage :
    .\wago-modbus.ps1 -Ip 193.168.30.124 -Preset Modules
@@ -25,9 +27,22 @@ param(
   [int]$WriteCoil = -1,
   [int]$Value,
   [switch]$AllowWrite,
+  [switch]$Reset,
   [int]$TimeoutMs = 2000
 )
 . "$PSScriptRoot\WagoNet.ps1"
+
+if ($Reset) {
+  if (-not $AllowWrite) { throw "Reset refuse sans -AllowWrite" }
+  Invoke-WagoSoftReset -Ip $Ip
+  $t0 = Get-Date
+  "reset envoye a $Ip, attente du retour..."
+  Start-Sleep -Seconds 3
+  while (((Get-Date) - $t0).TotalSeconds -lt 120) {
+    try { $id = Get-WagoIdentity -Ip $Ip; "{0}-{1} de retour apres {2:N0} s" -f $id.Series, $id.Item, ((Get-Date) - $t0).TotalSeconds; exit 0 } catch { Start-Sleep -Seconds 2 }
+  }
+  "pas de retour en 120 s"; exit 1
+}
 
 function Show-Words([int[]]$w, [int]$base) {
   for ($i = 0; $i -lt $w.Count; $i++) {

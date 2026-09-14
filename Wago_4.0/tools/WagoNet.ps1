@@ -123,6 +123,22 @@ function Write-WagoCoil {
   [void](Invoke-WagoModbus -Ip $Ip -Pdu $pdu -TimeoutMs $TimeoutMs)
 }
 
+function Write-WagoRegister {
+  # FC6. Meme reserve que Write-WagoCoil.
+  param([Parameter(Mandatory)][string]$Ip, [Parameter(Mandatory)][int]$Address, [Parameter(Mandatory)][int]$Value, [int]$TimeoutMs = 2000)
+  $pdu = [byte[]]@(6, ($Address -shr 8), ($Address -band 0xFF), ($Value -shr 8), ($Value -band 0xFF))
+  [void](Invoke-WagoModbus -Ip $Ip -Pdu $pdu -TimeoutMs $TimeoutMs)
+}
+
+function Invoke-WagoSoftReset {
+  # Redemarrage logiciel du coupleur : 0x55AA puis 0xAA55 dans 0x2040. L'automate
+  # coupe la connexion aussitot ; le second write peut donc rester sans reponse.
+  # Ne jamais generaliser a 0x2041..0x2043 (formatage flash, reglages usine).
+  param([Parameter(Mandatory)][string]$Ip)
+  Write-WagoRegister -Ip $Ip -Address 0x2040 -Value 0x55AA
+  try { Write-WagoRegister -Ip $Ip -Address 0x2040 -Value 0xAA55 } catch {}
+}
+
 # --- Cartographie WAGO 750-8xx, registres de description -----------------------
 # 0x2011 serie (750), 0x2012 reference (841, 881...), 0x2013/0x2014 firmware.
 # 0x2030..0x2032 : trois blocs de 64 mots, un par module du rack.
