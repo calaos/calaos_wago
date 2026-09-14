@@ -23,6 +23,13 @@ du code de `../Wago_3.0`, retravaillee ici. Tout se passe dans ce dossier.
    - modif dans `src/targets/X/` -> `build.cmd X` suffit
 5. Committer `src/` **et** les `*.pro` ensemble apres un build vert (sinon ils divergent).
 
+## Tickets
+`docs/board.md` est le tableau de suivi : il porte la convention complete et l'etat
+de chaque fiche. En bref : une fiche ouverte est dans `docs/todo/`, une fiche close
+dans `docs/done/` (deplacee par `git mv`), et la ligne `**Statut**` en tete de fiche
+fait foi. Un ticket n'est clos qu'apres 7 x `BUILD OK`, un aller-retour verifie, et
+une relecture par l'agent `codesys-review`. Un commit separe par ticket.
+
 ## Cibles
 `841 849 880 881 889 891 893` (WAGO 750-xxx). Meme code partout, sauf :
 - **849** : `PROGRAM KNX_Master` en plus (controleur KNX/IP, lib `KNX_IP_750_849_01`).
