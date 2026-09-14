@@ -71,6 +71,7 @@ VAR_GLOBAL
 	netDaliLevels AT %QW256: ARRAY[0..15] OF WORD; (* addresses for light levels *)
 
 	write_word: WRITE_OUTPUT_WORD;
+	write_word_out: WRITE_OUTPUT_WORD;
 	read_word: READ_INPUT_WORD;
 	write_bit: WRITE_OUTPUT_BIT;
 	read_bit: READ_INPUT_BIT;
