@@ -32,7 +32,7 @@ Dernière mise à jour : 2026-09-14
 | [T-2](done/T-2.md) | Le miroir serveur → dégradé écrivait à côté et éteignait les sorties | ✅ clos *(partiel)* | `6725cac` |
 | [T-3](done/T-3.md) | La relecture DMX lisait son adresse dans le mauvais paramètre | ✅ clos | `684e347`, `c9cf37d`, `08ef59a` |
 | [T-4](done/T-4.md) | 16 sorties Modbus (coils 4336..4351) ne sont jamais relues | ✅ clos *(partiel)* | `c081aa7` |
-| [T-5](todo/T-5.md) | `lights[]` trop court d'un octet pour la règle 512 | 📋 ouvert | — |
+| [T-5](done/T-5.md) | `lights[]` trop court d'un octet pour la règle 512 | ✅ clos | `0fa011c` |
 | [T-6](todo/T-6.md) | Le drapeau groupe est ignoré sur un des deux chemins de relecture DALI | 📋 ouvert | — |
 | [T-7](todo/T-7.md) | Après une bascule, le premier appui relance un volet au lieu de l'arrêter | 📋 ouvert | — |
 | [T-8](todo/T-8.md) | Une lecture DALI en attente peut être détournée ou privée de réponse | 📋 ouvert | — |
