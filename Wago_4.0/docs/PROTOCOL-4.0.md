@@ -100,6 +100,11 @@ sortie ; la version annoncée n'est incrémentée qu'après une sortie.
 | `WAGO_GET_LAYOUT` | `WAGO_LAYOUT <start_addr_in> <start_addr_out> <scan_error> <dali647_in> <dali647_out> <feedback_last>` |
 | `WAGO_GET_INFO_MODULE <n>` | `WAGO_MODULE <n> <moduleType> <physicalPos> <sizePAE> <sizePAA> <posPAE> <posPAA> <channels> <altFormat>` — les quatre derniers sont nouveaux, **en fin**. Hors `0..63`, les huit champs valent `NA` : la trame garde ses 10 champs |
 | `WAGO_GET_OUTPUT_WORD <w>` | `WAGO_OUTPUT_WORD <w> <valeur>` — lecture de l'image de sortie par `READ_OUTPUT_WORD`, sans variable localisée. `<valeur>` vaut `NA` si le bloc rend `ERROR` : une lecture refusée ne doit pas ressembler à un mot qui vaut 0 |
+| `WAGO_GET_STATE` | `WAGO_STATE <cycle> <outloop> <branch> <hb> <hb_et_ms> <led> <err_dig> <err_dali>` |
+| `WAGO_GET_NETOUT_WORD <w>` | `WAGO_NETOUT_WORD <w> <valeur\|NA>` — `netOutStandard` tel que le programme le lit. `<w>` en mots, `0..15` |
+| `WAGO_GET_OUTSTATE_WORD <w>` | `WAGO_OUTSTATE_WORD <w> <valeur\|NA>` — la table dégradée `OutArrState`. `<w>` en mots **absolus**, `0..255` |
+| `WAGO_GET_WRITTEN_WORD <w>` | `WAGO_WRITTEN_WORD <w> <valeur\|NA>` — la dernière valeur passée à `WRITE_OUTPUT_WORD` pour ce mot. `NA` tant que rien n'y a été écrit depuis le démarrage |
+| `WAGO_GET_OUTPUT_CHAIN <n>` | `WAGO_OUTPUT_CHAIN <n> <word> <bit> <netout> <outstate> <written> <readback>` — les quatre maillons pour la sortie `n`, l'automate résolvant lui-même mot et bit |
 
 Unités : `start_addr_*` et `posPA*` en **bits**, `dali647_*` et `<w>` en **mots**. `scan_error` est le
 `ScanError` de [PROCESS-IMAGE.md](PROCESS-IMAGE.md).
@@ -108,6 +113,22 @@ Unités : `start_addr_*` et `posPA*` en **bits**, `dali647_*` et `<w>` en **mots
 faux. Pas `0` : personne n'écrit le feedback sans la borne, et `0` est son « tout va bien » — la
 même règle que `WAGO_DALI_GET ERR`, appliquée à nous-mêmes. `feedback_last` est le dernier
 `bFeedback` **non nul** du maître 647 ; il n'est jamais remis à zéro.
+
+
+`WAGO_GET_OUTPUT_CHAIN` existe pour que **l'automate** convertisse le numéro de sortie en mot et en
+bit : chaque conversion d'unité laissée à l'outil est un endroit de plus où la confusion
+bit / octet / mot peut revenir, et c'est de là que venait T-2. Les quatre maillons se lisent dans
+l'ordre `netout → outstate → written → readback` ; le cinquième, l'image physique, se lit en Modbus
+(`0x0200 + word`). Le premier maillon qui ne porte pas la valeur attendue nomme le défaut.
+
+`branch` vaut `0` si le bloc de sortie ne tourne pas (`nb_module_out = 0`), `1` en mode dégradé,
+`2` en mode serveur. `cycle` et `outloop` avancent ensemble tant que le bloc s'exécute : les deux
+figés disent « programme arrêté », `outloop` figé seul dit « bloc non atteint ». `err_dig` et
+`err_dali` sont l'`ERROR` de `WRITE_OUTPUT_WORD`, agrégé sur toute la boucle du cycle.
+
+⚠️ `UDPServer` s'exécute **avant** le bloc de sortie : les compteurs, `branch` et les deux drapeaux
+d'erreur datent donc du cycle précédent. Sans conséquence pour un diagnostic, mais à savoir en
+lisant une trace.
 
 ⚠️ `WAGO_MODULE` gagne quatre champs en fin. Si `calaos_server` ou `calaos_installer` parse cette
 réponse par **nombre** de champs, il faut le vérifier dans `calaos_base` avant de déployer ; un

@@ -21,6 +21,8 @@ VAR
 	abDali647In: ARRAY[0..23] OF BYTE;
 	abDali647Out: ARRAY[0..23] OF BYTE;
 	j: INT;
+	wa: INT;
+	valOut: WORD;
 	daliFeedbackLast: BYTE;
 
 END_VAR
@@ -49,9 +51,18 @@ DALIMaster647(
 	bFeedback => daliFeedback
 );
 
+writeErrDali := FALSE;
 FOR j := 0 TO 11 DO
-	write_word(WORD_ADDRESS := Config.AddrDali647Out + INT_TO_WORD(j),
-		VALUE := SHL(BYTE_TO_WORD(abDali647Out[2 * j + 1]), 8) + abDali647Out[2 * j]);
+	wa := WORD_TO_INT(Config.AddrDali647Out) + j;
+	valOut := SHL(BYTE_TO_WORD(abDali647Out[2 * j + 1]), 8) + abDali647Out[2 * j];
+	write_word(WORD_ADDRESS := INT_TO_WORD(wa), VALUE := valOut);
+	IF (write_word.ERROR = TRUE) THEN
+		writeErrDali := TRUE;
+	END_IF
+	IF (wa <= 255) THEN
+		lastWritten[wa] := valOut;
+		lastWrittenValid[wa] := TRUE;
+	END_IF
 END_FOR
 
 (* bFeedback lives one cycle; keep the last non-zero code for the bench. *)

@@ -76,6 +76,18 @@ VAR_GLOBAL
 	write_bit: WRITE_OUTPUT_BIT;
 	read_bit: READ_INPUT_BIT;
 
+	(* Read by the UDP debug verbs. lastWritten shadows every WRITE_OUTPUT_WORD
+	   call, indexed by absolute word, so a write that never reached the bus can
+	   be told from one that carried a wrong value; lastWrittenValid keeps a word
+	   never written apart from a word written to 0. *)
+	cycleCount: DWORD;
+	outLoopCount: DWORD;
+	outBranch: BYTE;
+	writeErrDigital: BOOL;
+	writeErrDali: BOOL;
+	lastWritten: ARRAY[0..255] OF WORD;
+	lastWrittenValid: ARRAY[0..255] OF BOOL;
+
 END_VAR
 VAR_GLOBAL RETAIN
 	(* Rules mapping:

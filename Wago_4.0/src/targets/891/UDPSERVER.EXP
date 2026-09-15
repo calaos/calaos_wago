@@ -73,6 +73,11 @@ VAR
 
 	read_out_word: READ_OUTPUT_WORD;
 
+	dbgWord: INT;
+	dbgRel: INT;
+	dbgByte: INT;
+	dbgVal: WORD;
+
 END_VAR
 (* @END_DECLARATION := '0' *)
 (* Here we start an UDP server for other network functions *)
@@ -241,6 +246,115 @@ IF server.bDataReceived THEN
 			cmd := CONCAT(cmd, 'NA');
 		ELSE
 			cmd := CONCAT(cmd, WORD_TO_STRING(read_out_word.VALUE));
+		END_IF
+		start_send := TRUE;
+	END_IF
+
+	IF (STRING_COMPARE(cmd, 'WAGO_GET_STATE') = TRUE) THEN
+		cmd := 'WAGO_STATE ';
+		cmd := CONCAT(cmd, DWORD_TO_STRING(cycleCount));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, DWORD_TO_STRING(outLoopCount));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(BYTE_TO_INT(outBranch)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(BOOL_TO_INT(HEARTBEAT)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, DWORD_TO_STRING(TIME_TO_DWORD(HEARTBEAT_TIMER.ET)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(BYTE_TO_INT(LedMode)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(BOOL_TO_INT(writeErrDigital)));
+		cmd := CONCAT(cmd, ' ');
+		cmd := CONCAT(cmd, ITOA(BOOL_TO_INT(writeErrDali)));
+		start_send := TRUE;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_GET_NETOUT_WORD ', 21) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		cmd := 'WAGO_NETOUT_WORD ';
+		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
+		cmd := CONCAT(cmd, ' ');
+		IF ((p1 >= 0) AND (p1 <= 15)) THEN
+			dbgByte := DINT_TO_INT(p1) * 2;
+			dbgVal := netOutStandard[dbgByte + 1];
+			cmd := CONCAT(cmd, WORD_TO_STRING(SHL(dbgVal, 8) + netOutStandard[dbgByte]));
+		ELSE
+			cmd := CONCAT(cmd, 'NA');
+		END_IF
+		start_send := TRUE;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_GET_OUTSTATE_WORD ', 23) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		cmd := 'WAGO_OUTSTATE_WORD ';
+		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
+		cmd := CONCAT(cmd, ' ');
+		IF ((p1 >= 0) AND (p1 <= 255)) THEN
+			dbgByte := DINT_TO_INT(p1) * 2;
+			dbgVal := OutArrState[dbgByte + 1];
+			cmd := CONCAT(cmd, WORD_TO_STRING(SHL(dbgVal, 8) + OutArrState[dbgByte]));
+		ELSE
+			cmd := CONCAT(cmd, 'NA');
+		END_IF
+		start_send := TRUE;
+	END_IF
+
+	IF (Strncmp(cmd, 'WAGO_GET_WRITTEN_WORD ', 22) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		cmd := 'WAGO_WRITTEN_WORD ';
+		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
+		cmd := CONCAT(cmd, ' ');
+		IF ((p1 >= 0) AND (p1 <= 255)) THEN
+			IF (lastWrittenValid[p1] = TRUE) THEN
+				cmd := CONCAT(cmd, WORD_TO_STRING(lastWritten[p1]));
+			ELSE
+				cmd := CONCAT(cmd, 'NA');
+			END_IF
+		ELSE
+			cmd := CONCAT(cmd, 'NA');
+		END_IF
+		start_send := TRUE;
+	END_IF
+
+	(* The PLC resolves word and bit itself: a unit conversion left to the tool is
+	   one more place for the bit / byte / word mix-up to reappear. *)
+	IF (Strncmp(cmd, 'WAGO_GET_OUTPUT_CHAIN ', 22) = TRUE) THEN
+		p1 := GET_PARAM_DINT(cmd, 1);
+		cmd := 'WAGO_OUTPUT_CHAIN ';
+		cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1)));
+		IF ((p1 >= 0) AND (p1 <= 255)) THEN
+			dbgRel := DINT_TO_INT(p1) / 16;
+			dbgWord := WORD_TO_INT(start_addr_out) / 16 + dbgRel;
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(dbgWord));
+			cmd := CONCAT(cmd, ' ');
+			cmd := CONCAT(cmd, ITOA(DINT_TO_INT(p1) MOD 16));
+			cmd := CONCAT(cmd, ' ');
+			dbgVal := netOutStandard[dbgRel * 2 + 1];
+			cmd := CONCAT(cmd, WORD_TO_STRING(SHL(dbgVal, 8) + netOutStandard[dbgRel * 2]));
+			cmd := CONCAT(cmd, ' ');
+			IF (dbgWord <= 255) THEN
+				dbgVal := OutArrState[dbgWord * 2 + 1];
+				cmd := CONCAT(cmd, WORD_TO_STRING(SHL(dbgVal, 8) + OutArrState[dbgWord * 2]));
+				cmd := CONCAT(cmd, ' ');
+				IF (lastWrittenValid[dbgWord] = TRUE) THEN
+					cmd := CONCAT(cmd, WORD_TO_STRING(lastWritten[dbgWord]));
+				ELSE
+					cmd := CONCAT(cmd, 'NA');
+				END_IF
+			ELSE
+				cmd := CONCAT(cmd, 'NA NA');
+			END_IF
+			cmd := CONCAT(cmd, ' ');
+			read_out_word(WORD_ADDRESS := INT_TO_WORD(dbgWord));
+			IF (read_out_word.ERROR = TRUE) THEN
+				cmd := CONCAT(cmd, 'NA');
+			ELSE
+				cmd := CONCAT(cmd, WORD_TO_STRING(read_out_word.VALUE));
+			END_IF
+		ELSE
+			cmd := CONCAT(cmd, ' NA NA NA NA NA NA');
 		END_IF
 		start_send := TRUE;
 	END_IF
