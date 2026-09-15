@@ -84,6 +84,15 @@ Dernière mise à jour : 2026-09-14
   de sa justesse. Effet de bord assumé : une sortie au-delà de la 240e suit désormais le serveur
   en mode serveur, au lieu de conserver sa dernière valeur dégradée.
 
+## En production
+
+Depuis le 2026-09-15, le **750-889 de la maison tourne la 4.0** (et non plus la 3.0), avec le
+correctif T-13 et l'instrumentation T-14. Les **sorties digitales** sont validées de bout en bout
+depuis `calaos_server`. Le **DALI ne l'est pas** : la 647 vit, mais aucun ballast n'a été commandé, et
+deux changements de contrat 4.0 attendent encore côté serveur — la forme `WAGO_DALI_GET ERR <raison>`
+(T-9) et `WAGO_MODULE` à 10 champs (T-12). C'est le premier endroit où regarder si une lumière DALI se
+comporte mal.
+
 ## Ce qui bloque, et où est la réponse
 
 Ces questions ne peuvent pas être tranchées depuis `calaos_wago` :
