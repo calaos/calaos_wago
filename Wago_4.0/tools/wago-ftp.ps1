@@ -103,12 +103,18 @@ function Invoke-FtpTransfer {
       Start-Sleep -Milliseconds 200
       $ds.Close(); $data.Close()
       # Le 226 ne vient qu'une fois la flash ecrite, ce qui peut prendre des minutes.
-      # Fermer la session avant, et le 750 jette le fichier.
+      # Fermer la session avant, et le 750 jette le fichier. Mais le canal de
+      # commande tombe parfois avant le 226 alors que le fichier est bien ecrit :
+      # ce n'est pas un echec, c'est la relecture qui tranche.
       $t0 = Get-Date
       Write-Host ("  attente de l'ecriture flash (jusqu'a {0} s)..." -f $FlashWaitSec) -NoNewline
       $ctl.ReceiveTimeout = $FlashWaitSec * 1000
-      [void](Read-Reply $r)
-      Write-Host (" {0:N0} s" -f ((Get-Date) - $t0).TotalSeconds)
+      try {
+        [void](Read-Reply $r)
+        Write-Host (" {0:N0} s" -f ((Get-Date) - $t0).TotalSeconds)
+      } catch {
+        Write-Host (" pas d'acquittement apres {0:N0} s, la relecture tranchera" -f ((Get-Date) - $t0).TotalSeconds)
+      }
     } else {
       $buf = New-Object byte[] 65536
       while (($n = $ds.Read($buf, 0, $buf.Length)) -gt 0) { $ms.Write($buf, 0, $n) }

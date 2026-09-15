@@ -8,7 +8,9 @@
 $script:WagoReadVerbs = @(
   'WAGO_GET_VERSION', 'WAGO_GET_INFO', 'WAGO_GET_INFO_MODULE', 'WAGO_GET_LAYOUT',
   'WAGO_GET_OUTPUT_WORD', 'WAGO_GET_OUTTYPE', 'WAGO_GET_OUTADDR', 'WAGO_INFO_VOLET_GET',
-  'WAGO_DALI_GET'
+  'WAGO_DALI_GET',
+  'WAGO_GET_STATE', 'WAGO_GET_NETOUT_WORD', 'WAGO_GET_OUTSTATE_WORD',
+  'WAGO_GET_WRITTEN_WORD', 'WAGO_GET_OUTPUT_CHAIN'
 )
 
 function Test-WagoReadVerb([string]$Command) {
@@ -132,9 +134,13 @@ function Write-WagoRegister {
 
 function Invoke-WagoSoftReset {
   # Redemarrage logiciel du coupleur, la meme trame que WagoConnect::ResetWago de
-  # calaos_installer : un seul FC6 de 0x55AA dans 0x2040, qui suffit sur 841 et 889.
-  # L'automate coupe la connexion aussitot, la reponse peut manquer.
+  # calaos_installer : FC6 de 0x55AA dans 0x2040. L'automate coupe la connexion
+  # aussitot, la reponse manque donc normalement.
   # Ne jamais generaliser a 0x2041..0x2043 (formatage flash, reglages usine).
+  #
+  # Mesure : redemarre bien un 750-889 (firmware 1.3), mais sur un 750-841
+  # (firmware 2.11) l'automate ne redemarre pas et son serveur Modbus s'arrete,
+  # ce qui ferme le seul canal d'ecriture. Sur 841, couper l'alimentation.
   param([Parameter(Mandatory)][string]$Ip)
   try { Write-WagoRegister -Ip $Ip -Address 0x2040 -Value 0x55AA } catch {}
 }

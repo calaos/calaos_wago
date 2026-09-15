@@ -12,12 +12,41 @@ Tout est en lecture seule par defaut. Les seules ecritures possibles exigent
 
 | Script | Sert a |
 |---|---|
+| `wago-debug.ps1 -Ip <ip> -Output <n>` | le runbook : flash, reset, etat de reference, stimulus sur une sortie, releve de la chaine interne, verdict, restauration. Voir plus bas. |
 | `wago-diag.ps1 -Ip <ip>` | le rapport complet en une commande : identite et rack par Modbus, puis version, `WAGO_INFO`, `WAGO_LAYOUT` (4.0), `WAGO_MODULE n` pour chaque module. `-OutFile` pour l'archiver. |
 | `wago-udp.ps1 -Ip <ip> -Command '<verbe>'` | une commande du protocole Calaos, sa reponse, ou « pas de reponse » apres 2 s. |
 | `wago-modbus.ps1 -Ip <ip> -Preset <Identity\|Modules\|NetOut\|OutWords\|InWords>` | ce que l'automate est et ce qu'il a dans son image, independamment du programme. `-Function 1..4 -Address -Count` pour du brut. |
 | `wago-ftp.ps1 -Ip <ip> [-Path /PLC] [-Get <fichier> -To <dir> [-Compare <fichier local>]]` | lister la flash, rapatrier `DEFAULT.PRG` / `.CHK` et les comparer au boot project du depot. `-Put <local> -As </PLC/X> -AllowWrite` envoie puis relit et compare ; `-Delete </PLC/X> -AllowWrite`. |
 | `wago-web.ps1 -Ip <ip> [-Page state\|plccfg\|...]` | la page d'etat du Web-Based Management en texte (firmware, hostname, code d'erreur, options PLC). |
 | `WagoNet.ps1` | les fonctions communes (`Invoke-WagoUdp`, `Invoke-WagoModbus`, `Read-WagoRegisters`, `Read-WagoCoils`, `Get-WagoIdentity`, `Get-WagoModules`). A charger par `. .\WagoNet.ps1` pour un usage interactif. |
+
+## `wago-debug.ps1` — la chaine de sortie, de bout en bout
+
+Pour une sortie `n`, cinq maillons doivent porter la meme valeur. Le premier qui ne
+la porte pas nomme le defaut :
+
+| Maillon | Source | Ce qu'une rupture ici veut dire |
+|---|---|---|
+| `netout` | `WAGO_OUTPUT_CHAIN` (le programme lit `netOutStandard`) | le serveur n'a pas ecrit, ou pas au bon bit |
+| `outstate` | idem (`OutArrState`) | le miroir serveur -> degradé ne suit pas |
+| `written` | idem (`lastWritten`) | la boucle n'a pas tourne, ou a calcule une mauvaise valeur |
+| `readback` | idem (`READ_OUTPUT_WORD`) | l'ecriture n'atteint pas l'image |
+| `qw` | Modbus FC3 `0x0200 + mot` | l'image est ecrasee apres coup |
+
+`-Mode` choisit la branche mise a l'epreuve, **calaos_server etant arrete** :
+`server` tient le mode serveur en emettant le heartbeat et stimule par la coil
+`4096 + n` ; `standalone` laisse le timer de 30 s expirer et stimule par
+`WAGO_SET_OUTPUT` ; `auto` prend la branche annoncee. La branche serveur est celle
+qui etait morte avec une 647 : `-Mode server` est le test de T-13.
+
+Garde-fous : le nom de projet lu dans les derniers octets du `.PRG` doit concorder
+avec la reference Modbus de l'automate (impossible de flasher un 841 sur un 889) ;
+`-Output` est borne par `output_digital` de `WAGO_INFO` ; la coil est relue au
+moment du releve, et une reprise par `calaos_server` est signalee.
+
+Les verbes que tout ceci consomme (`WAGO_GET_STATE`, `WAGO_GET_NETOUT_WORD`,
+`WAGO_GET_OUTSTATE_WORD`, `WAGO_GET_WRITTEN_WORD`, `WAGO_GET_OUTPUT_CHAIN`)
+n'existent qu'en 4.0 et sont decrits dans `docs/PROTOCOL-4.0.md`.
 
 ## Ce que Modbus donne que le programme ne donne pas
 
@@ -72,3 +101,14 @@ Mesure sur le 750-841 (serveur « Nucleus FTP 1.7 ») :
 - La 647 declare `sizePAE = sizePAA = 152` bits au programme alors qu'elle occupe
   192 bits (24 octets) dans l'image : ne pas deduire une position d'une somme de
   tailles, seul `posPAE` / `posPAA` fait foi.
+- Le `226` d'un `STOR` **peut ne jamais arriver** alors que le fichier est
+  correctement ecrit : le canal de commande tombe pendant l'attente. `-Put` ne
+  traite donc pas cela comme un echec et laisse la **relecture** trancher.
+- **Le reset logiciel depend du modele.** `0x55AA` dans `0x2040` redemarre un
+  750-889 (firmware 1.3) en quelques secondes. Sur un 750-841 (firmware 2.11) il
+  ne redemarre pas et **arrete le serveur Modbus**, donc le seul canal d'ecriture ;
+  l'automate reste joignable en ping, web et FTP et continue de faire tourner son
+  programme. Il faut alors couper l'alimentation.
+- **Ne pas marteler le port 502.** Une connexion Modbus toutes les 2 s sature la
+  table de connexions du coupleur, qui refuse ensuite le port 502 plusieurs
+  minutes. Les boucles d'attente sondent toutes les 15 s.
