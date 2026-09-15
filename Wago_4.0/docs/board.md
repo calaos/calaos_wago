@@ -87,11 +87,24 @@ Dernière mise à jour : 2026-09-14
 ## En production
 
 Depuis le 2026-09-15, le **750-889 de la maison tourne la 4.0** (et non plus la 3.0), avec le
-correctif T-13 et l'instrumentation T-14. Les **sorties digitales** sont validées de bout en bout
-depuis `calaos_server`. Le **DALI ne l'est pas** : la 647 vit, mais aucun ballast n'a été commandé, et
-deux changements de contrat 4.0 attendent encore côté serveur — la forme `WAGO_DALI_GET ERR <raison>`
-(T-9) et `WAGO_MODULE` à 10 champs (T-12). C'est le premier endroit où regarder si une lumière DALI se
-comporte mal.
+correctif T-13 et l'instrumentation T-14.
+
+- **Sorties digitales** : validées de bout en bout depuis `calaos_server`.
+- **DALI, adresse courte** : validé par UDP sur le ballast 18 — `WAGO_DALI_SET` à 100, 50 puis 0, et
+  `WAGO_DALI_GET` qui suit (`1 100`, `1 49`, `0 0`). `feedback_last` inchangé : aucune erreur du
+  maître 647 pendant les commandes. Le niveau est bien en pourcentage.
+- **Pas encore exercé** : les capteurs DALI du CSV (présence, boutons), l'écriture sur un groupe.
+
+⭐ La réserve T-9 (`WAGO_DALI_GET ERR GROUP_UNSUPPORTED` que `calaos_server` ne sait pas lire) **ne
+concerne pas cette armoire** : cette réponse n'existe que sur la branche 641 (`CONFIG_DALI`). Sur un
+rack à 647 la lecture de groupe est servie normalement depuis le cache du maître
+(`DaliSendValueGrp647[]`). Reste ouverte la vérification `calaos_base` de `WAGO_MODULE` à 10 champs
+(T-12).
+
+⚠️ Deux verrues de forme sur la réponse `WAGO_DALI_GET` de la branche 647 : le **3ᵉ champ vaut
+toujours 0** (c'est `DALIDimmValue.bDimmValue`, qui appartient au bloc 641 jamais piloté sur ce rack),
+et certains ballasts rapportent un niveau **supérieur à 100** (103 relevé sur les adresses 2, 3 et 45)
+alors que l'échelle est en pourcentage. Non expliqué, sans effet mesuré.
 
 ## Ce qui bloque, et où est la réponse
 
