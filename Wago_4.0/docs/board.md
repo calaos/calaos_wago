@@ -40,7 +40,8 @@ Dernière mise à jour : 2026-09-14
 | [T-10](done/T-10.md) | Le balayage de modules ne classe pas tout et recalcule l'offset de la 647 à la main | ✅ clos *(partiel)* | `cef4d2c` |
 | [T-11](done/T-11.md) | La 753-647 est clouée en tête du rack et condamne 24 octets sans elle | ✅ clos *(partiel)* | `2c743d1` |
 | [T-12](done/T-12.md) | Rien ne permet d'observer le rack, les offsets ni la 647 de l'extérieur | ✅ clos *(partiel)* | `6461362` |
-| [T-13](todo/T-13.md) | En 4.0 avec une 647, les sorties digitales ne sont plus pilotées (régression T-11) | 📋 ouvert · correctif candidat | `86b2363` |
+| [T-13](done/T-13.md) | En 4.0 avec une 647, les sorties digitales ne sont plus pilotées (régression T-11) | ✅ clos | `86b2363` |
+| [T-14](todo/T-14.md) | Rien ne permet d'observer l'image interne pour automatiser le débug | 📋 ouvert *(livré, réserves)* | `81272a3`, `2fb79d5` |
 
 ## Clôtures partielles — ce qui reste
 
@@ -68,11 +69,16 @@ Dernière mise à jour : 2026-09-14
   non 0, l'inconnue fermée par le `OR moduleType=647` était donc superflue mais inoffensive). Reste
   la vérification côté `calaos_base` : `WAGO_MODULE` est-il parsé par nombre de champs ? Sinon, repli
   `WAGO_GET_MODULE_DESC`.
-- **T-13** : ouvert le 2026-09-14. Régression introduite par T-11 (boîte 647 par `write_word` au lieu
-  de la variable localisée). Sur un rack avec 647, aucune sortie digitale ne bouge alors que la 3.0
-  les pilote. Correctif candidat `86b2363` (bloc digital avant la 647, instance `write_word_out`
-  dédiée) : compile 7×, aller-retour propre, relecture OK — mais **non validé au banc**. Le ticket ne
-  se clôt qu'après une mesure sur un rack à 647. La 4.0 n'est pas déployable sur un rack DALI d'ici là.
+- **T-13** : clos le 2026-09-15, **validé au banc** sur le 750-889 avec sa 647 — la sortie 27 est
+  pilotée dans les deux branches, chaîne complète des cinq maillons. Reste non tranché, sans effet sur
+  la fiabilité : `86b2363` applique deux changements à la fois (réordonnancement et instance dédiée),
+  on ne sait pas lequel porte le correctif. Voir le §8 de la fiche.
+- **T-14** : livré et validé au banc (`81272a3`, `2fb79d5`), mais **pas clos** : la relecture a laissé
+  trois réserves mineures non traitées — `err_dali` répond `0` au lieu de `NA` quand il n'y a pas de
+  647 ; `WAGO_GET_OUTSTATE_WORD` suppose `start_addr_out` aligné sur 16 (déjà signalé par
+  `SCAN_ERR_OUT_ALIGN`) ; les gardes `wa <= 255` n'ont pas de borne basse. Aucune ne gêne l'usage.
+  La réserve la plus sérieuse — `err_dig` structurellement à 1 en mode dégradé — a été **levée par la
+  mesure** : `WRITE_OUTPUT_WORD` ne lève pas `ERROR` au-delà du rack peuplé.
 - **T-4** : la question « le serveur écrit-il au-delà de la coil 4335 ? » reste ouverte, faute de
   `calaos_base`. Le correctif est juste dans les deux cas ; la réponse décide de son intérêt, pas
   de sa justesse. Effet de bord assumé : une sortie au-delà de la 240e suit désormais le serveur

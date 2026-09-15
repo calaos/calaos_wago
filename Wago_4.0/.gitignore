@@ -16,3 +16,7 @@ DEFAULT.DFR
 *.ECI
 *.wibu.ini
 *Vis.txt
+
+# Sauvegarde automatique et dossier temporaire d'une session CoDeSys ouverte
+*.ASD
+*Temp/
